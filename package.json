@@ -1,0 +1,33 @@
+{
+  "name": "luma-citizen-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Luma Protect · Portal Ciudadano, Verificador Semántico Local y Recursos Comunitarios (UNSO)",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "next": "^16.3.1",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "3.3.1",
+    "@types/node": "24.0.14",
+    "@types/react": "19.1.8",
+    "@types/react-dom": "19.1.6",
+    "autoprefixer": "10.4.21",
+    "eslint": "9.31.0",
+    "eslint-config-next": "^16.3.1",
+    "postcss": "^8.5.10",
+    "tailwindcss": "3.4.17",
+    "typescript": "5.8.3",
+    "vitest": "^3.2.7"
+  }
+}

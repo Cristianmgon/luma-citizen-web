@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Folleto Adulto Mayor - Luma Protect</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    }
+    body {
+      background: #f8fafc;
+      color: #0f172a;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .print-bar {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 12px;
+    }
+    .btn {
+      background: #0284c7;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .sheet {
+      background: white;
+      width: 190mm;
+      min-height: 270mm;
+      padding: 15mm;
+      border: 3px solid #0284c7;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .sheet {
+        box-shadow: none;
+        border: 2px solid #0284c7;
+        width: 100%;
+        min-height: 100%;
+        padding: 8mm;
+      }
+      .print-bar {
+        display: none !important;
+      }
+    }
+    .header {
+      text-align: center;
+      border-bottom: 3px solid #0284c7;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+    .header .tag {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #0369a1;
+      font-weight: 800;
+      font-size: 13pt;
+      padding: 4px 16px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .header h1 {
+      font-size: 26pt;
+      color: #0f172a;
+      font-weight: 900;
+      line-height: 1.15;
+    }
+    .header p {
+      font-size: 14pt;
+      color: #334155;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .rule-box {
+      background: #fef2f2;
+      border: 3px dashed #dc2626;
+      border-radius: 12px;
+      padding: 14px 18px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .rule-box h2 {
+      font-size: 20pt;
+      color: #b91c1c;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .rule-box p {
+      font-size: 14pt;
+      color: #7f1d1d;
+      font-weight: bold;
+      margin-top: 4px;
+    }
+    .card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: #f8fafc;
+      border: 2px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+    .card .icon {
+      font-size: 28pt;
+      line-height: 1;
+    }
+    .card .content h3 {
+      font-size: 15pt;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+    .card .content p {
+      font-size: 12pt;
+      color: #334155;
+      line-height: 1.35;
+      font-weight: 500;
+    }
+    .family-password {
+      background: #eff6ff;
+      border: 2px solid #3b82f6;
+      border-radius: 10px;
+      padding: 12px 16px;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    .family-password h4 {
+      font-size: 14pt;
+      color: #1d4ed8;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .family-password p {
+      font-size: 11pt;
+      color: #1e3a8a;
+    }
+    .family-password .input-line {
+      display: inline-block;
+      width: 250px;
+      border-bottom: 2px dashed #2563eb;
+      margin-top: 6px;
+      height: 20px;
+    }
+    .emergency-footer {
+      border-top: 2px solid #94a3b8;
+      padding-top: 12px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      background: #0f172a;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 8px;
+    }
+    .emergency-footer .item h5 {
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #38bdf8;
+      font-weight: 800;
+    }
+    .emergency-footer .item p {
+      font-size: 11pt;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <button class="btn" onclick="window.print()">🖨️ Imprimir Folleto A4 (Ctrl + P)</button>
+    <a class="btn" style="background:#475569;" href="/educacion">⬅️ Volver a Educación</a>
+  </div>
+
+  <div class="sheet">
+    <div>
+      <div class="header">
+        <span class="tag">🛡️ Guía para Pegar Junto al Teléfono</span>
+        <h1>¡ATENCIÓN! REGLAS DE ORO ANTE LLAMADAS</h1>
+        <p>Luma Protect · Seguridad para Adultos Mayores y Familias</p>
+      </div>
+
+      <div class="rule-box">
+        <h2>⚠️ SI TE APURAN, ¡CORTÁ!</h2>
+        <p>Ningún trámite legal ni familiar urgente se resuelve entregando plata o claves por teléfono.</p>
+      </div>
+
+      <div class="card-list">
+        <div class="card">
+          <div class="icon">🚫</div>
+          <div class="content">
+            <h3>1. ANSES, PAMI y Bancos NUNCA van a tu casa ni al cajero</h3>
+            <p>No existen pagos de reparaciones históricas urgentes ni cambios de billetes en bancos. Si dicen que van a mandar a un empleado a tu domicilio: <strong>es falso, cortá ya</strong>.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icon">📞</div>
+          <div class="content">
+            <h3>2. Si dicen que tu hijo o nieto tuvo un accidente o secuestro</h3>
+            <p>Los delincuentes imitan llantos y gritos. <strong>No des nombres</strong>. Poné la llamada en altavoz, respirá hondo y llamá directamente al número de tu ser querido desde otro teléfono.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icon">🔑</div>
+          <div class="content">
+            <h3>3. NUNCA leas números de tarjeta ni códigos por mensaje</h3>
+            <p>Los números de 6 dígitos que llegan por mensaje (SMS) o WhatsApp son llaves secretas. Si se los das a alguien, te roban tu cuenta bancaria o tu WhatsApp.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="family-password">
+        <h4>🔒 Nuestra Palabra Clave Familiar:</h4>
+        <p>Acordá con tus hijos y nietos una palabra que solo ustedes sepan (ej: el nombre de una mascota antigua). Si quien te llama no la sabe, es una trampa.</p>
+        <div>Palabra clave: <span class="input-line"></span></div>
+      </div>
+    </div>
+
+    <div class="emergency-footer">
+      <div class="item">
+        <h5>🚨 Denuncias por Ciberdelitos (UFECI)</h5>
+        <p>denunciasufeci@mpf.gov.ar<br>Tel: (011) 5071-0040</p>
+      </div>
+      <div class="item">
+        <h5>📞 Emergencias Inmediatas</h5>
+        <p>Policía: 911<br>Violencia / Asistencia: Línea 137</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

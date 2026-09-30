@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía de Taller Escolar - Luma Protect</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    }
+    body {
+      background: #f8fafc;
+      color: #0f172a;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .print-bar {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 12px;
+    }
+    .btn {
+      background: #7c3aed;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .sheet {
+      background: white;
+      width: 190mm;
+      min-height: 270mm;
+      padding: 14mm;
+      border: 3px solid #7c3aed;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .sheet {
+        box-shadow: none;
+        border: 2px solid #7c3aed;
+        width: 100%;
+        min-height: 100%;
+        padding: 8mm;
+      }
+      .print-bar {
+        display: none !important;
+      }
+    }
+    .header {
+      text-align: center;
+      border-bottom: 3px solid #7c3aed;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+    }
+    .header .tag {
+      display: inline-block;
+      background: #f3e8ff;
+      color: #6b21a8;
+      font-weight: 800;
+      font-size: 11pt;
+      padding: 4px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .header h1 {
+      font-size: 22pt;
+      color: #0f172a;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+    .header p {
+      font-size: 12pt;
+      color: #475569;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .timing-badge {
+      display: flex;
+      justify-content: space-around;
+      background: #faf5ff;
+      border: 1px solid #d8b4fe;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 10pt;
+      font-weight: 700;
+      color: #581c87;
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: 13pt;
+      font-weight: 800;
+      color: #581c87;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      border-left: 4px solid #7c3aed;
+      padding-left: 8px;
+    }
+    .block {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 12px;
+    }
+    .block h4 {
+      font-size: 11.5pt;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+    .block p, .block li {
+      font-size: 9.5pt;
+      color: #334155;
+      line-height: 1.35;
+    }
+    .block ul {
+      margin-left: 18px;
+      margin-top: 4px;
+    }
+    .questions-box {
+      background: #eff6ff;
+      border: 2px dashed #3b82f6;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 12px;
+    }
+    .questions-box h4 {
+      font-size: 11pt;
+      font-weight: 800;
+      color: #1e40af;
+      margin-bottom: 6px;
+    }
+    .questions-box p {
+      font-size: 9pt;
+      color: #1e3a8a;
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+    .footer {
+      border-top: 2px solid #cbd5e1;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 8.5pt;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <button class="btn" onclick="window.print()">🖨️ Imprimir Guía Escolar (Ctrl + P)</button>
+    <a class="btn" style="background:#475569;" href="/educacion">⬅️ Volver a Educación</a>
+  </div>
+
+  <div class="sheet">
+    <div>
+      <div class="header">
+        <span class="tag">🎒 Dinámica para Docentes y Familias</span>
+        <h1>TALLER: CIUDADANÍA DIGITAL Y SEGURIDAD</h1>
+        <p>Luma Protect · Prevención de Engaños y Grooming en el Aula y el Hogar</p>
+      </div>
+
+      <div class="timing-badge">
+        <span>⏱️ Duración: 30 minutos</span>
+        <span>👥 Destinatarios: Primaria y Secundaria</span>
+        <span>📍 Formato: Aula o Reunión de Familias</span>
+      </div>
+
+      <div class="section-title">Bloques de la Dinámica</div>
+
+      <div class="block">
+        <h4>1. Apertura: "¿Qué es real y qué es trampa en internet?" (5 min)</h4>
+        <p>Preguntar al grupo: <em>¿A quién le ofrecieron monedas gratis en Roblox, skins en Free Fire o ganar plata por dar likes en TikTok?</em> Explicar que en el mundo digital no existen los regalos de desconocidos: cada promesa excesiva busca robar cuentas, datos familiares o dinero.</p>
+      </div>
+
+      <div class="block">
+        <h4>2. Casos Reales y Señales de Alerta (10 min)</h4>
+        <ul>
+          <li><strong>Trampa gamer:</strong> Pedir contraseñas o el teléfono de los padres para recargar diamantes.</li>
+          <li><strong>Grooming y manipulación:</strong> Perfiles falsos que fingen la misma edad, piden secretos y fotos que generan vergüenza.</li>
+          <li><strong>Estafas de tareas y apuestas:</strong> Promesas de "ganar $20.000 por día" que derivan en extorsiones o apuestas clandestinas.</li>
+        </ul>
+      </div>
+
+      <div class="questions-box">
+        <h4>💡 Preguntas Disparadoras para el Debate Grupal (10 min)</h4>
+        <p><strong>• Pregunta 1:</strong> Si un jugador en un chat te dice: <em>"No le cuentes a tus papás, es nuestro secreto"</em>, ¿qué deberías hacer?</p>
+        <p><strong>• Regla fundamental:</strong> Los adultos buenos jamás le piden secretos a los chicos. Ante la incomodidad, se avisa de inmediato a un adulto de confianza.</p>
+        <p><strong>• Pregunta 2:</strong> ¿Por qué nunca debemos compartir fotos con el uniforme escolar ni fotos de nuestra casa?</p>
+      </div>
+
+      <div class="block">
+        <h4>3. Cierre y Compromiso Colectivo (5 min)</h4>
+        <p><strong>El Pacto de Cuidado:</strong> Acordar que nadie se burlará ni castigará a quien pida ayuda por haberse equivocado en internet. La vergüenza es la aliada del acosador. Si te pasó algo malo, contarlo te salva.</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div><strong>Luma Protect Educación</strong> · Licenciatura en Ciberseguridad UNSO</div>
+      <div>Línea 137 (Atención 24/7 Grooming y Violencia) · UFECI: denunciasufeci@mpf.gov.ar</div>
+    </div>
+  </div>
+
+</body>
+</html>

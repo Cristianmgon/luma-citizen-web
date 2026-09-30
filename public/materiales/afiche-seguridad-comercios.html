@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afiche Seguridad en Comercios - Luma Protect</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    }
+    body {
+      background: #f8fafc;
+      color: #0f172a;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .print-bar {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 12px;
+    }
+    .btn {
+      background: #059669;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .sheet {
+      background: white;
+      width: 190mm;
+      min-height: 270mm;
+      padding: 15mm;
+      border: 3px solid #059669;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .sheet {
+        box-shadow: none;
+        border: 2px solid #059669;
+        width: 100%;
+        min-height: 100%;
+        padding: 8mm;
+      }
+      .print-bar {
+        display: none !important;
+      }
+    }
+    .header {
+      text-align: center;
+      border-bottom: 3px solid #059669;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+    .header .tag {
+      display: inline-block;
+      background: #d1fae5;
+      color: #065f46;
+      font-weight: 800;
+      font-size: 12pt;
+      padding: 4px 16px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .header h1 {
+      font-size: 24pt;
+      color: #0f172a;
+      font-weight: 900;
+      line-height: 1.15;
+    }
+    .header p {
+      font-size: 13pt;
+      color: #475569;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .danger-alert {
+      background: #fef2f2;
+      border: 3px solid #ef4444;
+      border-radius: 10px;
+      padding: 14px 16px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .danger-alert h2 {
+      font-size: 18pt;
+      color: #b91c1c;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .danger-alert p {
+      font-size: 12pt;
+      color: #7f1d1d;
+      font-weight: bold;
+      margin-top: 4px;
+    }
+    .rules-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .rule-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: #f8fafc;
+      border: 2px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+    .rule-card .num {
+      background: #059669;
+      color: white;
+      font-weight: 900;
+      font-size: 16pt;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      shrink: 0;
+    }
+    .rule-card .text h3 {
+      font-size: 13.5pt;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+    .rule-card .text p {
+      font-size: 11pt;
+      color: #334155;
+      line-height: 1.35;
+    }
+    .warning-box {
+      background: #fffbeb;
+      border: 2px dashed #f59e0b;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 10.5pt;
+      color: #92400e;
+      line-height: 1.35;
+      margin-bottom: 14px;
+    }
+    .warning-box strong {
+      color: #b45309;
+    }
+    .footer {
+      border-top: 2px solid #059669;
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 9pt;
+      color: #475569;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <button class="btn" onclick="window.print()">🖨️ Imprimir Afiche para Mostrador (Ctrl + P)</button>
+    <a class="btn" style="background:#475569;" href="/educacion">⬅️ Volver a Educación</a>
+  </div>
+
+  <div class="sheet">
+    <div>
+      <div class="header">
+        <span class="tag">🏪 Protocolo Oficial para Caja y Mostrador</span>
+        <h1>COBRO SEGURO: TRANSFERENCIAS Y QR</h1>
+        <p>Luma Protect · Protección para Comercios y Emprendedores</p>
+      </div>
+
+      <div class="danger-alert">
+        <h2>🛑 LA CAPTURA EN PANTALLA NO ES DINERO</h2>
+        <p>Existen apps falsas que simulan pantallas de Mercado Pago y transferencias bancarias en 5 segundos. NO entregues mercadería sin verificar en tu app.</p>
+      </div>
+
+      <div class="rules-grid">
+        <div class="rule-card">
+          <div class="num">1</div>
+          <div class="text">
+            <h3>Verificá la acreditación en TU PROPIO teléfono o terminal</h3>
+            <p>El cliente puede mostrarte un comprobante que parece 100% auténtico o decir <em>"mirá, ya me descontó la plata"</em>. La única prueba válida es que el saldo figure acreditado en tu cuenta comercial.</p>
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <div class="num">2</div>
+          <div class="text">
+            <h3>Cuidado con el truco del "error en el monto transferido"</h3>
+            <p>Si dicen: <em>"Te transferí $100.000 en vez de $10.000, por favor transferime la diferencia ya mismo porque me despiden"</em>: <strong>NO devuelvas nada</strong>. Es una trampa para vaciarte tu cuenta o triangular fondos robados.</p>
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <div class="num">3</div>
+          <div class="text">
+            <h3>Falsas llamadas del "Gerente del Banco" o "Soporte"</h3>
+            <p>Ningún banco ni billetera llama en vivo a un comercio para exigir devoluciones o pedir que vayas a un cajero automático a anular una operación. Cortá y llamá a tu soporte oficial.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="warning-box">
+        <strong>⚠️ ¿Qué hacer si te muestran un comprobante falso?</strong><br>
+        1. Mantené la calma y explicá: <em>"Por protocolo del local, hasta que no impacte en nuestra cuenta no podemos entregar la mercadería"</em>.<br>
+        2. No confrontes al sujeto. Si se torna agresivo o se retira, anotá hora, cámaras de seguridad y hacé la denuncia formal.
+      </div>
+    </div>
+
+    <div class="footer">
+      <div><strong>Luma Protect Comercios</strong> · Licenciatura en Ciberseguridad UNSO</div>
+      <div>Denuncias UFECI: denunciasufeci@mpf.gov.ar · Emergencias: 911</div>
+    </div>
+  </div>
+
+</body>
+</html>

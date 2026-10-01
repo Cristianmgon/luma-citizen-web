@@ -29,14 +29,9 @@ export default function CitizenNavigation() {
             />
           </div>
           <div>
-            <div className="flex items-center gap-2">
-              <span className="text-lg font-black tracking-tight text-lumaText">
-                Luma <span className="text-lumaBlue">Protect</span>
-              </span>
-              <span className="hidden sm:inline-flex items-center rounded-full bg-blue-50 px-2 py-0.5 text-[10px] font-bold text-lumaBlue border border-blue-200">
-                UNSO Lab
-              </span>
-            </div>
+            <span className="text-lg font-black tracking-tight text-lumaText">
+              Luma <span className="text-lumaBlue">Protect</span>
+            </span>
             <p className="hidden sm:block text-[11px] font-medium text-lumaSubtext">
               Protección Ciudadana Inteligente
             </p>

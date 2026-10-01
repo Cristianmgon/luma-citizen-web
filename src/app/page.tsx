@@ -302,13 +302,13 @@ export default function LumaProtectHomePage() {
         </div>
 
         <div className="grid items-start gap-8 md:grid-cols-3">
-          {/* Pantalla 1: Home y 4 Perfiles */}
+          {/* Pantalla 1: Home y Herramientas Preventivas */}
           <div className="flex flex-col items-center rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
             <div className="w-full max-w-[260px] rounded-[2.2rem] border-[5px] border-slate-800 bg-slate-900 p-1.5 shadow-xl">
               <div className="overflow-hidden rounded-[1.8rem] bg-white">
                 <img
                   src="/images/luma_real_home.png"
-                  alt="Centro de Protección y 4 Perfiles de Luma Protect"
+                  alt="Centro de Protección y Herramientas Preventivas de Luma Protect"
                   className="w-full h-auto object-cover"
                 />
               </div>
@@ -317,20 +317,20 @@ export default function LumaProtectHomePage() {
               <span className="rounded-full bg-blue-100 px-2.5 py-0.5 text-[11px] font-bold text-blue-800">
                 1. Centro de Control
               </span>
-              <h3 className="text-lg font-bold text-lumaText">4 Perfiles Adaptados</h3>
+              <h3 className="text-lg font-bold text-lumaText">Herramientas Preventivas</h3>
               <p className="text-xs text-lumaSubtext max-w-xs">
-                Configuración simplificada en un clic: Adulto Mayor, Niños en juegos online, Adolescentes y Uso General.
+                Monitoreo local adaptado al usuario (ej. Adulto Mayor): protección de notificaciones en tiempo real, escáner QR y análisis seguro de mensajes dudosos.
               </p>
             </div>
           </div>
 
-          {/* Pantalla 2: Alerta Real de Peligro */}
+          {/* Pantalla 2: Alerta Real de Mensaje Sospechoso */}
           <div className="flex flex-col items-center rounded-3xl border border-rose-200 bg-rose-50/30 p-6 shadow-sm">
             <div className="w-full max-w-[260px] rounded-[2.2rem] border-[5px] border-rose-900 bg-rose-950 p-1.5 shadow-xl">
               <div className="overflow-hidden rounded-[1.8rem] bg-slate-900">
                 <img
                   src="/images/luma_real_alert_warning.jpg"
-                  alt="Alerta Inmediata en Pantalla ante Llamada o Mensaje Extorsivo"
+                  alt="Alerta en Pantalla ante Mensaje Sospechoso y Suplantación Bancaria"
                   className="w-full h-auto object-cover"
                 />
               </div>
@@ -339,31 +339,31 @@ export default function LumaProtectHomePage() {
               <span className="rounded-full bg-rose-100 px-2.5 py-0.5 text-[11px] font-bold text-rose-800">
                 2. Intervención en Tiempo Real
               </span>
-              <h3 className="text-lg font-bold text-rose-950">Aviso Protector Overlay</h3>
+              <h3 className="text-lg font-bold text-rose-950">Alerta de Riesgo Detectado</h3>
               <p className="text-xs text-rose-800/90 max-w-xs">
-                Al detectar coacción, pedidos de rescate o claves, Luma despliega el aviso calmante sobre la pantalla para frenar el engaño.
+                Ante intentos de suplantación bancaria o robo de claves, Luma interviene en pantalla advirtiendo que no respondas ni compartas información personal.
               </p>
             </div>
           </div>
 
-          {/* Pantalla 3: Acciones Inmediatas de Protección */}
-          <div className="flex flex-col items-center rounded-3xl border border-emerald-200 bg-emerald-50/30 p-6 shadow-sm">
-            <div className="w-full max-w-[260px] rounded-[2.2rem] border-[5px] border-emerald-900 bg-emerald-950 p-1.5 shadow-xl">
+          {/* Pantalla 3: Acciones Inmediatas y Contacto de Confianza */}
+          <div className="flex flex-col items-center rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="w-full max-w-[260px] rounded-[2.2rem] border-[5px] border-slate-800 bg-slate-900 p-1.5 shadow-xl">
               <div className="overflow-hidden rounded-[1.8rem] bg-slate-900">
                 <img
                   src="/images/luma_real_alert_actions.jpg"
-                  alt="Panel Táctil de Acciones y Asistencia Familiar"
+                  alt="Acciones Inmediatas y Llamada a la Persona de Confianza"
                   className="w-full h-auto object-cover"
                 />
               </div>
             </div>
             <div className="mt-5 space-y-2 text-center">
               <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-[11px] font-bold text-emerald-800">
-                3. Asistencia al Instante
+                3. Respuesta y Contención
               </span>
-              <h3 className="text-lg font-bold text-emerald-950">Botones Táctiles Accesibles</h3>
-              <p className="text-xs text-emerald-800/90 max-w-xs">
-                Botones gigantes de un solo toque para comunicarse con el familiar de auxilio, cortar la comunicación y registrar el evento.
+              <h3 className="text-lg font-bold text-lumaText">Persona de Confianza y Salida</h3>
+              <p className="text-xs text-lumaSubtext max-w-xs">
+                Acceso directo de un toque para llamar a tu persona de confianza, salir de forma segura marcando &quot;No responder&quot; y registrar el evento sin guardar datos privados.
               </p>
             </div>
           </div>

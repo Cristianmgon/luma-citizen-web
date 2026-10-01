@@ -70,14 +70,13 @@ export default function CitizenNavigation() {
 
         {/* CTA BUTTONS & MOBILE TOGGLE */}
         <div className="flex items-center gap-2">
-          <a
-            href="/downloads/luma-protect-preview.apk"
-            download="luma-protect-preview.apk"
-            className="hidden sm:inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2 text-xs font-black text-white shadow-sm hover:bg-emerald-700 transition"
+          <Link
+            href="/#descarga"
+            className="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2 text-xs font-bold text-slate-700 hover:border-blue-400 hover:text-lumaBlue hover:bg-white transition"
           >
-            <span>📱</span>
-            <span>Descargar App (.APK)</span>
-          </a>
+            <span>🛡️</span>
+            <span>Google Play (Pronto)</span>
+          </Link>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -126,14 +125,14 @@ export default function CitizenNavigation() {
           </div>
 
           <div className="pt-2">
-            <a
-              href="/downloads/luma-protect-preview.apk"
-              download="luma-protect-preview.apk"
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 px-4 py-3 text-center text-sm font-bold text-white shadow-sm hover:bg-emerald-700 transition"
+            <Link
+              href="/#descarga"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex w-full items-center justify-center gap-2 rounded-xl border border-blue-200 bg-blue-50/70 px-4 py-3 text-center text-xs font-bold text-lumaBlue hover:bg-blue-100 transition"
             >
-              <span>📱</span>
-              <span>Descargar Luma Protect para Android (.APK)</span>
-            </a>
+              <span>🛡️</span>
+              <span>Próximamente en Google Play Store</span>
+            </Link>
           </div>
         </div>
       )}

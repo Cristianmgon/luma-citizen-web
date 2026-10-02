@@ -127,21 +127,32 @@ export default function VerificadorPage() {
             </p>
           </div>
 
-          {/* Columna Mascota Luma con Tablet */}
+          {/* Columna Luma Investigadora */}
           <div className="flex flex-col items-center justify-center lg:col-span-4">
-            <div className="relative">
-              <div className="relative mx-auto h-48 w-48 sm:h-56 sm:w-56 drop-shadow-md">
-                <img
-                  src="/images/luma_animada_transparente.webp"
-                  alt="Luma - Mascota Oficial Protectora"
-                  className="h-full w-full object-contain"
-                />
+            <div className="relative group">
+              <div className="relative mx-auto h-48 w-48 sm:h-56 sm:w-56 overflow-hidden rounded-3xl border-2 border-cyan-400/40 shadow-xl shadow-cyan-500/10 bg-slate-900">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  poster="/images/luma_investigadora.jpg"
+                  className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                  aria-label="Luma Investigadora - Laboratorio de Análisis Forense"
+                >
+                  <source src="/videos/luma_investigadora.mp4" type="video/mp4" />
+                  <img
+                    src="/images/luma_investigadora.jpg"
+                    alt="Luma Investigadora - Laboratorio de Análisis Forense"
+                    className="h-full w-full object-cover"
+                  />
+                </video>
               </div>
 
               {/* Globo de Diálogo de Luma */}
-              <div className="mt-2 rounded-2xl border border-blue-200 bg-white p-3.5 text-center text-xs font-medium text-lumaText shadow-sm max-w-xs mx-auto">
+              <div className="mt-3 rounded-2xl border border-blue-200 bg-white p-3.5 text-center text-xs font-medium text-lumaText shadow-sm max-w-xs mx-auto">
                 <p>
-                  <span className="font-bold text-lumaBlue">¡Hola!</span> Pegá un mensaje para probar el motor juntos. Si ves un error, reportalo abajo para calibrarlo. 🛡️
+                  <span className="font-bold text-lumaBlue">Luma Investigadora:</span> &ldquo;Pegá un mensaje sospechoso para inspeccionar sus vectores de ataque en tiempo real.&rdquo; 🔬
                 </p>
               </div>
             </div>

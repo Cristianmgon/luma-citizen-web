@@ -557,7 +557,7 @@ export default function LumaProtectHomePage() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {/* Camino 1: Familias */}
           <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm space-y-4 flex flex-col justify-between">
             <div className="space-y-3">
@@ -575,7 +575,24 @@ export default function LumaProtectHomePage() {
             </a>
           </div>
 
-          {/* Camino 2: Universidad y Estudiantes */}
+          {/* Camino 2: Comercios y PyMEs */}
+          <div className="rounded-3xl border border-cyan-200 bg-cyan-50/30 p-7 shadow-sm space-y-4 flex flex-col justify-between">
+            <div className="space-y-3">
+              <span className="text-3xl">🏪</span>
+              <h3 className="text-xl font-bold text-slate-900">Comercios y PyMEs</h3>
+              <p className="text-xs leading-relaxed text-slate-700">
+                Auditá tu red Wi-Fi, terminales POS, QR de cobro y cámaras de seguridad bajo la Ley 25.326 y normativas AAIP con la asistencia de Luma Empresaria.
+              </p>
+            </div>
+            <Link
+              href="/pymes"
+              className="inline-flex items-center justify-center rounded-xl bg-cyan-600 px-4 py-2.5 text-xs font-bold text-white hover:bg-cyan-700 transition"
+            >
+              Portal PyMEs & Comercios 💼
+            </Link>
+          </div>
+
+          {/* Camino 3: Universidad y Estudiantes */}
           <div className="rounded-3xl border border-purple-200 bg-purple-50/30 p-7 shadow-sm space-y-4 flex flex-col justify-between">
             <div className="space-y-3">
               <span className="text-3xl">🎓</span>
@@ -592,7 +609,7 @@ export default function LumaProtectHomePage() {
             </a>
           </div>
 
-          {/* Camino 3: Organismos e Instituciones */}
+          {/* Camino 4: Organismos e Instituciones */}
           <div className="rounded-3xl border border-emerald-200 bg-emerald-50/30 p-7 shadow-sm space-y-4 flex flex-col justify-between">
             <div className="space-y-3">
               <span className="text-3xl">🏛️</span>

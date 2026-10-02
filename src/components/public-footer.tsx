@@ -36,6 +36,9 @@ export default function PublicFooter() {
           <Link href="/verificador" className="hover:text-lumaBlue hover:underline">
             Verificador Web
           </Link>
+          <Link href="/pymes" className="hover:text-lumaBlue hover:underline">
+            PyMEs & Comercios
+          </Link>
           <Link href="/radar" className="hover:text-lumaBlue hover:underline">
             Radar
           </Link>

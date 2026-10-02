@@ -164,15 +164,30 @@ export default function EducacionPage() {
           </div>
 
           <div className="flex flex-col items-center justify-center lg:col-span-4">
-            <div className="relative mx-auto h-48 w-48 sm:h-56 sm:w-56 drop-shadow-md">
-              <img
-                src="/images/luma_animada_transparente.webp"
-                alt="Luma Educadora - Mascota Oficial"
-                className="h-full w-full object-contain"
-              />
-            </div>
-            <div className="mt-2 rounded-2xl border border-blue-200 bg-white p-3 text-center text-xs font-semibold text-lumaText shadow-sm max-w-xs">
-              &ldquo;Aprender a cuidarse no tiene por qué ser aburrido ni difícil.&rdquo;
+            <div className="relative group">
+              <div className="relative mx-auto h-48 w-48 sm:h-56 sm:w-56 overflow-hidden rounded-3xl border-2 border-blue-200/80 shadow-lg shadow-blue-500/10 bg-white">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  poster="/images/luma_profesora.jpg"
+                  className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                  aria-label="Luma Profesora - Centro Pedagógico y Academia"
+                >
+                  <source src="/videos/luma_profesora.mp4" type="video/mp4" />
+                  <img
+                    src="/images/luma_profesora.jpg"
+                    alt="Luma Profesora - Centro Pedagógico y Academia"
+                    className="h-full w-full object-cover"
+                  />
+                </video>
+              </div>
+              <div className="mt-3 rounded-2xl border border-blue-200 bg-white p-3 text-center text-xs font-semibold text-lumaText shadow-sm max-w-xs mx-auto">
+                <p>
+                  <span className="font-bold text-lumaBlue">Luma Profesora:</span> &ldquo;Aprender a cuidarse no tiene por qué ser aburrido ni difícil.&rdquo; 🎓
+                </p>
+              </div>
             </div>
           </div>
         </div>

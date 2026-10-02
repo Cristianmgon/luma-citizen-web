@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 const NAV_LINKS = [
   { href: "/", label: "Inicio" },
   { href: "/verificador", label: "Verificador Web", highlight: true },
+  { href: "/pymes", label: "PyMEs & Comercios" },
   { href: "/radar", label: "Radar Comunitario" },
   { href: "/educacion", label: "Educación" },
   { href: "/terminos", label: "Términos & Privacidad" },

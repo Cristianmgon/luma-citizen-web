@@ -79,8 +79,10 @@ const CLUSTERS = {
     "datos bancarios", "claves bancarias", "homebanking", "home banking", "acceso bancario"
   ],
   REMOTE: [
-    "anydesk", "teamviewer", "rustdesk", "quicksupport", "remoto", "pantalla",
-    "compartir pantalla", "instalar", "aplicacion", "apk", "descargar"
+    "anydesk", "teamviewer", "rustdesk", "quicksupport", "supremo", "ultraviewer",
+    "acceso remoto", "control remoto", "soporte remoto", "compartir pantalla",
+    "comparti la pantalla", "instalar anydesk", "descargar anydesk", "instalar apk",
+    "descargar apk", "soporte a distancia"
   ],
   TASK_SCAM: [
     "tarea", "tareas", "ganar dinero", "ganar plata", "videos", "likes", "suscribir",

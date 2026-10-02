@@ -69,4 +69,11 @@ Internal Server Error 500`;
     expect(["ALTO", "CRÍTICO"]).toContain(res.riskLevel);
     expect(res.techniques).toContain("Fraude de inversión / Ponzi digital");
   });
+
+  it("classifies legitimate project team discussions about privacy laws and app security as BAJO", () => {
+    const teamDiscussion = "La idea está buenísima, tiene mucho paño para extenderse . Quizás lo más difícil sea adecuarse a las leyes onda la de protección de datos personales, el tema de la privacidad, la seguridad de la aplicación. Pero la idea está muy buena";
+    const res = evaluateClientScam(teamDiscussion);
+    expect(res.riskLevel).toBe("BAJO");
+    expect(res.riskScore).toBeLessThan(30);
+  });
 });

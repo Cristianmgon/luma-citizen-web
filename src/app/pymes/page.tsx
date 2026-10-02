@@ -142,7 +142,7 @@ export default function PymesCommercePage() {
             </h1>
 
             <p className="text-sm text-slate-300 leading-relaxed sm:text-base max-w-2xl">
-              Terminales de cobro POS, códigos QR, Wi-Fi de clientes, computadoras de facturación y cámaras de seguridad. Asesoramiento técnico y adecuación legal desarrollado por <strong>estudiantes de la Licenciatura en Ciberseguridad de la Universidad Nacional Raúl Scalabrini Ortiz (UNSO)</strong> para proteger la rentabilidad y la reputación de tu negocio.
+              Terminales de cobro POS, códigos QR, Wi-Fi de clientes, computadoras de facturación y cámaras de seguridad. Asesoramiento técnico y adecuación legal desarrollado por <strong>profesionales de la Licenciatura en Ciberseguridad de la Universidad Nacional Raúl Scalabrini Ortiz (UNSO)</strong> para proteger la rentabilidad y la reputación de tu negocio.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
@@ -410,7 +410,7 @@ export default function PymesCommercePage() {
 
             <div className="pt-4 border-t border-slate-200/60">
               <p className="text-[11px] text-slate-500 italic">
-                Marco Institucional: Iniciativa desarrollada por estudiantes regulares de la Licenciatura en Ciberseguridad de la Universidad Nacional Raúl Scalabrini Ortiz (UNSO).
+                Marco Institucional: Iniciativa desarrollada por profesionales de la Licenciatura en Ciberseguridad de la Universidad Nacional Raúl Scalabrini Ortiz (UNSO).
               </p>
             </div>
           </div>

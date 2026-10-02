@@ -129,22 +129,22 @@ export default function VerificadorPage() {
 
           {/* Columna Luma Investigadora */}
           <div className="flex flex-col items-center justify-center lg:col-span-4">
-            <div className="relative group">
-              <div className="relative mx-auto h-48 w-48 sm:h-56 sm:w-56 overflow-hidden rounded-3xl border-2 border-cyan-400/40 shadow-xl shadow-cyan-500/10 bg-slate-900">
+            <div className="relative group w-full max-w-xs sm:max-w-sm">
+              <div className="relative mx-auto aspect-video w-full overflow-hidden rounded-3xl border-2 border-cyan-400/40 shadow-xl shadow-cyan-500/10 bg-slate-900">
                 <video
                   autoPlay
                   loop
                   muted
                   playsInline
                   poster="/images/luma_investigadora.jpg"
-                  className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                  className="h-full w-full object-cover object-center transition duration-300 group-hover:scale-105"
                   aria-label="Luma Investigadora - Laboratorio de Análisis Forense"
                 >
                   <source src="/videos/luma_investigadora.mp4" type="video/mp4" />
                   <img
                     src="/images/luma_investigadora.jpg"
                     alt="Luma Investigadora - Laboratorio de Análisis Forense"
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover object-[center_60%]"
                   />
                 </video>
               </div>

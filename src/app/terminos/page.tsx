@@ -54,7 +54,7 @@ export default function TerminosPage() {
             </p>
             <p>
               <strong>1.2. No constituye Asesoramiento Financiero ni Peritaje Judicial:</strong> Luma Protect <strong>NO es una entidad bancaria, no es una compañía aseguradora contra fraudes, no brinda asesoramiento financiero ni legal vinculante, ni emite dictámenes periciales judiciales</strong>.
-              Toda alerta, diagnóstico, puntaje de riesgo o recomendación emitida por los modelos heurísticos responde a estimaciones probabilísticas en tiempo real
+              Toda alerta, diagnóstico, puntaje de riesgo o recomendación emitida por los modelos heurísticos responde a estimaciones probabilísticas automatizadas al momento de la consulta
               cuyo único fin es instar a la prudencia ciudadana (<em>&quot;Hacé una pausa&quot;</em>), sin reemplazar el criterio humano ni los canales formales de las autoridades.
             </p>
             <p>

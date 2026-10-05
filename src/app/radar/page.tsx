@@ -4,7 +4,7 @@ import PublicFooter from "@/components/public-footer";
 export const metadata = {
   title: "Radar Comunitario · Luma Inteligencia Ciudadana",
   description:
-    "Visibilización de estafas y ciberdelitos en tiempo real. No se puede proteger lo que no se conoce. Rompiendo el silencio y la vergüenza.",
+    "Visibilización comunitaria de estafas y modalidades delictivas. No se puede proteger lo que no se conoce. Rompiendo el silencio y la vergüenza.",
 };
 
 const PATRONES_CRITICOS = [
@@ -165,7 +165,7 @@ export default function RadarPage() {
         </div>
         <h3 className="text-xl font-bold">Compromiso con la Verdad: Cero Datos Inventados</h3>
         <p className="text-xs sm:text-sm leading-relaxed text-slate-300 max-w-4xl">
-          En Luma no publicamos gráficos simulados ni porcentajes falsos. La telemetría en tiempo real se nutrirá progresivamente de los eventos anónimos validados por la comunidad. Actualmente compartimos el catálogo oficial de modalidades críticas tipificadas para que aprendas a reconocerlas a tiempo.
+          En Luma no publicamos gráficos simulados ni porcentajes falsos. La telemetría comunitaria se nutrirá progresivamente de los eventos anónimos validados por la comunidad. Actualmente compartimos el catálogo oficial de modalidades críticas tipificadas para que aprendas a reconocerlas a tiempo.
         </p>
       </section>
 

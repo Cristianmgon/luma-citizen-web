@@ -76,4 +76,58 @@ Internal Server Error 500`;
     expect(res.riskLevel).toBe("BAJO");
     expect(res.riskScore).toBeLessThan(30);
   });
+
+  it("detects money mule / fake transfer triangulation fraud as CRITICO/ALTO (LKP-0006)", () => {
+    const message = "Hola mi nombre es Cosme Fulanito, te transferi por error a mercado pago, te envie cien mil pesos de mi cuenta, por favor necesito que transfieras el importe a esta otra cuenta de mercado pago el alias es; cuentamercadopago.mp necesito la plata para cubrir un cheque antes de las 15 Hs a lo van a rechazar.";
+    const res = evaluateClientScam(message);
+    expect(res.riskScore).toBeGreaterThanOrEqual(80);
+    expect(["ALTO", "CRÍTICO"]).toContain(res.riskLevel);
+    expect(res.threatCategory).toContain("Fraude del Falso Comprador");
+    expect(res.techniques).toContain("Triangulación de fondos / Mula financiera");
+  });
+
+  it("classifies SMTP bounce / mail server error 550 5.1.1 as technical log out of scope", () => {
+    const bounceMessage = "550 5.1.1 The email account that you tried to reach does not exist. Please try double-checking the recipient's email address for typos or unnecessary spaces.";
+    const res = evaluateClientScam(bounceMessage);
+    expect(res.isTechnicalLog).toBe(true);
+    expect(res.riskScore).toBe(0);
+    expect(res.riskLevel).toBe("BAJO");
+    expect(res.threatCategory).toContain("Registro Técnico / Error de Servidor");
+    expect(res.explanation).toContain("Luma Protect evalúa exclusivamente tácticas de ingeniería social");
+  });
+
+  it("detects multi-label combined attacks (LKP-0004 + LKP-0006) and extracts manipulation vectors (ADR-013)", () => {
+    const combinedMsg = "Hola má, se me rompió el celular y este es mi nuevo número provisorio. Te transferí plata de más por error a tu cuenta de mercado pago, necesito urgente que transfieras el importe al alias de mi amigo antes de las 15 hs.";
+    const res = evaluateClientScam(combinedMsg);
+    expect(res.isCombinedAttack).toBe(true);
+    expect(res.matchedLkps?.length).toBeGreaterThanOrEqual(2);
+    expect(res.threatCategory).toContain("Ataque Combinado");
+    expect(res.manipulationVector?.urgencyScarcity).toBeGreaterThanOrEqual(60);
+    expect(res.manipulationVector?.assetTransferIntent).toBeGreaterThanOrEqual(60);
+    expect(res.engineMode).toBe("MOTOR_HEURISTICO_ONTOLOGICO_ON_DEVICE");
+  });
+
+  it("evaluates psychological manipulation principles on virtual kidnapping (LKP-0001)", () => {
+    const kidnapMsg = "Tenemos a tu hija secuestrada, la tenemos lastimada acá en una bolsa. No cortes por nada del mundo o la matamos, juntá la plata ya.";
+    const res = evaluateClientScam(kidnapMsg);
+    expect(res.manipulationVector?.emotionalCoercion).toBeGreaterThanOrEqual(80);
+    expect(res.manipulationVector?.isolationTactics).toBeGreaterThanOrEqual(80);
+    expect(res.manipulationVector?.primaryPrinciple).toContain("Coerción Emocional & Miedo Extremo");
+  });
+
+  it("classifies legitimate bank transactional SMS with OTP and defensive advice as BAJO", () => {
+    const bankSms = "Banco Galicia: Tu codigo de seguridad para operar es 941029. Valido por 5 minutos. No lo compartas con nadie, el banco nunca te pedira este codigo.";
+    const res = evaluateClientScam(bankSms);
+    expect(res.riskLevel).toBe("BAJO");
+    expect(res.riskScore).toBeLessThanOrEqual(20);
+    expect(res.threatCategory).toContain("Aviso Transaccional Legítimo");
+  });
+
+  it("classifies innocent family update without financial request as BAJO", () => {
+    const familyUpdate = "Hola mama, cambie el numero del celu porque perdi el chip. Despues te llamo.";
+    const res = evaluateClientScam(familyUpdate);
+    expect(res.riskLevel).toBe("BAJO");
+    expect(res.riskScore).toBeLessThan(40);
+  });
 });
+

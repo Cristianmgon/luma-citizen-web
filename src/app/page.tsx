@@ -38,8 +38,8 @@ export default function LumaProtectHomePage() {
 
               <p className="text-sm leading-relaxed text-slate-300 sm:text-base">
                 Una iniciativa independiente de investigación aplicada y desarrollo tecnológico impulsada por <strong>estudiantes universitarios de la Licenciatura en Ciberseguridad de la Universidad Nacional Raúl Scalabrini Ortiz (UNSO)</strong> en preparación de su trabajo de grado. <em>Este proyecto es de carácter autónomo y no cuenta a la fecha con patrocinio, aval o representación institucional formal de la UNSO.</em>
-                Protección activa y en tiempo real contra el <strong>secuestro virtual, las transferencias bancarias falsas, la vinculación fraudulenta de WhatsApp y las estafas telefónicas</strong>. 
-                Tecnología procesada localmente en tu teléfono (privacidad estricta Zero-PII), sin publicidad, sin costo y sin enviar tus llamadas, mensajes ni datos personales a ningún servidor.
+                Herramienta asistencial de análisis y verificación preventiva On-Device frente a <strong>intentos de extorsión, transferencias bancarias fraudulentas, vinculación no autorizada de WhatsApp y engaños telefónicos</strong> mediante correlación de contexto e inspección heurística.
+                Tecnología procesada localmente en tu teléfono (privacidad estricta Zero-PII), sin publicidad, sin costo y sin enviar tus notificaciones, mensajes ni datos personales a ningún servidor.
               </p>
 
               {/* Botones de Acción */}
@@ -193,11 +193,11 @@ export default function LumaProtectHomePage() {
               </div>
               <h3 className="text-lg font-bold text-lumaText">Ciberseguridad y Detección Local</h3>
               <p className="text-xs leading-relaxed text-lumaSubtext">
-                El núcleo actual de Luma: motor heurístico local contra tácticas de ingeniería social, detección en tiempo real de llamadas sospechosas, inspección de SMS fraudulentos, enlaces maliciosos y despliegue del aviso protector en pantalla.
+                El núcleo actual de Luma: motor heurístico y ontológico local contra tácticas de manipulación psicológica, correlación contextual de eventos telefónicos/VoIP y OTP, inspección de SMS y notificaciones, análisis forense de QR/enlaces maliciosos y despliegue de avisos preventivos.
               </p>
             </div>
             <div className="pt-2 text-[11px] font-semibold text-blue-700">
-              Implementado y probado en el cliente Android
+              Implementado y probado en el cliente Android (158 tests unitarios)
             </div>
           </div>
 
@@ -319,7 +319,7 @@ export default function LumaProtectHomePage() {
               </span>
               <h3 className="text-lg font-bold text-lumaText">Herramientas Preventivas</h3>
               <p className="text-xs text-lumaSubtext max-w-xs">
-                Monitoreo local adaptado al usuario (ej. Adulto Mayor): protección de notificaciones en tiempo real, escáner QR y análisis seguro de mensajes dudosos.
+                Monitoreo local adaptado al usuario (ej. Adulto Mayor): análisis preventivo de notificaciones en el dispositivo, escáner QR y verificación segura de mensajes dudosos.
               </p>
             </div>
           </div>
@@ -337,11 +337,11 @@ export default function LumaProtectHomePage() {
             </div>
             <div className="mt-5 space-y-2 text-center">
               <span className="rounded-full bg-rose-100 px-2.5 py-0.5 text-[11px] font-bold text-rose-800">
-                2. Intervención en Tiempo Real
+                2. Alerta Preventiva en Pantalla
               </span>
               <h3 className="text-lg font-bold text-rose-950">Alerta de Riesgo Detectado</h3>
               <p className="text-xs text-rose-800/90 max-w-xs">
-                Ante intentos de suplantación bancaria o robo de claves, Luma interviene en pantalla advirtiendo que no respondas ni compartas información personal.
+                Ante notificaciones o mensajes con patrones de extracción bancaria o robo de claves, Luma despliega una alerta clara recomendando no responder ni entregar tokens o dinero.
               </p>
             </div>
           </div>
@@ -377,35 +377,35 @@ export default function LumaProtectHomePage() {
             Arquitectura de Defensa y Seguridad
           </span>
           <h2 className="text-3xl font-extrabold sm:text-4xl">
-            Cómo funciona el escudo de Luma
+            Cómo funciona el motor de protección de Luma
           </h2>
           <p className="text-sm text-slate-300 leading-relaxed sm:text-base">
-            El motor de Luma Protect opera mediante un clasificador semántico y fonético en el chip de tu móvil. Intercepta tres momentos críticos:
+            El motor de Luma Protect opera mediante un analizador heurístico y ontológico determinístico directamente en el procesador de tu móvil. Actúa en tres ejes preventivos clave:
           </p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-3">
           <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
             <span className="text-2xl">🧠</span>
-            <h4 className="font-bold text-white text-base">Evaluación Semántica On-Device</h4>
+            <h4 className="font-bold text-white text-base">Evaluación Heurística On-Device</h4>
             <p className="text-xs leading-relaxed text-slate-400">
-              Analiza el texto buscando patrones de urgencia, pedidos de claves y amenazas de secuestro, desofuscando trampas escritas en código o números (*leetspeak*).
+              Inspecciona el texto de SMS y notificaciones en busca de vectores de manipulación (urgencia, coerción, solicitud de extracción o códigos OTP), normalizando caracteres engañosos (*leetspeak*).
             </p>
           </div>
 
           <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
             <span className="text-2xl">📞</span>
-            <h4 className="font-bold text-white text-base">Protección Activa de Llamadas</h4>
+            <h4 className="font-bold text-white text-base">Asistencia y Contención Telefónica</h4>
             <p className="text-xs leading-relaxed text-slate-400">
-              Identifica patrones extorsivos y ayuda a la víctima a mantener la calma en los primeros 60 segundos con instrucciones auditivas y visuales claras.
+              Detecta el estado de llamada o eventos VoIP para desplegar una guía visual rápida de contención, pausas reflexivas y acceso en un toque a la persona de confianza (sin interceptar ni grabar audio).
             </p>
           </div>
 
           <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
             <span className="text-2xl">🔗</span>
-            <h4 className="font-bold text-white text-base">Inspección de Enlaces y QR</h4>
+            <h4 className="font-bold text-white text-base">Análisis Forense de Enlaces y QR</h4>
             <p className="text-xs leading-relaxed text-slate-400">
-              Verifica si un link imita a bancos o billeteras virtuales (*phishing*) antes de que ingreses tus claves o tokens personales.
+              Evalúa dominios sospechosos mediante entropía de Shannon, distancia Levenshtein y detección de suplantación compuesta (*brand spoofing*) antes de que ingreses a sitios clonados.
             </p>
           </div>
         </div>
@@ -632,7 +632,7 @@ export default function LumaProtectHomePage() {
       <section className="rounded-3xl border border-blue-200 bg-white p-8 shadow-sm space-y-6">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <span className="rounded-full bg-blue-100 px-3.5 py-1 text-xs font-bold text-lumaBlue">
-            Comunidad Oficial · Prevención en Tiempo Real
+            Comunidad Oficial · Prevención y Difusión Ciudadana
           </span>
           <h2 className="text-2xl font-black text-lumaText sm:text-3xl">
             Sumate a los Canales Oficiales de Luma Protect

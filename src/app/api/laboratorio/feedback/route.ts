@@ -47,7 +47,19 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json();
-    const { text, riskScore, riskLevel, threatCategory, feedbackType, notes, isTechnicalLog } = body;
+    const {
+      text,
+      riskScore,
+      riskLevel,
+      threatCategory,
+      feedbackType,
+      notes,
+      isTechnicalLog,
+      canonicalMatches,
+      isCombinedAttack,
+      primaryPrinciple,
+      psychologicalVector,
+    } = body;
 
     if (!text || typeof text !== "string") {
       return NextResponse.json({ error: "Texto requerido para el reporte" }, { status: 400 });
@@ -76,6 +88,10 @@ export async function POST(req: NextRequest) {
       notes: sanitizedNotes,
       clientHash: clientKey.substring(0, 16), // Hash truncado para telemetría anti-abuso sin rastrear identidad
       triageStatus: "PENDIENTE_CURADOR",
+      canonicalMatches: Array.isArray(canonicalMatches) ? canonicalMatches : [],
+      isCombinedAttack: Boolean(isCombinedAttack),
+      primaryPrinciple: primaryPrinciple ? String(primaryPrinciple) : null,
+      psychologicalVector: psychologicalVector && typeof psychologicalVector === "object" ? psychologicalVector : null,
     };
 
     try {

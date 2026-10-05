@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { evaluateClientScam, ClientScamResult } from "@/lib/client-scam-evaluator";
 import PublicFooter from "@/components/public-footer";
@@ -15,6 +15,10 @@ const EJEMPLOS = [
     texto: "Tenemos a tu hija, la tenemos acá conmigo y está lastimada. Si no transferís toda la plata a este CBU en 10 minutos no la ves más. No cortes ni llames a la policía.",
   },
   {
+    titulo: "💸 Mula Financiera / Triangulación",
+    texto: "Hola mi nombre es Cosme Fulanito, te transferi por error a mercado pago, te envie cien mil pesos de mi cuenta, por favor necesito que transfieras el importe a esta otra cuenta de mercado pago el alias es; cuentamercadopago.mp necesito la plata para cubrir un cheque antes de las 15 Hs a lo van a rechazar.",
+  },
+  {
     titulo: "💼 Estafa de Tareas Telegram",
     texto: "¡Hola! Somos de la agencia de marketing de YouTube. Podés ganar entre $15.000 y $50.000 diarios simplemente mirando videos y dando 'Me Gusta'. Unite a nuestro canal de Telegram para empezar con tu primera misión remunerada.",
   },
@@ -23,17 +27,22 @@ const EJEMPLOS = [
     texto: "Hola má, se me rompió el celu y este es mi nuevo número provisorio. Agendame porfa. Necesito pedirte un favor urgente, ¿me podrás transferir al alias de un amigo que tengo que pagar algo y no me anda la app?",
   },
   {
-    titulo: "📉 Falsa Inversión / Premio Temu (Doble Estafa)",
+    titulo: "📉 Falsa Inversión / Premio Temu",
     texto: "¡Felicitaciones! Por tu compra en Temu ganaste un premio de $500.000. Para cobrarlo o invertirlo en nuestra plataforma petrolera con retiro inmediato, verificá tu cuenta bancaria con el asesor en línea.",
   },
   {
-    titulo: "💻 Error Técnico de Servidor",
+    titulo: "💻 Error Técnico Python/Django",
     texto: "Traceback (most recent call last):\n  File 'manage.py', line 12, in <module>\n    from django.core.management import execute_from_command_line\nOperationalError: (2002, \"Can't connect to MySQL server on '127.0.0.1' (111)\")\nInternal Server Error 500",
+  },
+  {
+    titulo: "📧 Rebote Servidor SMTP (550 5.1.1)",
+    texto: "550 5.1.1 The email account that you tried to reach does not exist. Please try double-checking the recipient's email address for typos or unnecessary spaces.",
   },
 ];
 
 export default function VerificadorPage() {
   const [input, setInput] = useState("");
+  const [analyzedText, setAnalyzedText] = useState("");
   const [resultado, setResultado] = useState<ClientScamResult | null>(null);
   const [acceptedTerms, setAcceptedTerms] = useState(false);
 
@@ -46,24 +55,36 @@ export default function VerificadorPage() {
   const [feedbackStatus, setFeedbackStatus] = useState<"IDLE" | "SENDING" | "SENT" | "ERROR">("IDLE");
   const [feedbackMsg, setFeedbackMsg] = useState("");
 
-  const handleAnalizar = (texto: string) => {
-    setInput(texto);
+  // Desplazamiento automático suave hacia la sección de diagnóstico cuando se genera o cambia el resultado
+  useEffect(() => {
+    if (resultado) {
+      const timer = setTimeout(() => {
+        const el = document.getElementById("diagnostico-laboratorio");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 50);
+      return () => clearTimeout(timer);
+    }
+  }, [resultado]);
+
+  const handleEjecutarAnalisis = (texto: string) => {
+    const clean = texto.trim();
+    if (!clean) return;
+
+    setAcceptedTerms(true);
+    setAnalyzedText(clean);
+    setInput(""); // Borrado inmediato del texto ingresado según directiva de usabilidad
     setFeedbackStatus("IDLE");
     setShowFeedbackModal(false);
-    if (!texto.trim()) {
-      setResultado(null);
-      return;
-    }
-    if (acceptedTerms) {
-      const res = evaluateClientScam(texto);
-      setResultado(res);
-    } else {
-      setResultado(null);
-    }
+
+    const res = evaluateClientScam(clean);
+    setResultado(res);
   };
 
   const handleSendFeedback = async (directType?: "ACERTADO" | "FALSO_POSITIVO" | "FALSO_NEGATIVO" | "REGISTRO_TECNICO" | "OTRO") => {
-    if (!input.trim() || !resultado) return;
+    const textToSend = analyzedText.trim() || input.trim();
+    if (!textToSend || !resultado) return;
 
     setFeedbackStatus("SENDING");
     const chosenType = directType || feedbackType;
@@ -73,13 +94,17 @@ export default function VerificadorPage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          text: input,
+          text: textToSend, // Sanitizado con Zero-PII en backend
           riskScore: resultado.riskScore,
           riskLevel: resultado.riskLevel,
           threatCategory: resultado.threatCategory,
           isTechnicalLog: Boolean(resultado.isTechnicalLog),
           feedbackType: chosenType,
           notes: feedbackNotes,
+          canonicalMatches: resultado.matchedLkps || [],
+          isCombinedAttack: Boolean(resultado.isCombinedAttack),
+          primaryPrinciple: resultado.manipulationVector?.primaryPrinciple || null,
+          psychologicalVector: resultado.manipulationVector || null,
         }),
       });
 
@@ -111,10 +136,12 @@ export default function VerificadorPage() {
           <div className="space-y-4 lg:col-span-8">
             <div className="flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/90 px-3.5 py-1.5 text-xs font-bold text-lumaBlue shadow-sm">
-                <span className="flex h-2 w-2 rounded-full bg-amber-500 animate-pulse" />
-                <span>🧪 Laboratorio Abierto de Calibración Comunitaria · Beta Estudiantil</span>
+                <span className="flex h-2 w-2 rounded-full bg-cyan-500 animate-pulse" />
+                <span>🧪 Motor Heurístico y Ontológico On-Device (ADR-013)</span>
                 <span>·</span>
                 <span>Privacidad Radical (Zero-PII)</span>
+                <span>·</span>
+                <span>Doctrina $0.00 (Fase 1)</span>
               </span>
             </div>
 
@@ -123,7 +150,7 @@ export default function VerificadorPage() {
             </h1>
 
             <p className="text-sm text-lumaSubtext leading-relaxed sm:text-base max-w-2xl">
-              Iniciativa independiente de investigación aplicada y desarrollo tecnológico impulsada por <strong>estudiantes de la Licenciatura en Ciberseguridad de la Universidad Nacional Raúl Scalabrini Ortiz (UNSO)</strong> en el marco de sus prácticas de grado. Probá mensajes sospechosos en tiempo real con ejecución 100% en tu navegador. <strong>Tu feedback colabora directamente con el equipo de investigación para calibrar el motor que protegerá a la ciudadanía en la app móvil.</strong>
+              Iniciativa independiente de investigación aplicada y desarrollo tecnológico impulsada por <strong>estudiantes de la Licenciatura en Ciberseguridad de la Universidad Nacional Raúl Scalabrini Ortiz (UNSO)</strong> en el marco de sus prácticas de grado. Probá mensajes sospechosos con ejecución y análisis 100% local en tu navegador. <strong>Tu feedback colabora directamente con el equipo de investigación para calibrar el motor que protegerá a la ciudadanía en la app móvil.</strong>
             </p>
           </div>
 
@@ -152,7 +179,7 @@ export default function VerificadorPage() {
               {/* Globo de Diálogo de Luma */}
               <div className="mt-3 rounded-2xl border border-blue-200 bg-white p-3.5 text-center text-xs font-medium text-lumaText shadow-sm max-w-xs mx-auto">
                 <p>
-                  <span className="font-bold text-lumaBlue">Luma Investigadora:</span> &ldquo;Pegá un mensaje sospechoso para inspeccionar sus vectores de ataque en tiempo real.&rdquo; 🔬
+                  <span className="font-bold text-lumaBlue">Luma Investigadora:</span> &ldquo;Pegá un mensaje sospechoso para inspeccionar sus vectores de ataque de forma instantánea.&rdquo; 🔬
                 </p>
               </div>
             </div>
@@ -228,7 +255,13 @@ export default function VerificadorPage() {
           id="mensaje-input"
           rows={5}
           value={input}
-          onChange={(e) => handleAnalizar(e.target.value)}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) {
+              e.preventDefault();
+              handleEjecutarAnalisis(input);
+            }
+          }}
           placeholder="Ej: 'Aviso del Banco: Detectamos una transferencia extraña. Para frenarla urgente entrá al enlace y poné tu clave de 6 dígitos...'"
           className="w-full rounded-2xl border border-slate-200 bg-slate-50/50 p-4 text-sm text-lumaText placeholder:text-slate-400 focus:border-lumaBlue focus:bg-white focus:outline-none focus:ring-4 focus:ring-lumaBlue/10 transition"
         />
@@ -243,7 +276,7 @@ export default function VerificadorPage() {
                 const checked = e.target.checked;
                 setAcceptedTerms(checked);
                 if (checked && input.trim()) {
-                  setResultado(evaluateClientScam(input));
+                  handleEjecutarAnalisis(input);
                 } else if (!checked) {
                   setResultado(null);
                 }
@@ -258,27 +291,15 @@ export default function VerificadorPage() {
               . Comprendo que este asistente ofrece una orientación pedagógica y de investigación comunitaria, sin reemplazar la consulta oficial con la entidad bancaria ni la denuncia formal.
             </span>
           </label>
-          {input.trim() && !acceptedTerms && (
-            <p className="text-xs text-amber-700 font-medium flex items-center gap-1.5 pt-1 pl-6">
-              <span>👉</span>
-              <span>Tildá la casilla de términos arriba para ver el diagnóstico de seguridad.</span>
-            </p>
-          )}
         </div>
 
         {/* Botón Principal de Verificación y Limpiar */}
         <div className="flex flex-wrap items-center gap-3 pt-2">
           <button
             type="button"
-            onClick={() => {
-              if (!input.trim()) return;
-              setAcceptedTerms(true);
-              setFeedbackStatus("IDLE");
-              setShowFeedbackModal(false);
-              setResultado(evaluateClientScam(input));
-            }}
+            onClick={() => handleEjecutarAnalisis(input)}
             disabled={!input.trim()}
-            className="inline-flex items-center gap-2 rounded-2xl bg-lumaBlue px-6 py-3 text-sm font-extrabold text-white shadow-md shadow-lumaBlue/25 hover:bg-blue-700 transition disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed"
+            className="inline-flex items-center gap-2 rounded-2xl bg-lumaBlue px-6 py-3.5 text-sm font-extrabold text-white shadow-md shadow-lumaBlue/25 hover:bg-blue-700 transition disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed"
           >
             <span>🔍</span>
             <span>Verificar Mensaje Ahora</span>
@@ -288,11 +309,8 @@ export default function VerificadorPage() {
               type="button"
               onClick={() => {
                 setInput("");
-                setResultado(null);
-                setFeedbackStatus("IDLE");
-                setShowFeedbackModal(false);
               }}
-              className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-xs font-bold text-rose-700 hover:bg-rose-100 transition"
+              className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-xs font-bold text-rose-700 hover:bg-rose-100 transition cursor-pointer"
             >
               ✕ Limpiar texto
             </button>
@@ -309,13 +327,7 @@ export default function VerificadorPage() {
               <button
                 key={ej.titulo}
                 type="button"
-                onClick={() => {
-                  setAcceptedTerms(true);
-                  setInput(ej.texto);
-                  setFeedbackStatus("IDLE");
-                  setShowFeedbackModal(false);
-                  setResultado(evaluateClientScam(ej.texto));
-                }}
+                onClick={() => handleEjecutarAnalisis(ej.texto)}
                 className="rounded-xl border border-blue-100 bg-lumaBlueSoft/60 px-3.5 py-2 text-xs font-bold text-lumaBlue hover:bg-lumaBlue hover:text-white transition shadow-sm cursor-pointer"
               >
                 {ej.titulo}
@@ -328,8 +340,9 @@ export default function VerificadorPage() {
       {/* 4. RESULTADO DE LA EVALUACIÓN */}
       {resultado && (
         <section
+          id="diagnostico-laboratorio"
           aria-live="polite"
-          className={`space-y-6 rounded-3xl border p-6 sm:p-8 shadow-sm transition ${
+          className={`scroll-mt-8 space-y-6 rounded-3xl border p-6 sm:p-8 shadow-sm transition ${
             resultado.isTechnicalLog
               ? "border-indigo-200 bg-indigo-50/40"
               : resultado.riskLevel === "CRÍTICO"
@@ -361,16 +374,193 @@ export default function VerificadorPage() {
                     : resultado.riskLevel === "ALTO"
                     ? "bg-amber-600 text-white"
                     : resultado.riskLevel === "MEDIO"
-                    ? "bg-yellow-500 text-slate-900"
+                    ? "bg-yellow-600 text-white"
                     : "bg-slate-700 text-white"
                 }`}
               >
-                {resultado.isTechnicalLog
-                  ? "💻 REGISTRO TÉCNICO (FUERA DE ALCANCE)"
-                  : `Nivel de Sospecha: ${resultado.riskLevel} (${resultado.riskScore}/100)`}
+                Nivel {resultado.riskLevel} · Score {resultado.riskScore}/100
               </span>
             </div>
           </div>
+
+          {/* Mensaje Analizado con opción de recuperación / re-edición */}
+          {analyzedText && (
+            <div className="rounded-2xl border border-slate-200/90 bg-white/90 p-4 shadow-sm space-y-2">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <span className="text-xs font-extrabold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
+                  <span>💬</span>
+                  <span>Mensaje analizado:</span>
+                </span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setInput(analyzedText);
+                    const el = document.getElementById("mensaje-input");
+                    if (el) {
+                      el.scrollIntoView({ behavior: "smooth", block: "center" });
+                      el.focus();
+                    }
+                  }}
+                  className="text-xs font-bold text-lumaBlue hover:underline flex items-center gap-1 cursor-pointer"
+                  title="Volver a cargar este texto en el área de escritura"
+                >
+                  <span>✏️</span>
+                  <span>Volver a cargar en el cuadro de texto ↑</span>
+                </button>
+              </div>
+              <p className="text-xs text-slate-700 italic leading-relaxed whitespace-pre-wrap bg-slate-50 rounded-xl p-3 border border-slate-100 font-mono">
+                "{analyzedText}"
+              </p>
+            </div>
+          )}
+
+          {/* Ontología Canónica LKP Identificada (Multi-Label) */}
+          {resultado.matchedLkps && resultado.matchedLkps.length > 0 && (
+            <div className="space-y-3 rounded-2xl border border-blue-200 bg-white/95 p-4 shadow-sm">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <span className="text-xs font-bold uppercase tracking-wider text-lumaBlue flex items-center gap-1.5">
+                  <span>🛡️</span>
+                  <span>Ontología Canónica LKP {resultado.isCombinedAttack ? "· ¡Ataque Compuesto Multi-Vector!" : "Identificada"}</span>
+                </span>
+                <span className="text-[11px] font-semibold text-slate-500 bg-slate-100 px-2.5 py-0.5 rounded-full">
+                  Fase 2: Motor Heurístico y Ontológico
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {resultado.matchedLkps.map((lkp) => (
+                  <div key={lkp.code} className="flex items-center gap-2 rounded-xl border border-blue-200 bg-blue-50/70 px-3 py-1.5 text-xs">
+                    <span className="font-extrabold text-blue-900">{lkp.code}</span>
+                    <span className="text-slate-700 font-medium">{lkp.name}</span>
+                    <span className="rounded-full bg-blue-600 px-2 py-0.5 text-[10px] font-black text-white">
+                      {lkp.confidence}%
+                    </span>
+                  </div>
+                ))}
+              </div>
+              {resultado.isCombinedAttack && (
+                <p className="text-xs text-amber-900 bg-amber-50 p-2.5 rounded-xl border border-amber-200 leading-relaxed">
+                  ⚠️ <strong>Ataque Multivectorial:</strong> Los atacantes combinan múltiples estrategias ({resultado.matchedLkps.map((m) => m.code).join(" + ")}) simultáneamente para desorientar a la víctima y aumentar la tasa de éxito del engaño.
+                </p>
+              )}
+            </div>
+          )}
+
+          {/* Vector de Manipulación Psicológica (Framework Cialdini & Kahneman) */}
+          {resultado.manipulationVector && !resultado.isTechnicalLog && (
+            <div className="space-y-4 rounded-2xl border border-purple-200/90 bg-gradient-to-br from-purple-50/50 via-white to-slate-50 p-5 shadow-sm">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-purple-100 pb-3">
+                <div>
+                  <h3 className="text-xs font-extrabold uppercase tracking-wider text-purple-900 flex items-center gap-1.5">
+                    <span>🧠</span>
+                    <span>Vector de Manipulación Psicológica (Framework Cialdini / Kahneman)</span>
+                  </h3>
+                  <p className="text-[11px] text-slate-600 mt-0.5">
+                    Medición continua de palancas coercitivas sobre el pensamiento impulsivo (Sistema 1)
+                  </p>
+                </div>
+                <span className="text-[11px] font-bold text-purple-700 bg-purple-100 border border-purple-200 px-2.5 py-1 rounded-full">
+                  {resultado.manipulationVector.primaryPrinciple}
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 pt-1">
+                {/* 1. Urgencia */}
+                <div className="rounded-xl border border-slate-200 bg-white p-3 space-y-1.5">
+                  <div className="flex justify-between text-xs font-bold text-slate-700">
+                    <span className="flex items-center gap-1">⚡ Urgencia</span>
+                    <span className={resultado.manipulationVector.urgencyScarcity >= 60 ? "text-rose-600" : "text-slate-500"}>
+                      {resultado.manipulationVector.urgencyScarcity}%
+                    </span>
+                  </div>
+                  <div className="h-2 w-full rounded-full bg-slate-100 overflow-hidden">
+                    <div
+                      className={`h-full rounded-full transition-all ${
+                        resultado.manipulationVector.urgencyScarcity >= 60 ? "bg-rose-500" : "bg-blue-500"
+                      }`}
+                      style={{ width: `${resultado.manipulationVector.urgencyScarcity}%` }}
+                    />
+                  </div>
+                  <p className="text-[10px] text-slate-500">Presión temporal y escasez</p>
+                </div>
+
+                {/* 2. Autoridad */}
+                <div className="rounded-xl border border-slate-200 bg-white p-3 space-y-1.5">
+                  <div className="flex justify-between text-xs font-bold text-slate-700">
+                    <span className="flex items-center gap-1">🏛️ Autoridad</span>
+                    <span className={resultado.manipulationVector.authorityImpersonation >= 60 ? "text-rose-600" : "text-slate-500"}>
+                      {resultado.manipulationVector.authorityImpersonation}%
+                    </span>
+                  </div>
+                  <div className="h-2 w-full rounded-full bg-slate-100 overflow-hidden">
+                    <div
+                      className={`h-full rounded-full transition-all ${
+                        resultado.manipulationVector.authorityImpersonation >= 60 ? "bg-rose-500" : "bg-blue-500"
+                      }`}
+                      style={{ width: `${resultado.manipulationVector.authorityImpersonation}%` }}
+                    />
+                  </div>
+                  <p className="text-[10px] text-slate-500">Suplantación institucional</p>
+                </div>
+
+                {/* 3. Coerción Emocional */}
+                <div className="rounded-xl border border-slate-200 bg-white p-3 space-y-1.5">
+                  <div className="flex justify-between text-xs font-bold text-slate-700">
+                    <span className="flex items-center gap-1">💔 Miedo / Afecto</span>
+                    <span className={resultado.manipulationVector.emotionalCoercion >= 60 ? "text-rose-600" : "text-slate-500"}>
+                      {resultado.manipulationVector.emotionalCoercion}%
+                    </span>
+                  </div>
+                  <div className="h-2 w-full rounded-full bg-slate-100 overflow-hidden">
+                    <div
+                      className={`h-full rounded-full transition-all ${
+                        resultado.manipulationVector.emotionalCoercion >= 60 ? "bg-rose-500" : "bg-blue-500"
+                      }`}
+                      style={{ width: `${resultado.manipulationVector.emotionalCoercion}%` }}
+                    />
+                  </div>
+                  <p className="text-[10px] text-slate-500">Shock o afecto fingido</p>
+                </div>
+
+                {/* 4. Desvío de Activos */}
+                <div className="rounded-xl border border-slate-200 bg-white p-3 space-y-1.5">
+                  <div className="flex justify-between text-xs font-bold text-slate-700">
+                    <span className="flex items-center gap-1">💸 Desvío Fondos</span>
+                    <span className={resultado.manipulationVector.assetTransferIntent >= 60 ? "text-rose-600" : "text-slate-500"}>
+                      {resultado.manipulationVector.assetTransferIntent}%
+                    </span>
+                  </div>
+                  <div className="h-2 w-full rounded-full bg-slate-100 overflow-hidden">
+                    <div
+                      className={`h-full rounded-full transition-all ${
+                        resultado.manipulationVector.assetTransferIntent >= 60 ? "bg-rose-500" : "bg-blue-500"
+                      }`}
+                      style={{ width: `${resultado.manipulationVector.assetTransferIntent}%` }}
+                    />
+                  </div>
+                  <p className="text-[10px] text-slate-500">Transferencias, OTP, claves</p>
+                </div>
+
+                {/* 5. Aislamiento */}
+                <div className="rounded-xl border border-slate-200 bg-white p-3 space-y-1.5">
+                  <div className="flex justify-between text-xs font-bold text-slate-700">
+                    <span className="flex items-center gap-1">🤫 Aislamiento</span>
+                    <span className={resultado.manipulationVector.isolationTactics >= 60 ? "text-rose-600" : "text-slate-500"}>
+                      {resultado.manipulationVector.isolationTactics}%
+                    </span>
+                  </div>
+                  <div className="h-2 w-full rounded-full bg-slate-100 overflow-hidden">
+                    <div
+                      className={`h-full rounded-full transition-all ${
+                        resultado.manipulationVector.isolationTactics >= 60 ? "bg-rose-500" : "bg-blue-500"
+                      }`}
+                      style={{ width: `${resultado.manipulationVector.isolationTactics}%` }}
+                    />
+                  </div>
+                  <p className="text-[10px] text-slate-500">Secreto y no consultar</p>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Explicación en lenguaje claro */}
           <div className="space-y-1.5">

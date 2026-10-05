@@ -343,14 +343,14 @@ export default function LumaProtectHomePage() {
       {/* 5. PANTALLAS REALES DE LA APP Y PROTECCIÓN EN ACCIÓN */}
       <section className="space-y-10">
         <div className="text-center max-w-3xl mx-auto space-y-2">
-          <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-bold text-emerald-800">
-            Tecnología en Tu Teléfono
+          <span className="rounded-full bg-blue-100 px-3.5 py-1 text-xs font-bold text-lumaBlue">
+            Prototipo Móvil en Calibración
           </span>
           <h2 className="text-3xl font-black text-lumaText sm:text-4xl">
-            Mirá cómo te cuida Luma Protect en vivo
+            Así te protegerá Luma en tu celular
           </h2>
-          <p className="text-sm text-lumaSubtext sm:text-base">
-            Diseñada especialmente para no requerir conocimientos técnicos y actuar en el segundo exacto donde se produce el engaño:
+          <p className="text-sm text-lumaSubtext sm:text-base max-w-2xl mx-auto">
+            Capturas reales de la aplicación en fase de desarrollo y pruebas de laboratorio: una interfaz pensada para no requerir conocimientos técnicos y advertir al usuario en el momento exacto del intento de engaño.
           </p>
         </div>
 

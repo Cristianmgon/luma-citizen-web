@@ -590,10 +590,10 @@ export function evaluateClientScam(text: string): ClientScamResult {
       } else if (match.code === "LKP-0006") {
         const isMule = norm.includes("otra cuenta") || norm.includes("alias") || norm.includes("mula") || norm.includes("a esta otra");
         detectedPatterns.push(isMule
-          ? "Supuesta transferencia por error solicitando reenviar fondos a otra cuenta o alias (Triangulación / Mula Financiera)"
+          ? "Supuesta transferencia por error solicitando reenviar fondos a otra cuenta o alias (Triangulación de pagos)"
           : "Reclamo de transferencia excedida por error con comprobante apócrifo para forzar reintegro"
         );
-        techniques.push(isMule ? "Triangulación de fondos / Mula financiera" : "Falso comprobante y presión por reintegro");
+        techniques.push(isMule ? "Triangulación de fondos / Reenvío engañoso a terceros" : "Falso comprobante y presión por reintegro");
       } else if (match.code === "LKP-0007") {
         detectedPatterns.push("Smishing logístico simulando envío retenido o fotomulta estatal");
         techniques.push("Smishing logístico / Enlace apócrifo");
@@ -659,8 +659,8 @@ export function evaluateClientScam(text: string): ClientScamResult {
   let targetAsset = "Ninguno identificado";
   if (techniques.includes("Robo de token de autenticación (Account Takeover)")) {
     targetAsset = "Código de verificación SMS / Control de cuenta de WhatsApp";
-  } else if (techniques.includes("Triangulación de fondos / Mula financiera")) {
-    targetAsset = "Fondos transferidos por supuesta devolución de pago / Cuenta bancaria usada como mula";
+  } else if (techniques.includes("Triangulación de fondos / Reenvío engañoso a terceros")) {
+    targetAsset = "Fondos monetarios mediante falsa solicitud de reintegro o desvío a terceros";
   } else if (techniques.includes("Falso comprobante y presión por reintegro")) {
     targetAsset = "Fondos monetarios por falso reintegro de compraventa";
   } else if (techniques.includes("Suplantación afectiva familiar")) {
@@ -686,8 +686,8 @@ export function evaluateClientScam(text: string): ClientScamResult {
       recommendations.push(`🛡️ ${match.code}: ${match.mitigationStrategy}`);
     }
 
-    if (techniques.includes("Triangulación de fondos / Mula financiera") && !matchedLkps.some((m) => m.code === "LKP-0006")) {
-      recommendations.push("⚠️ NUNCA transfieras dinero a una cuenta o alias distinto al originario: es una táctica clásica de triangulación para usar tu cuenta como mula.");
+    if (techniques.includes("Triangulación de fondos / Reenvío engañoso a terceros") && !matchedLkps.some((m) => m.code === "LKP-0006")) {
+      recommendations.push("⚠️ NUNCA transfieras dinero a una cuenta o alias distinto al originario: si recibiste un pago por error, usá exclusivamente la opción 'Devolver' de tu app bancaria.");
     }
   } else if (riskLevel === "MEDIO") {
     recommendations.push("Pausá antes de actuar. Verificá la autenticidad del mensaje por un canal oficial e independiente.");

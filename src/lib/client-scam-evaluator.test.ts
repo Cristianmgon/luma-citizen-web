@@ -83,7 +83,7 @@ Internal Server Error 500`;
     expect(res.riskScore).toBeGreaterThanOrEqual(80);
     expect(["ALTO", "CRÍTICO"]).toContain(res.riskLevel);
     expect(res.threatCategory).toContain("Fraude del Falso Comprador");
-    expect(res.techniques).toContain("Triangulación de fondos / Mula financiera");
+    expect(res.techniques).toContain("Triangulación de fondos / Reenvío engañoso a terceros");
   });
 
   it("classifies SMTP bounce / mail server error 550 5.1.1 as technical log out of scope", () => {

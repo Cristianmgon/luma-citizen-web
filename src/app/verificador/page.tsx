@@ -15,7 +15,7 @@ const EJEMPLOS = [
     texto: "Tenemos a tu hija, la tenemos acá conmigo y está lastimada. Si no transferís toda la plata a este CBU en 10 minutos no la ves más. No cortes ni llames a la policía.",
   },
   {
-    titulo: "💸 Mula Financiera / Triangulación",
+    titulo: "💸 Falsa Transferencia y Pedido de Devolución",
     texto: "Hola mi nombre es Cosme Fulanito, te transferi por error a mercado pago, te envie cien mil pesos de mi cuenta, por favor necesito que transfieras el importe a esta otra cuenta de mercado pago el alias es; cuentamercadopago.mp necesito la plata para cubrir un cheque antes de las 15 Hs a lo van a rechazar.",
   },
   {
@@ -137,11 +137,13 @@ export default function VerificadorPage() {
             <div className="flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/90 px-3.5 py-1.5 text-xs font-bold text-lumaBlue shadow-sm">
                 <span className="flex h-2 w-2 rounded-full bg-cyan-500 animate-pulse" />
-                <span>🧪 Motor Heurístico y Ontológico On-Device (ADR-013)</span>
+                <span>🔬 Laboratorio Ciudadano</span>
                 <span>·</span>
-                <span>Privacidad Radical (Zero-PII)</span>
+                <span>🛡️ Análisis Preventivo On-Device</span>
                 <span>·</span>
-                <span>Doctrina $0.00 (Fase 1)</span>
+                <span>Privacidad Radical Zero-PII</span>
+                <span>·</span>
+                <span>100% Gratuito y Libre</span>
               </span>
             </div>
 
@@ -445,17 +447,17 @@ export default function VerificadorPage() {
             </div>
           )}
 
-          {/* Vector de Manipulación Psicológica (Framework Cialdini & Kahneman) */}
+          {/* Patrones de Manipulación Detectados */}
           {resultado.manipulationVector && !resultado.isTechnicalLog && (
             <div className="space-y-4 rounded-2xl border border-purple-200/90 bg-gradient-to-br from-purple-50/50 via-white to-slate-50 p-5 shadow-sm">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-purple-100 pb-3">
                 <div>
                   <h3 className="text-xs font-extrabold uppercase tracking-wider text-purple-900 flex items-center gap-1.5">
                     <span>🧠</span>
-                    <span>Vector de Manipulación Psicológica (Framework Cialdini / Kahneman)</span>
+                    <span>Tácticas de Manipulación Psicológica Detectadas</span>
                   </h3>
                   <p className="text-[11px] text-slate-600 mt-0.5">
-                    Medición continua de palancas coercitivas sobre el pensamiento impulsivo (Sistema 1)
+                    Señales analizadas localmente para advertir sobre trampas emocionales antes de actuar
                   </p>
                 </div>
                 <span className="text-[11px] font-bold text-purple-700 bg-purple-100 border border-purple-200 px-2.5 py-1 rounded-full">
@@ -466,97 +468,67 @@ export default function VerificadorPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 pt-1">
                 {/* 1. Urgencia */}
                 <div className="rounded-xl border border-slate-200 bg-white p-3 space-y-1.5">
-                  <div className="flex justify-between text-xs font-bold text-slate-700">
+                  <div className="flex justify-between items-center text-xs font-bold text-slate-700">
                     <span className="flex items-center gap-1">⚡ Urgencia</span>
-                    <span className={resultado.manipulationVector.urgencyScarcity >= 60 ? "text-rose-600" : "text-slate-500"}>
-                      {resultado.manipulationVector.urgencyScarcity}%
+                    <span className={`text-[10px] px-1.5 py-0.5 rounded font-bold ${
+                      resultado.manipulationVector.urgencyScarcity >= 60 ? "bg-rose-100 text-rose-700" : "bg-slate-100 text-slate-500"
+                    }`}>
+                      {resultado.manipulationVector.urgencyScarcity >= 60 ? "Detectada" : "Normal"}
                     </span>
                   </div>
-                  <div className="h-2 w-full rounded-full bg-slate-100 overflow-hidden">
-                    <div
-                      className={`h-full rounded-full transition-all ${
-                        resultado.manipulationVector.urgencyScarcity >= 60 ? "bg-rose-500" : "bg-blue-500"
-                      }`}
-                      style={{ width: `${resultado.manipulationVector.urgencyScarcity}%` }}
-                    />
-                  </div>
-                  <p className="text-[10px] text-slate-500">Presión temporal y escasez</p>
+                  <p className="text-[10px] text-slate-500">Presión de tiempo para actuar sin pensar</p>
                 </div>
 
                 {/* 2. Autoridad */}
                 <div className="rounded-xl border border-slate-200 bg-white p-3 space-y-1.5">
-                  <div className="flex justify-between text-xs font-bold text-slate-700">
+                  <div className="flex justify-between items-center text-xs font-bold text-slate-700">
                     <span className="flex items-center gap-1">🏛️ Autoridad</span>
-                    <span className={resultado.manipulationVector.authorityImpersonation >= 60 ? "text-rose-600" : "text-slate-500"}>
-                      {resultado.manipulationVector.authorityImpersonation}%
+                    <span className={`text-[10px] px-1.5 py-0.5 rounded font-bold ${
+                      resultado.manipulationVector.authorityImpersonation >= 60 ? "bg-rose-100 text-rose-700" : "bg-slate-100 text-slate-500"
+                    }`}>
+                      {resultado.manipulationVector.authorityImpersonation >= 60 ? "Detectada" : "Normal"}
                     </span>
                   </div>
-                  <div className="h-2 w-full rounded-full bg-slate-100 overflow-hidden">
-                    <div
-                      className={`h-full rounded-full transition-all ${
-                        resultado.manipulationVector.authorityImpersonation >= 60 ? "bg-rose-500" : "bg-blue-500"
-                      }`}
-                      style={{ width: `${resultado.manipulationVector.authorityImpersonation}%` }}
-                    />
-                  </div>
-                  <p className="text-[10px] text-slate-500">Suplantación institucional</p>
+                  <p className="text-[10px] text-slate-500">Suplantación de bancos o entidades</p>
                 </div>
 
                 {/* 3. Coerción Emocional */}
                 <div className="rounded-xl border border-slate-200 bg-white p-3 space-y-1.5">
-                  <div className="flex justify-between text-xs font-bold text-slate-700">
-                    <span className="flex items-center gap-1">💔 Miedo / Afecto</span>
-                    <span className={resultado.manipulationVector.emotionalCoercion >= 60 ? "text-rose-600" : "text-slate-500"}>
-                      {resultado.manipulationVector.emotionalCoercion}%
+                  <div className="flex justify-between items-center text-xs font-bold text-slate-700">
+                    <span className="flex items-center gap-1">💔 Emoción</span>
+                    <span className={`text-[10px] px-1.5 py-0.5 rounded font-bold ${
+                      resultado.manipulationVector.emotionalCoercion >= 60 ? "bg-rose-100 text-rose-700" : "bg-slate-100 text-slate-500"
+                    }`}>
+                      {resultado.manipulationVector.emotionalCoercion >= 60 ? "Detectada" : "Normal"}
                     </span>
                   </div>
-                  <div className="h-2 w-full rounded-full bg-slate-100 overflow-hidden">
-                    <div
-                      className={`h-full rounded-full transition-all ${
-                        resultado.manipulationVector.emotionalCoercion >= 60 ? "bg-rose-500" : "bg-blue-500"
-                      }`}
-                      style={{ width: `${resultado.manipulationVector.emotionalCoercion}%` }}
-                    />
-                  </div>
-                  <p className="text-[10px] text-slate-500">Shock o afecto fingido</p>
+                  <p className="text-[10px] text-slate-500">Inducción de miedo, shock o afecto fingido</p>
                 </div>
 
                 {/* 4. Desvío de Activos */}
                 <div className="rounded-xl border border-slate-200 bg-white p-3 space-y-1.5">
-                  <div className="flex justify-between text-xs font-bold text-slate-700">
+                  <div className="flex justify-between items-center text-xs font-bold text-slate-700">
                     <span className="flex items-center gap-1">💸 Desvío Fondos</span>
-                    <span className={resultado.manipulationVector.assetTransferIntent >= 60 ? "text-rose-600" : "text-slate-500"}>
-                      {resultado.manipulationVector.assetTransferIntent}%
+                    <span className={`text-[10px] px-1.5 py-0.5 rounded font-bold ${
+                      resultado.manipulationVector.assetTransferIntent >= 60 ? "bg-rose-100 text-rose-700" : "bg-slate-100 text-slate-500"
+                    }`}>
+                      {resultado.manipulationVector.assetTransferIntent >= 60 ? "Detectado" : "Normal"}
                     </span>
                   </div>
-                  <div className="h-2 w-full rounded-full bg-slate-100 overflow-hidden">
-                    <div
-                      className={`h-full rounded-full transition-all ${
-                        resultado.manipulationVector.assetTransferIntent >= 60 ? "bg-rose-500" : "bg-blue-500"
-                      }`}
-                      style={{ width: `${resultado.manipulationVector.assetTransferIntent}%` }}
-                    />
-                  </div>
-                  <p className="text-[10px] text-slate-500">Transferencias, OTP, claves</p>
+                  <p className="text-[10px] text-slate-500">Pedido de transferencias, claves o tokens</p>
                 </div>
 
                 {/* 5. Aislamiento */}
                 <div className="rounded-xl border border-slate-200 bg-white p-3 space-y-1.5">
-                  <div className="flex justify-between text-xs font-bold text-slate-700">
+                  <div className="flex justify-between items-center text-xs font-bold text-slate-700">
                     <span className="flex items-center gap-1">🤫 Aislamiento</span>
-                    <span className={resultado.manipulationVector.isolationTactics >= 60 ? "text-rose-600" : "text-slate-500"}>
-                      {resultado.manipulationVector.isolationTactics}%
+                    <span className={`text-[10px] px-1.5 py-0.5 rounded font-bold ${
+                      resultado.manipulationVector.isolationTactics >= 60 ? "bg-rose-100 text-rose-700" : "bg-slate-100 text-slate-500"
+                    }`}>
+                      {resultado.manipulationVector.isolationTactics >= 60 ? "Detectado" : "Normal"}
                     </span>
                   </div>
-                  <div className="h-2 w-full rounded-full bg-slate-100 overflow-hidden">
-                    <div
-                      className={`h-full rounded-full transition-all ${
-                        resultado.manipulationVector.isolationTactics >= 60 ? "bg-rose-500" : "bg-blue-500"
-                      }`}
-                      style={{ width: `${resultado.manipulationVector.isolationTactics}%` }}
-                    />
-                  </div>
-                  <p className="text-[10px] text-slate-500">Secreto y no consultar</p>
+                  <p className="text-[10px] text-slate-500">Exigencia de secreto o no consultar a terceros</p>
                 </div>
               </div>
             </div>

@@ -59,7 +59,7 @@ const PATRONES_CRITICOS = [
     foco: "Vendedores en plataformas digitales, clasificados y emprendedores",
     entidadesImitadas: ["Supuesto comprador", "Falso sector de retenciones bancarias", "Soporte de billeteras"],
     modusOperandi:
-      "El supuesto comprador envía un comprobante de transferencia falso con un monto muy superior al pactado (ej: $500.000 en vez de $50.000) y ruega desesperado la devolución inmediata de la diferencia, o hace llamar a un cómplice como 'el banco' para sacar un préstamo a nombre de la víctima.",
+      "El supuesto comprador envía un comprobante de transferencia falso con un monto muy superior al pactado (ej: $500.000 en vez de $50.000) y ruega desesperado la devolución inmediata de la diferencia, o hace intervenir a un supuesto asesor bancario para tramitar préstamos no autorizados.",
     accionPreventiva: "Verificá la acreditación real entrando a tu app oficial. El comprobante en captura o PDF no prueba que el dinero haya ingresado.",
   },
 ];
@@ -160,7 +160,7 @@ export default function RadarPage() {
       <section className="rounded-3xl border border-slate-800 bg-slate-950 p-6 sm:p-8 text-white space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <span className="rounded-full bg-blue-500/20 px-3 py-1 text-xs font-bold text-blue-300">
-            Fase de Desarrollo y MVP · Política de Transparencia
+            Transparencia y Calibración Comunitaria
           </span>
         </div>
         <h3 className="text-xl font-bold">Compromiso con la Verdad: Cero Datos Inventados</h3>

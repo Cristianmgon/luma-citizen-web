@@ -37,7 +37,7 @@ export default function LumaProtectHomePage() {
               </p>
 
               <p className="text-sm leading-relaxed text-slate-300 sm:text-base">
-                Una iniciativa independiente de investigación aplicada y desarrollo tecnológico impulsada por <strong>estudiantes universitarios de la Licenciatura en Ciberseguridad de la Universidad Nacional Raúl Scalabrini Ortiz (UNSO)</strong> en preparación de su trabajo de grado. <em>Este proyecto es de carácter autónomo y no cuenta a la fecha con patrocinio, aval o representación institucional formal de la UNSO.</em>
+                Una iniciativa independiente de investigación aplicada y desarrollo tecnológico impulsada por <strong>estudiantes universitarios de la Licenciatura en Ciberseguridad de la Universidad Nacional Raúl Scalabrini Ortiz (UNSO)</strong> en preparación de su trabajo de grado. <em>Este proyecto es de carácter autónomo y no cuenta a la fecha con patrocinio, aval o representación institucional formal de la UNSO.</em>{" "}
                 Herramienta asistencial de análisis y verificación preventiva On-Device frente a <strong>intentos de extorsión, transferencias bancarias fraudulentas, vinculación no autorizada de WhatsApp y engaños telefónicos</strong> mediante correlación de contexto e inspección heurística.
                 Tecnología procesada localmente en tu teléfono (privacidad estricta Zero-PII), sin publicidad, sin costo y sin enviar tus notificaciones, mensajes ni datos personales a ningún servidor.
               </p>

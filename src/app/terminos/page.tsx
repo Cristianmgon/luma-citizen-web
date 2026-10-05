@@ -107,8 +107,8 @@ export default function TerminosPage() {
                 Opera como herramienta preventiva comunitaria y pedagógica. El procesamiento de texto se efectúa de modo efímero y anónimo en memoria volátil de tu dispositivo.
               </p>
               <p className="font-semibold text-rose-800">
-                ⚠️ Protocolo de Devolución Bancaria (Anti-Mulas): Si un usuario recibe fondos por error, la única vía válida de reintegro es el botón oficial &quot;Devolver transferencia&quot;
-                de la propia app bancaria. Se desaconseja categóricamente realizar envíos manuales a alias provistos por chat para no incurrir en triangulación de fondos ni ser partícipe involuntario de maniobras ilícitas.
+                ⚠️ Protocolo de Devolución Bancaria Segura: Si un usuario recibe fondos por error, la única vía válida y segura de reintegro es el botón oficial &quot;Devolver transferencia&quot;
+                dentro de su propia aplicación bancaria. Se desaconseja terminantemente realizar transferencias manuales hacia otros alias o cuentas sugeridas por chat para evitar maniobras de triangulación.
               </p>
             </div>
 

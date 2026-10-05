@@ -100,29 +100,82 @@ export default function LumaProtectHomePage() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm space-y-3">
-            <span className="text-3xl font-black text-rose-600 sm:text-4xl">+300%</span>
-            <h3 className="text-lg font-bold text-lumaText">Aumento en Denuncias Formales</h3>
-            <p className="text-xs leading-relaxed text-lumaSubtext">
-              Según estadísticas de la <strong>UFECI (Ministerio Público Fiscal)</strong>, las denuncias por fraudes electrónicos crecieron exponencialmente, encabezadas por el vaciamiento de cuentas bancarias y robo de identidad digital.
-            </p>
+          <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm space-y-3 flex flex-col justify-between">
+            <div className="space-y-3">
+              <span className="text-3xl font-black text-rose-600 sm:text-4xl">+300%</span>
+              <h3 className="text-lg font-bold text-lumaText">Aumento en Denuncias Formales</h3>
+              <p className="text-xs leading-relaxed text-lumaSubtext">
+                Según estadísticas de la <strong>UFECI (Ministerio Público Fiscal de la Nación)</strong>, las denuncias por fraudes electrónicos crecieron exponencialmente, encabezadas por el vaciamiento de cuentas bancarias y robo de identidad digital.
+              </p>
+            </div>
+            <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
+              <span className="text-[11px] font-semibold text-slate-500">Fuente Oficial:</span>
+              <a
+                href="https://www.mpf.gob.ar/ufeci/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-[11px] font-bold text-lumaBlue hover:underline"
+              >
+                <span>UFECI / MPF</span>
+                <span>↗</span>
+              </a>
+            </div>
           </div>
 
-          <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm space-y-3">
-            <span className="text-3xl font-black text-amber-500 sm:text-4xl">80% a 85%</span>
-            <h3 className="text-lg font-bold text-lumaText">La Cifra Negra: No Denuncian</h3>
-            <p className="text-xs leading-relaxed text-lumaSubtext">
-              La inmensa mayoría de las víctimas <strong>no radica la denuncia por vergüenza, culpa o resignación</strong>. Esto genera una invisibilidad estadística que impide la asignación oportuna de presupuestos y fuerzas policiales.
-            </p>
+          <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm space-y-3 flex flex-col justify-between">
+            <div className="space-y-3">
+              <span className="text-3xl font-black text-amber-500 sm:text-4xl">80% a 85%</span>
+              <h3 className="text-lg font-bold text-lumaText">La Cifra Negra: No Denuncian</h3>
+              <p className="text-xs leading-relaxed text-lumaSubtext">
+                La inmensa mayoría de las víctimas <strong>no radica la denuncia por vergüenza, culpa o resignación</strong>. Esto genera una invisibilidad estadística que impide la asignación oportuna de presupuestos y fuerzas policiales.
+              </p>
+            </div>
+            <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
+              <span className="text-[11px] font-semibold text-slate-500">Relevamiento:</span>
+              <span className="text-[11px] font-bold text-slate-600">Criminología Digital PGN</span>
+            </div>
           </div>
 
-          <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm space-y-3">
-            <span className="text-3xl font-black text-lumaBlue sm:text-4xl">7 de cada 10</span>
-            <h3 className="text-lg font-bold text-lumaText">Ataques Vía WhatsApp y Llamadas</h3>
-            <p className="text-xs leading-relaxed text-lumaSubtext">
-              Los estafadores ya no atacan servidores de alta seguridad: atacan el teléfono familiar mediante manipulación emocional (falsos secuestros nocturnos, ofertas de trabajo piramidales y enlaces clonados).
-            </p>
+          <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm space-y-3 flex flex-col justify-between">
+            <div className="space-y-3">
+              <span className="text-3xl font-black text-lumaBlue sm:text-4xl">7 de cada 10</span>
+              <h3 className="text-lg font-bold text-lumaText">Ataques Vía WhatsApp y Llamadas</h3>
+              <p className="text-xs leading-relaxed text-lumaSubtext">
+                Los estafadores ya no atacan servidores de alta seguridad: atacan el teléfono familiar mediante manipulación psicológica (falsos secuestros nocturnos, ofertas de trabajo piramidales y enlaces clonados).
+              </p>
+            </div>
+            <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
+              <span className="text-[11px] font-semibold text-slate-500">Vector de Ataque:</span>
+              <a
+                href="https://www.mpf.gob.ar/ufeci/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-[11px] font-bold text-lumaBlue hover:underline"
+              >
+                <span>Reportes UFECI</span>
+                <span>↗</span>
+              </a>
+            </div>
           </div>
+        </div>
+
+        {/* Banner de Veracidad y Enlace Primario */}
+        <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-xs text-slate-600 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-sm">
+          <div className="flex items-center gap-2.5">
+            <span className="text-lg">🏛️</span>
+            <span>
+              <strong>Compromiso de Veracidad:</strong> Luma fundamenta sus patrones en informes públicos de la <strong>Unidad Fiscal Especializada en Ciberdelincuencia (UFECI)</strong> y la <strong>Agencia de Acceso a la Información Pública (AAIP)</strong>.
+            </span>
+          </div>
+          <a
+            href="https://www.mpf.gob.ar/ufeci/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 text-xs font-bold text-lumaBlue hover:underline inline-flex items-center gap-1 self-start sm:self-auto"
+          >
+            <span>Canal Oficial de la UFECI</span>
+            <span>↗</span>
+          </a>
         </div>
       </section>
 

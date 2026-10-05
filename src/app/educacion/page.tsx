@@ -217,6 +217,7 @@ export default function EducacionPage() {
   const [perfilActivo, setPerfilActivo] = useState(PERFILES[0].id);
   const [eleccionSimulador, setEleccionSimulador] = useState<number | null>(null);
   const [modalidadIndex, setModalidadIndex] = useState(0);
+  const [modoLecturaFacil, setModoLecturaFacil] = useState(false);
 
   const perfil = PERFILES.find((p) => p.id === perfilActivo)!;
   const modalidadActual = MODALIDADES_CRITICAS[modalidadIndex];
@@ -312,27 +313,51 @@ export default function EducacionPage() {
 
       {/* 3. DETALLE DEL PERFIL ACTIVO */}
       <section className="space-y-8 rounded-3xl border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
-        <div className="flex items-center gap-4 border-b border-slate-100 pb-6">
-          <span className="text-4xl sm:text-5xl">{perfil.icono}</span>
-          <div>
-            <h2 className="text-2xl font-black text-lumaText sm:text-3xl">{perfil.nombre}</h2>
-            <p className="text-xs sm:text-sm text-lumaSubtext">{perfil.subtitulo}</p>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-6">
+          <div className="flex items-center gap-4">
+            <span className="text-4xl sm:text-5xl">{perfil.icono}</span>
+            <div>
+              <h2 className={`font-black text-lumaText ${modoLecturaFacil ? "text-3xl sm:text-4xl" : "text-2xl sm:text-3xl"}`}>
+                {perfil.nombre}
+              </h2>
+              <p className={`text-lumaSubtext ${modoLecturaFacil ? "text-base font-semibold" : "text-xs sm:text-sm"}`}>
+                {perfil.subtitulo}
+              </p>
+            </div>
           </div>
+
+          <button
+            type="button"
+            onClick={() => setModoLecturaFacil(!modoLecturaFacil)}
+            className={`inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 text-xs font-bold transition shadow-xs self-start sm:self-auto cursor-pointer ${
+              modoLecturaFacil
+                ? "bg-amber-500 text-white ring-2 ring-amber-300 shadow-md"
+                : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+            }`}
+            aria-label="Alternar modo lectura fácil con letra grande"
+          >
+            <span className="text-base">🔎</span>
+            <span>{modoLecturaFacil ? "Modo Letra Grande (Activo)" : "Activar Letra Grande (Adulto Mayor)"}</span>
+          </button>
         </div>
 
         {/* Amenaza Principal y Regla de Oro */}
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-3xl border border-rose-100 bg-rose-50/40 p-6 space-y-2">
+          <div className="rounded-3xl border border-rose-100 bg-rose-50/50 p-6 space-y-2">
             <h3 className="text-xs font-bold uppercase tracking-wider text-rose-800">
               ⚠️ Mayor riesgo para este perfil
             </h3>
-            <p className="text-sm font-semibold text-rose-950 leading-relaxed">{perfil.amenazaPrincipal}</p>
+            <p className={`font-semibold text-rose-950 leading-relaxed ${modoLecturaFacil ? "text-lg sm:text-xl font-bold" : "text-sm"}`}>
+              {perfil.amenazaPrincipal}
+            </p>
           </div>
           <div className="rounded-3xl border border-blue-100 bg-lumaBlueSoft/60 p-6 space-y-2">
             <h3 className="text-xs font-bold uppercase tracking-wider text-lumaBlue">
               🛡️ Regla de Oro (&ldquo;Luma Cuidadora&rdquo;)
             </h3>
-            <p className="text-sm font-semibold text-lumaText leading-relaxed">{perfil.reglaOro}</p>
+            <p className={`font-semibold text-lumaText leading-relaxed ${modoLecturaFacil ? "text-lg sm:text-xl font-extrabold text-blue-950" : "text-sm"}`}>
+              {perfil.reglaOro}
+            </p>
           </div>
         </div>
 
@@ -347,7 +372,9 @@ export default function EducacionPage() {
             </span>
           </div>
 
-          <div className="rounded-2xl bg-white p-5 text-sm font-medium leading-relaxed text-lumaText shadow-sm border border-slate-200/80">
+          <div className={`rounded-2xl bg-white p-5 font-medium leading-relaxed text-lumaText shadow-sm border border-slate-200/80 ${
+            modoLecturaFacil ? "text-lg sm:text-xl font-semibold" : "text-sm"
+          }`}>
             &ldquo;{perfil.simulador.escenario}&rdquo;
           </div>
 
@@ -363,7 +390,9 @@ export default function EducacionPage() {
                     key={idx}
                     type="button"
                     onClick={() => setEleccionSimulador(idx)}
-                    className={`rounded-2xl border p-4 text-left text-xs sm:text-sm font-semibold transition ${
+                    className={`rounded-2xl border p-4 text-left font-semibold transition cursor-pointer ${
+                      modoLecturaFacil ? "text-base sm:text-lg py-5" : "text-xs sm:text-sm"
+                    } ${
                       seleccionada
                         ? opcion.correcta
                           ? "border-emerald-500 bg-emerald-50 text-emerald-950 shadow-sm"
@@ -381,7 +410,9 @@ export default function EducacionPage() {
 
           {eleccionSimulador !== null && (
             <div
-              className={`rounded-2xl border p-5 text-xs sm:text-sm font-medium leading-relaxed ${
+              className={`rounded-2xl border p-5 font-medium leading-relaxed ${
+                modoLecturaFacil ? "text-base sm:text-lg font-semibold" : "text-xs sm:text-sm"
+              } ${
                 perfil.simulador.opciones[eleccionSimulador].correcta
                   ? "border-emerald-200 bg-emerald-50 text-emerald-950"
                   : "border-rose-200 bg-rose-50 text-rose-950"
@@ -399,7 +430,7 @@ export default function EducacionPage() {
             {perfil.consejos.map((consejo, idx) => (
               <div key={idx} className="rounded-2xl border border-slate-200 bg-slate-50/50 p-5 text-xs text-lumaSubtext leading-relaxed space-y-2">
                 <span className="block font-black text-lumaBlue text-sm">0{idx + 1}.</span>
-                <p className="text-lumaText font-medium">{consejo}</p>
+                <p className={`text-lumaText font-medium ${modoLecturaFacil ? "text-base font-semibold" : "text-xs"}`}>{consejo}</p>
               </div>
             ))}
           </div>

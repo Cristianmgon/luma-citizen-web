@@ -362,7 +362,15 @@ export default function PymesCommercePage() {
               </p>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-2 flex flex-wrap justify-center gap-3">
+              <button
+                type="button"
+                onClick={() => window.print()}
+                className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-xs sm:text-sm font-bold text-slate-700 shadow-sm hover:bg-slate-50 transition"
+              >
+                <span>🖨️</span>
+                <span>Imprimir / Guardar este Diagnóstico</span>
+              </button>
               <a
                 href="#asesoramiento"
                 className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-6 py-3 text-xs sm:text-sm font-bold text-white shadow-md hover:bg-slate-800 transition"
@@ -373,6 +381,123 @@ export default function PymesCommercePage() {
             </div>
           </div>
         )}
+      </section>
+
+      {/* 3.5 MATERIALES Y PLANTILLAS HOMOLOGADAS DESCARGABLES */}
+      <section className="space-y-6 rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950 p-6 sm:p-10 text-white shadow-md">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+          <div className="space-y-2">
+            <span className="inline-block rounded-full bg-cyan-400/20 px-3.5 py-1 text-xs font-bold text-cyan-300">
+              Recursos Gratuitos para Comercios
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black">
+              Plantillas y Materiales Homologados para tu Local
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-300 max-w-2xl">
+              Descargá e imprimí sin costo afiches y protocolos desarrollados conforme a la <strong>Ley 25.326</strong> y disposiciones de la <strong>AAIP</strong> para exhibir en tu comercio.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-3 pt-2">
+          {/* Card 1: Afiche Cobros en Mostrador */}
+          <div className="flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-900/90 p-5 space-y-4">
+            <div className="space-y-2.5">
+              <div className="flex items-center justify-between">
+                <span className="text-2xl">🏪🧾</span>
+                <span className="rounded-full bg-emerald-500/20 px-2.5 py-0.5 text-[11px] font-bold text-emerald-300">
+                  Formato A4
+                </span>
+              </div>
+              <h3 className="font-bold text-white text-base">Afiche Seguridad en Caja</h3>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Protocolo visual para el personal: prevención de transferencias truchas, control de stickers QR y acreditación bancaria en tiempo real.
+              </p>
+            </div>
+            <div className="pt-2 flex flex-col gap-2">
+              <a
+                href="/materiales/afiche-seguridad-comercios-luma.pdf"
+                download="afiche-seguridad-comercios-luma.pdf"
+                className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-emerald-600 px-4 py-2.5 text-xs font-bold text-white hover:bg-emerald-500 transition shadow-sm"
+              >
+                <span>📥</span> Descargar PDF A4
+              </a>
+              <a
+                href="/materiales/afiche-seguridad-comercios.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-slate-700 bg-slate-800 px-4 py-2 text-xs font-semibold text-slate-300 hover:bg-slate-700 transition"
+              >
+                <span>👁️</span> Ver en Navegador
+              </a>
+            </div>
+          </div>
+
+          {/* Card 2: Cartelería CCTV Homologada */}
+          <div className="flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-900/90 p-5 space-y-4">
+            <div className="space-y-2.5">
+              <div className="flex items-center justify-between">
+                <span className="text-2xl">📹⚖️</span>
+                <span className="rounded-full bg-blue-500/20 px-2.5 py-0.5 text-[11px] font-bold text-blue-300">
+                  Disp. AAIP 10/2008
+                </span>
+              </div>
+              <h3 className="font-bold text-white text-base">Cartelería CCTV Oficial</h3>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Reemplazá el cartel genérico de librería por el modelo homologado con Razón Social, CUIT y dirección de ejercicio de Habeas Data.
+              </p>
+            </div>
+            <div className="pt-2 flex flex-col gap-2">
+              <a
+                href="/materiales/afiche-seguridad-comercios-luma.pdf"
+                download="carteleria-cctv-homologada-luma.pdf"
+                className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-blue-600 px-4 py-2.5 text-xs font-bold text-white hover:bg-blue-500 transition shadow-sm"
+              >
+                <span>📥</span> Descargar Plantilla CCTV
+              </a>
+              <a
+                href="/materiales/afiche-seguridad-comercios.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-slate-700 bg-slate-800 px-4 py-2 text-xs font-semibold text-slate-300 hover:bg-slate-700 transition"
+              >
+                <span>👁️</span> Ver Modelo Online
+              </a>
+            </div>
+          </div>
+
+          {/* Card 3: Checklist Ciberhigiene */}
+          <div className="flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-900/90 p-5 space-y-4">
+            <div className="space-y-2.5">
+              <div className="flex items-center justify-between">
+                <span className="text-2xl">📋📶</span>
+                <span className="rounded-full bg-cyan-500/20 px-2.5 py-0.5 text-[11px] font-bold text-cyan-300">
+                  Checklist Operativo
+                </span>
+              </div>
+              <h3 className="font-bold text-white text-base">Checklist de Ciberhigiene</h3>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Guía de 5 pasos para el cierre del día: rotación de claves Wi-Fi, backups de facturación desconectados de internet y seguridad POS.
+              </p>
+            </div>
+            <div className="pt-2 flex flex-col gap-2">
+              <a
+                href="/materiales/afiche-seguridad-comercios-luma.pdf"
+                download="checklist-ciberhigiene-pyme-luma.pdf"
+                className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-cyan-600 px-4 py-2.5 text-xs font-bold text-white hover:bg-cyan-500 transition shadow-sm"
+              >
+                <span>📥</span> Descargar Checklist
+              </a>
+              <button
+                type="button"
+                onClick={() => window.print()}
+                className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-slate-700 bg-slate-800 px-4 py-2 text-xs font-semibold text-slate-300 hover:bg-slate-700 transition"
+              >
+                <span>🖨️</span> Imprimir Diagnóstico
+              </button>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* 4. FORMULARIO DE CONTACTO / SOLICITUD DE ASESORAMIENTO */}

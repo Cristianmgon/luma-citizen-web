@@ -10,8 +10,10 @@ export const metadata = {
 const PATRONES_CRITICOS = [
   {
     codigo: "Patrón #01",
+    icono: "📞",
     nombre: "Secuestro Virtual y Extorsión Emocional",
     foco: "Madres, padres y adultos mayores",
+    resumenCorto: "Llaman de madrugada simulando llantos y gritos para exigir rescate sin dejarte verificar.",
     entidadesImitadas: ["Falso hijo/a", "Falso comisario", "Servicios de emergencia"],
     modusOperandi:
       "Llamadas en horas de la madrugada simulando llantos y gritos desesperados. La táctica es inducir un shock emocional agudo que anule la capacidad de razonamiento para exigir dinero o joyas antes de corroborar si el familiar está a salvo.",
@@ -19,8 +21,10 @@ const PATRONES_CRITICOS = [
   },
   {
     codigo: "Patrón #02",
+    icono: "💳",
     nombre: "Suplantación Bancaria y Robo de Token OTP",
-    foco: "Usuarios de billeteras virtuales y homebanking",
+    foco: "Billeteras virtuales y homebanking",
+    resumenCorto: "Alerta trucha de bloqueo de cuenta con enlace falso para robar claves o token de 6 dígitos.",
     entidadesImitadas: ["Mercado Pago", "Cuenta DNI", "Bancos tradicionales", "ARCA / AFIP"],
     modusOperandi:
       "Mensajes urgentes advirtiendo sobre un supuesto bloqueo de cuenta o cobro no reconocido. Guían a la víctima a una página clonada idéntica a la original o le solicitan el código de seguridad de 6 dígitos recibido por SMS.",
@@ -28,8 +32,10 @@ const PATRONES_CRITICOS = [
   },
   {
     codigo: "Patrón #03",
+    icono: "💼",
     nombre: "Falsas Ofertas de Empleo y Estafas de Tareas",
-    foco: "Jóvenes, estudiantes y personas en búsqueda laboral",
+    foco: "Jóvenes, estudiantes y búsqueda laboral",
+    resumenCorto: "Prometen ganar plata dando 'likes', pagan $1.500 de anzuelo y luego piden depósitos de garantía.",
     entidadesImitadas: ["YouTube Partners", "TikTok Marketing", "Empresas internacionales"],
     modusOperandi:
       "Contactan ofreciendo pagos diarios por suscribirse a canales o dar 'likes'. Pagan una suma simbólica inicial ($1.000 a $2.000) para generar confianza, y luego exigen transferencias de 'garantía' para desbloquear tareas que nunca se reintegran.",
@@ -37,8 +43,10 @@ const PATRONES_CRITICOS = [
   },
   {
     codigo: "Patrón #04",
+    icono: "📱",
     nombre: "Falso Familiar por WhatsApp (Reemplazo de Identidad)",
     foco: "Círculo familiar y amigos cercanos",
+    resumenCorto: "'Hola má, cambié el número porque se me rompió el celu'. Al rato piden una transferencia urgente.",
     entidadesImitadas: ["Hijo/a", "Nieto/a", "Amigo cercano con número nuevo"],
     modusOperandi:
       "Escriben desde una línea desconocida con la foto de perfil de un ser querido diciendo 'agendá mi nuevo número porque se me rompió el celu'. Horas después, fingen una urgencia económica solicitando una transferencia inmediata a un alias ajeno.",
@@ -46,8 +54,10 @@ const PATRONES_CRITICOS = [
   },
   {
     codigo: "Patrón #05",
+    icono: "🔐",
     nombre: "Secuestro de Cuenta WhatsApp (Robo de Token SMS)",
     foco: "Comunidad general, profesionales y comerciantes",
+    resumenCorto: "'Te mandé un código por error, ¿me lo pasás?'. Es el token de registro para robarte tu WhatsApp.",
     entidadesImitadas: ["Contactos agendados hackeados", "Falso soporte técnico", "Falsos turnos sanitarios"],
     modusOperandi:
       "Llega un mensaje de un conocido diciendo 'te mandé un código de 6 dígitos por error a tu celular, ¿me lo pasás?'. Ese código es el token oficial de registro de WhatsApp que permite al atacante apoderarse de la cuenta.",
@@ -55,8 +65,10 @@ const PATRONES_CRITICOS = [
   },
   {
     codigo: "Patrón #06",
+    icono: "🧾",
     nombre: "Fraude del Falso Comprador y Triangulación",
-    foco: "Vendedores en plataformas digitales, clasificados y emprendedores",
+    foco: "Vendedores en plataformas digitales y emprendedores",
+    resumenCorto: "Muestran comprobante de pago editado con un cero de más y ruegan la devolución inmediata del dinero.",
     entidadesImitadas: ["Supuesto comprador", "Falso sector de retenciones bancarias", "Soporte de billeteras"],
     modusOperandi:
       "El supuesto comprador envía un comprobante de transferencia falso con un monto muy superior al pactado (ej: $500.000 en vez de $50.000) y ruega desesperado la devolución inmediata de la diferencia, o hace intervenir a un supuesto asesor bancario para tramitar préstamos no autorizados.",
@@ -156,58 +168,100 @@ export default function RadarPage() {
         </div>
       </section>
 
-      {/* 3. TRANSPARENCIA RADICAL (CERO DATOS SIMULADOS) */}
-      <section className="rounded-3xl border border-slate-800 bg-slate-950 p-6 sm:p-8 text-white space-y-3">
+      {/* 3. TRANSPARENCIA RADICAL (CERO DATOS SIMULADOS) & ENLACE PRIMARIO A UFECI */}
+      <section className="rounded-3xl border border-slate-800 bg-slate-950 p-6 sm:p-8 text-white space-y-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <span className="rounded-full bg-blue-500/20 px-3 py-1 text-xs font-bold text-blue-300">
-            Transparencia y Calibración Comunitaria
+            Transparencia y Fuentes Judiciales
           </span>
+          <a
+            href="https://www.mpf.gob.ar/ufeci/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-xl bg-blue-600/30 border border-blue-400/40 px-3 py-1 text-xs font-semibold text-blue-200 hover:bg-blue-600/50 transition"
+          >
+            <span>Sitio Oficial UFECI</span>
+            <span>↗</span>
+          </a>
         </div>
         <h3 className="text-xl font-bold">Compromiso con la Verdad: Cero Datos Inventados</h3>
         <p className="text-xs sm:text-sm leading-relaxed text-slate-300 max-w-4xl">
-          En Luma no publicamos gráficos simulados ni porcentajes falsos. La telemetría comunitaria se nutrirá progresivamente de los eventos anónimos validados por la comunidad. Actualmente compartimos el catálogo oficial de modalidades críticas tipificadas para que aprendas a reconocerlas a tiempo.
+          En Luma no publicamos gráficos simulados ni porcentajes falsos. Los patrones descritos a continuación están basados en la casuística documentada por la <strong>Unidad Fiscal Especializada en Ciberdelincuencia (UFECI)</strong> y el análisis de vectores de ataque reales en Argentina. Si fuiste víctima de un delito, podés denunciarlo formalmente a través de <code className="bg-slate-800 px-2 py-0.5 rounded text-blue-300 font-mono">denunciasufeci@mpf.gov.ar</code>.
         </p>
       </section>
 
-      {/* 4. CATÁLOGO DE MODALIDADES CRÍTICAS */}
+      {/* 4. CATÁLOGO DE MODALIDADES CRÍTICAS CON ACORDEONES Y LECTURA RÁPIDA */}
       <section className="space-y-6">
-        <div>
-          <h2 className="text-2xl font-black text-lumaText">
-            Modalidades y Patrones de Engaño Frecuentes
-          </h2>
-          <p className="text-xs text-lumaSubtext mt-1">
-            Conocé cómo operan las 6 modalidades de engaño más frecuentes en Argentina y cómo defender a tu familia.
-          </p>
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+          <div>
+            <h2 className="text-2xl font-black text-lumaText">
+              Modalidades y Patrones de Engaño Frecuentes
+            </h2>
+            <p className="text-xs text-lumaSubtext mt-1">
+              Hacé clic en cualquier modalidad para ver su explicación completa o leé el resumen rápido en 15 segundos.
+            </p>
+          </div>
+          <span className="text-[11px] font-bold text-slate-500 bg-slate-100 rounded-full px-3 py-1 self-start sm:self-auto">
+            6 Patrones Tipificados
+          </span>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
           {PATRONES_CRITICOS.map((patron) => (
             <article
               key={patron.codigo}
-              className="flex flex-col justify-between space-y-4 rounded-3xl border border-slate-200 bg-white p-6 sm:p-7 shadow-sm hover:border-blue-200 transition"
+              className="flex flex-col justify-between space-y-4 rounded-3xl border border-slate-200 bg-white p-6 sm:p-7 shadow-sm hover:border-blue-300 transition"
             >
-              <div className="space-y-3">
+              <div className="space-y-3.5">
                 <div className="flex items-center justify-between gap-2">
-                  <span className="rounded-xl bg-lumaBlueSoft px-3 py-1 text-xs font-black text-lumaBlue">
-                    {patron.codigo}
-                  </span>
-                  <span className="text-xs font-semibold text-slate-500">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl">{patron.icono}</span>
+                    <span className="rounded-xl bg-lumaBlueSoft px-2.5 py-1 text-xs font-black text-lumaBlue">
+                      {patron.codigo}
+                    </span>
+                  </div>
+                  <span className="text-[11px] font-semibold text-slate-500 bg-slate-50 px-2.5 py-0.5 rounded-full border border-slate-200">
                     Foco: {patron.foco}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-lumaText">{patron.nombre}</h3>
-                <p className="text-xs leading-relaxed text-lumaSubtext sm:text-sm">{patron.modusOperandi}</p>
-
-                <div className="rounded-2xl bg-slate-50 p-3.5 text-xs text-slate-700 space-y-1">
-                  <span className="font-bold text-lumaText">Entidades o identidades que imitan: </span>
-                  <p className="text-slate-600">{patron.entidadesImitadas.join(", ")}</p>
+                <h3 className="text-lg sm:text-xl font-bold text-lumaText">{patron.nombre}</h3>
+                
+                {/* Resumen rápido para lectura ágil (TL;DR) */}
+                <div className="rounded-2xl border border-amber-200 bg-amber-50/70 p-3.5 text-xs text-amber-900 space-y-1">
+                  <div className="flex items-center gap-1.5 font-bold text-amber-950">
+                    <span>⚡ Resumen en 15 segundos:</span>
+                  </div>
+                  <p className="leading-relaxed font-medium">{patron.resumenCorto}</p>
                 </div>
+
+                {/* Acordeón para profundizar sin fatigar visualmente */}
+                <details className="group cursor-pointer rounded-2xl border border-slate-200 bg-slate-50/60 p-3.5 text-xs transition open:bg-white open:shadow-xs">
+                  <summary className="font-bold text-slate-700 flex items-center justify-between select-none list-none">
+                    <span className="flex items-center gap-1.5">
+                      <span>🔍 Ver modus operandi completo y entidades imitadas</span>
+                    </span>
+                    <span className="text-slate-400 group-open:rotate-180 transition-transform duration-200 text-sm">
+                      ▼
+                    </span>
+                  </summary>
+                  
+                  <div className="pt-3 space-y-2.5 border-t border-slate-200/80 mt-2.5">
+                    <p className="leading-relaxed text-slate-600 sm:text-xs">
+                      {patron.modusOperandi}
+                    </p>
+                    <div className="rounded-xl bg-slate-100 p-2.5 text-slate-700 space-y-0.5">
+                      <span className="font-bold text-slate-800 text-[11px]">Entidades o identidades que imitan: </span>
+                      <p className="text-slate-600 text-[11px]">{patron.entidadesImitadas.join(", ")}</p>
+                    </div>
+                  </div>
+                </details>
               </div>
 
-              <div className="rounded-2xl border border-blue-200 bg-lumaBlueSoft/60 p-4 text-xs font-medium text-lumaText">
-                <span className="font-bold text-lumaBlue">🛡️ Protocolo de Acción Luma: </span>
-                <span>{patron.accionPreventiva}</span>
+              {/* Protocolo de Acción Destacado */}
+              <div className="rounded-2xl border border-blue-200 bg-lumaBlueSoft/70 p-4 text-xs font-medium text-lumaText shadow-xs">
+                <span className="font-bold text-lumaBlue block mb-1">🛡️ Protocolo de Acción Inmediato:</span>
+                <span className="leading-relaxed text-slate-700">{patron.accionPreventiva}</span>
               </div>
             </article>
           ))}

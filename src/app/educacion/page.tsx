@@ -130,15 +130,108 @@ const PERFILES = [
   },
 ];
 
+const MODALIDADES_CRITICAS = [
+  {
+    id: "falsa-transferencia",
+    categoria: "Transferencias y Billeteras Virtuales",
+    etiquetaCorta: "Transferencia por error",
+    badge: "Riesgo Patrimonial Directo",
+    titulo: "Dinero «por error» y pedido urgente de reintegro",
+    icono: "🔄",
+    situacion:
+      "Recibís una transferencia inesperada en tu cuenta o te contactan por WhatsApp desesperados diciendo: «Te transferí $120.000 por equivocación, por favor transferímelos urgente a este otro CBU o Alias porque tengo una emergencia familiar».",
+    trampaOculta:
+      "Puede tratarse de una triangulación: el estafador le vendió algo inexistente a un tercero y le pidió que te deposite a vos, o bien sacaron un crédito rápido a tu nombre. Si enviás dinero de tu bolsillo a ese alias desconocido, vos terminás perdiendo tus propios fondos o quedando involucrado en una maniobra fraudulenta.",
+    accionSegura:
+      "Nunca realices transferencias manuales a cuentas o alias provistos por chat. La única vía segura y legal para reintegrar dinero es utilizar la opción oficial «Devolver» dentro de la aplicación de tu propio banco o billetera virtual.",
+    detalleClave:
+      "El botón oficial «Devolver» anula la transacción por el canal oficial del Banco Central retornando los fondos exactamente a la cuenta de origen. Te protege legalmente y evita que pongas plata de tus ahorros.",
+  },
+  {
+    id: "falso-comprobante",
+    categoria: "Compraventas y Marketplace",
+    etiquetaCorta: "Falso Comprobante",
+    badge: "Muy Frecuente",
+    titulo: "Comprobante de pago trucho con «un cero de más»",
+    icono: "🧾",
+    situacion:
+      "Publicás un producto a la venta en internet. Un supuesto comprador te envía la foto o captura de un comprobante bancario, pero dice que se equivocó y te transfirió de más (ej: $1.000.000 en vez de $100.000). A los minutos te llama un falso «gerente bancario» para apurarte.",
+    trampaOculta:
+      "El comprobante fue editado con programas digitales o generado por apps falsas de transferencias. A tu cuenta no ingresó un solo peso. Toda la puesta en escena busca que entres en pánico y transfieras tus propios ahorros creyendo que estás «devolviendo la diferencia».",
+    accionSegura:
+      "El dinero solo existe si impactó efectivamente en el saldo disponible de tu propia aplicación bancaria. Las capturas de pantalla, fotos y correos electrónicos no tienen validez de acreditación.",
+    detalleClave:
+      "Si el saldo no figura acreditado en tus movimientos reales, no entregues el producto, no despaches nada por encomienda y cortá cualquier llamada de supuestos supervisores bancarios.",
+  },
+  {
+    id: "llamada-soporte-token",
+    categoria: "Seguridad Bancaria y Accesos",
+    etiquetaCorta: "Llamada de Banco y Token",
+    badge: "Ingeniería Social",
+    titulo: "Alerta de «compra sospechosa» y pedido de clave Token",
+    icono: "📞",
+    situacion:
+      "Te llaman con tono urgente de un número que parece oficial: «Detectamos un débito fraudulento en su cuenta por $450.000. Para cancelarlo ya mismo, le solicitamos que nos dicte el código de 6 números que acaba de recibir en su celular».",
+    trampaOculta:
+      "No existe ningún débito. El código que te están pidiendo es tu Clave Token de seguridad o el código de acceso para autorizar una transferencia inmediata o solicitar un préstamo preaprobado en tu nombre en ese preciso instante.",
+    accionSegura:
+      "Ningún banco, billetera virtual, tarjeta ni organismo oficial te pedirá jamás tu Clave Token, PIN de cajero ni contraseñas personales por teléfono.",
+    detalleClave:
+      "Ante una llamada alarmante sobre tus cuentas, no discutas ni entregues números: cortá inmediatamente y llamá vos al teléfono de atención que figura impreso en el reverso de tu tarjeta.",
+  },
+  {
+    id: "secuestro-whatsapp",
+    categoria: "Mensajería y Redes Sociales",
+    etiquetaCorta: "Secuestro de WhatsApp",
+    badge: "Suplantación de Identidad",
+    titulo: "Código de 6 dígitos recibido por SMS",
+    icono: "💬",
+    situacion:
+      "Un contacto agendado, una supuesta cuenta de salud (turnos médicos / vacunas) o una empresa de encomiendas te escribe por WhatsApp: «Te mandé un código de 6 números por SMS por error, ¿me lo podés reenviar que lo necesito?».",
+    trampaOculta:
+      "Alguien está intentando dar de alta tu número de WhatsApp en otro teléfono. El SMS que te llegó no es ningún turno: es el código oficial de verificación que WhatsApp te envía a vos para autenticar tu línea.",
+    accionSegura:
+      "Nunca le dictes ni reenvíes a nadie ningún código numérico que recibas por SMS, aunque te lo pida un familiar o un amigo (su cuenta puede estar comprometida).",
+    detalleClave:
+      "Activá hoy mismo la «Verificación en dos pasos» en WhatsApp (Ajustes > Cuenta > Verificación en dos pasos) e ingresá un PIN personal de 6 números. Esto blinda tu cuenta de manera permanente.",
+  },
+  {
+    id: "prestamos-magicos",
+    categoria: "Créditos y Finanzas Personales",
+    etiquetaCorta: "Falsos Préstamos y Adelantos",
+    badge: "Fraude Económico",
+    titulo: "Crédito aprobado al instante con «gastos previos de liberación»",
+    icono: "💸",
+    situacion:
+      "Te ofrecen por redes sociales un crédito rápido, con cuotas bajísimas y sin requisitos. Sin embargo, para transferirte el dinero te solicitan transferir previamente una suma por «seguro de caución», «sellado impositivo» o «gastos de carpeta».",
+    trampaOculta:
+      "No existe ningún préstamo. En cuanto transferís ese adelanto, los delincuentes desaparecen o inventan un nuevo gasto para sacarte más dinero.",
+    accionSegura:
+      "Las entidades financieras legítimas descuentan cualquier costo administrativo directamente del monto liquidado; jamás te exigirán transferir dinero antes para otorgarte un crédito.",
+    detalleClave:
+      "Antes de contratar o tramitar créditos con entidades dudosas, verificá que figuren registradas en el padrón oficial del Banco Central de la República Argentina (BCRA).",
+  },
+];
+
 export default function EducacionPage() {
   const [perfilActivo, setPerfilActivo] = useState(PERFILES[0].id);
   const [eleccionSimulador, setEleccionSimulador] = useState<number | null>(null);
+  const [modalidadIndex, setModalidadIndex] = useState(0);
 
   const perfil = PERFILES.find((p) => p.id === perfilActivo)!;
+  const modalidadActual = MODALIDADES_CRITICAS[modalidadIndex];
 
   const handleCambiarPerfil = (id: string) => {
     setPerfilActivo(id);
     setEleccionSimulador(null);
+  };
+
+  const handlePrevModalidad = () => {
+    setModalidadIndex((prev) => (prev === 0 ? MODALIDADES_CRITICAS.length - 1 : prev - 1));
+  };
+
+  const handleNextModalidad = () => {
+    setModalidadIndex((prev) => (prev === MODALIDADES_CRITICAS.length - 1 ? 0 : prev + 1));
   };
 
   return (
@@ -313,7 +406,155 @@ export default function EducacionPage() {
         </div>
       </section>
 
-      {/* 4. KITS COMUNITARIOS */}
+      {/* 4. CARRUSEL INTERACTIVO DE AUTODEFENSA Y MODALIDADES CRÍTICAS */}
+      <section className="space-y-6 rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-slate-50/50 to-blue-50/30 p-6 sm:p-10 shadow-sm">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-100 pb-6">
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50/80 px-3.5 py-1.5 text-xs font-bold text-lumaBlue shadow-sm">
+              <span>🛡️</span>
+              <span>Guías Clave de Autodefensa Ciudadana</span>
+            </div>
+            <h2 className="text-2xl font-black text-lumaText sm:text-3xl">
+              Carrusel de Modalidades Bancarias y Digitales
+            </h2>
+            <p className="max-w-2xl text-xs sm:text-sm text-lumaSubtext leading-relaxed">
+              Las maniobras y trampas más frecuentes explicadas en lenguaje simple. Aprendé cómo operan, qué persiguen en secreto y cuál es la acción segura para no comprometer tu dinero.
+            </p>
+          </div>
+
+          {/* Controles del Carrusel (Flechas y Contador) */}
+          <div className="flex items-center gap-3 self-start md:self-auto shrink-0">
+            <span className="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1.5 rounded-full border border-slate-200">
+              Modalidad {modalidadIndex + 1} de {MODALIDADES_CRITICAS.length}
+            </span>
+            <div className="flex items-center gap-1.5">
+              <button
+                type="button"
+                onClick={handlePrevModalidad}
+                aria-label="Modalidad anterior"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-300 bg-white text-slate-700 shadow-sm hover:bg-slate-50 active:scale-95 transition"
+              >
+                ←
+              </button>
+              <button
+                type="button"
+                onClick={handleNextModalidad}
+                aria-label="Siguiente modalidad"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-300 bg-white text-slate-700 shadow-sm hover:bg-slate-50 active:scale-95 transition"
+              >
+                →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Pestañas rápidas / Selector directo */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-2">
+          {MODALIDADES_CRITICAS.map((m, idx) => {
+            const activo = idx === modalidadIndex;
+            return (
+              <button
+                key={m.id}
+                type="button"
+                onClick={() => setModalidadIndex(idx)}
+                className={`whitespace-nowrap rounded-2xl px-3.5 py-2 text-xs font-bold transition shrink-0 border ${
+                  activo
+                    ? "border-lumaBlue bg-lumaBlue text-white shadow-sm"
+                    : "border-slate-200 bg-white text-slate-700 hover:border-blue-200 hover:bg-slate-50"
+                }`}
+              >
+                <span className="mr-1.5">{m.icono}</span>
+                {m.etiquetaCorta}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Tarjeta Detallada de la Modalidad Activa */}
+        <div className="relative rounded-3xl border border-blue-100 bg-white p-6 sm:p-8 shadow-sm">
+          {/* Header de la tarjeta */}
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-5">
+            <div className="flex items-center gap-3">
+              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 border border-blue-200 text-2xl shadow-sm">
+                {modalidadActual.icono}
+              </span>
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                  {modalidadActual.categoria}
+                </span>
+                <h3 className="text-lg sm:text-xl font-black text-lumaText">
+                  {modalidadActual.titulo}
+                </h3>
+              </div>
+            </div>
+            <span className="rounded-full bg-amber-100/80 px-3 py-1 text-xs font-bold text-amber-900 border border-amber-200/80">
+              ⚠️ {modalidadActual.badge}
+            </span>
+          </div>
+
+          {/* Contenido en dos columnas */}
+          <div className="grid gap-6 pt-6 md:grid-cols-2">
+            {/* Columna 1: La Situación y La Trampa Oculta */}
+            <div className="space-y-4">
+              <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-5 space-y-2">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
+                  <span>📢</span> ¿Cómo se presenta la situación?
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-800 leading-relaxed font-medium">
+                  {modalidadActual.situacion}
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-rose-200 bg-rose-50/50 p-5 space-y-2">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-rose-900 flex items-center gap-1.5">
+                  <span>🕵️</span> ¿Cuál es la trampa oculta?
+                </h4>
+                <p className="text-xs sm:text-sm text-rose-950 leading-relaxed">
+                  {modalidadActual.trampaOculta}
+                </p>
+              </div>
+            </div>
+
+            {/* Columna 2: Regla de Autodefensa y Detalle Clave */}
+            <div className="space-y-4">
+              <div className="rounded-2xl border-2 border-emerald-400/80 bg-emerald-50/60 p-5 space-y-2.5 shadow-sm">
+                <h4 className="text-xs font-extrabold uppercase tracking-wider text-emerald-900 flex items-center gap-1.5">
+                  <span>🛡️</span> Escudo Luma: Acción Segura Obligatoria
+                </h4>
+                <p className="text-xs sm:text-sm font-bold text-emerald-950 leading-relaxed">
+                  {modalidadActual.accionSegura}
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-blue-200 bg-blue-50/50 p-5 space-y-2">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-lumaBlue flex items-center gap-1.5">
+                  <span>💡</span> Detalle clave para no equivocarte
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                  {modalidadActual.detalleClave}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Indicadores de bolitas (Dots) */}
+          <div className="mt-8 flex items-center justify-center gap-2 pt-2 border-t border-slate-100">
+            {MODALIDADES_CRITICAS.map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => setModalidadIndex(idx)}
+                aria-label={`Ir a modalidad ${idx + 1}`}
+                className={`h-2.5 rounded-full transition-all ${
+                  idx === modalidadIndex ? "w-8 bg-lumaBlue" : "w-2.5 bg-slate-300 hover:bg-slate-400"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. KITS COMUNITARIOS */}
       <section className="space-y-4 rounded-3xl bg-slate-950 p-8 sm:p-10 text-white">
         <h2 className="text-2xl font-bold">Materiales Comunitarios Gratuitos</h2>
         <p className="max-w-2xl text-xs sm:text-sm text-slate-300">

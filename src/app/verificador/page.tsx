@@ -210,19 +210,6 @@ export default function VerificadorPage() {
         </div>
       </aside>
 
-      {/* 2.1 CONSEJO DE SEGURIDAD ANTE TRANSFERENCIAS */}
-      <aside className="rounded-2xl border border-amber-200 bg-amber-50/70 p-4 text-xs text-amber-950 flex flex-col sm:flex-row items-start gap-3 shadow-sm">
-        <span className="text-xl shrink-0">💡</span>
-        <div className="space-y-1">
-          <p className="font-bold text-amber-900">
-            Consejo importante ante transferencias o dinero inesperado:
-          </p>
-          <p className="leading-relaxed text-amber-900/90">
-            Si recibiste una transferencia por error, la única vía segura y legal para reintegrarla es utilizar la opción oficial <strong>&quot;Devolver&quot;</strong> dentro de la aplicación de tu propio banco o billetera virtual. Nunca hagas transferencias manuales a cuentas o alias provistos por chat para evitar maniobras de triangulación o compromisos patrimoniales.
-          </p>
-        </div>
-      </aside>
-
       {/* 2.2 GARANTÍA DE PRIVACIDAD LEY 25.326 */}
       <aside className="rounded-2xl border border-blue-200/80 bg-lumaBlueSoft/60 p-5 text-xs text-lumaText sm:text-sm flex flex-col sm:flex-row items-start sm:items-center gap-4">
         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white border border-blue-100 shadow-sm p-1.5">

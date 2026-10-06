@@ -66,13 +66,15 @@ export default function CitizenNavigation() {
 
         {/* CTA BUTTONS & MOBILE TOGGLE */}
         <div className="flex items-center gap-2">
-          <Link
-            href="/#descarga"
-            className="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2 text-xs font-bold text-slate-700 hover:border-blue-400 hover:text-lumaBlue hover:bg-white transition"
+          <a
+            href="https://t.me/LumaProtectArgBot"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:inline-flex items-center gap-2 rounded-xl border border-emerald-500/40 bg-emerald-50 px-3.5 py-2 text-xs font-bold text-emerald-800 hover:border-emerald-600 hover:text-white hover:bg-emerald-600 transition"
           >
-            <span>🛡️</span>
-            <span>Google Play (Pronto)</span>
-          </Link>
+            <span>💬</span>
+            <span>Consultar Bot</span>
+          </a>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

@@ -38,17 +38,25 @@ export default function LumaProtectHomePage() {
 
               <p className="text-sm leading-relaxed text-slate-300 sm:text-base">
                 Una iniciativa independiente de investigación aplicada y desarrollo tecnológico impulsada por <strong>estudiantes universitarios de la Licenciatura en Ciberseguridad de la Universidad Nacional Raúl Scalabrini Ortiz (UNSO)</strong> en preparación de su trabajo de grado. <em>Este proyecto es de carácter autónomo y no cuenta a la fecha con patrocinio, aval o representación institucional formal de la UNSO.</em>{" "}
-                Herramienta asistencial de análisis y verificación preventiva On-Device frente a <strong>intentos de extorsión, transferencias bancarias fraudulentas, vinculación no autorizada de WhatsApp y engaños telefónicos</strong> mediante correlación de contexto e inspección heurística.
-                Tecnología procesada localmente en tu teléfono (privacidad estricta Zero-PII), sin publicidad, sin costo y sin enviar tus notificaciones, mensajes ni datos personales a ningún servidor.
+                Ecosistema de asistencia cívica frente a <strong>estafas por WhatsApp, ingeniería social coercitiva, vaciamiento de cuentas y enlaces maliciosos</strong>. Operamos mediante un <strong>Bot Asistente en WhatsApp con Inteligencia Artificial</strong>, una <strong>Red de Contactos de Confianza (Guardian Network)</strong> y <strong>Bloqueo DNS de phishing</strong>, eliminando permisos invasivos en tu dispositivo y garantizando privacidad estricta (Ley 25.326 Zero-PII).
               </p>
 
               {/* Botones de Acción */}
               <div className="flex flex-col items-center gap-3 pt-2 sm:flex-row sm:justify-start">
+                <a
+                  href="https://t.me/LumaProtectArgBot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full rounded-2xl bg-emerald-600 px-8 py-4 text-center text-base font-extrabold text-white shadow-lg shadow-emerald-600/30 hover:bg-emerald-500 transition sm:w-auto flex items-center justify-center gap-2"
+                >
+                  <span>💬</span>
+                  <span>Consultar Bot Asistente</span>
+                </a>
                 <Link
                   href="/verificador"
                   className="w-full rounded-2xl bg-lumaBlue px-8 py-4 text-center text-base font-extrabold text-white shadow-lg shadow-lumaBlue/30 hover:bg-blue-600 transition sm:w-auto"
                 >
-                  🔍 Probar Verificador Gratuito
+                  🔍 Verificador Web Gratuito
                 </Link>
                 <Link
                   href="/radar"
@@ -59,11 +67,11 @@ export default function LumaProtectHomePage() {
               </div>
 
               <div className="flex items-center justify-center gap-4 pt-2 text-xs text-slate-400 lg:justify-start">
-                <span>🔒 Cero almacenamiento de datos</span>
+                <span>🔒 Cero almacenamiento de conversaciones</span>
                 <span>·</span>
                 <span>Ley 25.326 Zero-PII</span>
                 <span>·</span>
-                <span>100% Gratuito y Libre</span>
+                <span>100% Gratuito y Comunitario</span>
               </div>
             </div>
 
@@ -423,53 +431,121 @@ export default function LumaProtectHomePage() {
         </div>
       </section>
 
-      {/* 6. CÓMO PROTEGE Y SALVAGUARDA DE INFORMACIÓN CRÍTICA */}
-      <section className="rounded-3xl border border-slate-800 bg-slate-950 p-8 text-white sm:p-12 space-y-8">
+      {/* 6. QUÉ Y CÓMO PROTEGE LUMA PROTECT (ARQUITECTURA VIABLE Y REAL) */}
+      <section className="rounded-3xl border border-slate-800 bg-slate-950 p-8 text-white sm:p-12 space-y-10 shadow-xl">
         <div className="max-w-3xl space-y-3">
-          <span className="rounded-full bg-blue-500/20 px-3.5 py-1.5 text-xs font-bold text-blue-300">
-            Arquitectura de Defensa y Seguridad
+          <span className="rounded-full bg-blue-500/20 px-3.5 py-1.5 text-xs font-bold text-blue-300 border border-blue-400/30">
+            Arquitectura de Protección Real · Sin Permisos Invasivos
           </span>
-          <h2 className="text-3xl font-extrabold sm:text-4xl">
-            Cómo funciona el motor de protección de Luma
+          <h2 className="text-3xl font-extrabold sm:text-4xl text-white">
+            ¿Qué es Luma Protect y cómo te defiende?
           </h2>
           <p className="text-sm text-slate-300 leading-relaxed sm:text-base">
-            El motor de Luma Protect opera mediante un analizador heurístico y ontológico determinístico directamente en el procesador de tu móvil. Actúa en tres ejes preventivos clave:
+            Ante la inviabilidad operativa de los antivirus tradicionales (que consumen batería, exigen permisos invasivos y generan falsos positivos), Luma Protect opera mediante un enfoque no intrusivo centrado en la persona y su entorno de confianza:
           </p>
         </div>
 
+        {/* MATRIZ QUÉ PROTEGE VS CÓMO PROTEGE */}
+        <div className="grid gap-6 md:grid-cols-2">
+          {/* QUÉ PROTEGE */}
+          <div className="rounded-2xl border border-blue-900/60 bg-blue-950/40 p-6 space-y-5">
+            <div className="flex items-center gap-3">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600/30 text-xl font-bold text-blue-300">
+                🛡️
+              </span>
+              <h3 className="text-xl font-bold text-white">¿Qué amenazas neutraliza?</h3>
+            </div>
+            <ul className="space-y-3 text-xs sm:text-sm text-slate-300">
+              <li className="flex items-start gap-2.5">
+                <span className="text-emerald-400 font-bold">✓</span>
+                <span><strong>Estafas por WhatsApp y Mensajería:</strong> Engaños de falsa urgencia, ofertas laborales fraudulentas y pedidos imprevistos de dinero.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="text-emerald-400 font-bold">✓</span>
+                <span><strong>Robo de Códigos de Verificación (OTP):</strong> Intentos de apoderamiento de cuentas bancarias y WhatsApp mediante solicitudes engañosas de códigos de 6 dígitos.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="text-emerald-400 font-bold">✓</span>
+                <span><strong>Suplantación de Identidad Familiar:</strong> Mensajes de &quot;Hola ma/pa, cambié de número&quot; que buscan forzar transferencias antes de que puedas verificar.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="text-emerald-400 font-bold">✓</span>
+                <span><strong>Enlaces Maliciosos y Phishing Bancario:</strong> Sitios clonados que imitan bancos, billeteras virtuales y organismos públicos (ANSES, Correo, AFIP/ARCA).</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="text-emerald-400 font-bold">✓</span>
+                <span><strong>Falsas Transferencias y Mulas Financieras:</strong> Maniobras de supuestos pagos en exceso donde te exigen devolver dinero a cuentas de terceros.</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* CÓMO PROTEGE */}
+          <div className="rounded-2xl border border-emerald-900/60 bg-emerald-950/30 p-6 space-y-5">
+            <div className="flex items-center gap-3">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-600/30 text-xl font-bold text-emerald-300">
+                ⚙️
+              </span>
+              <h3 className="text-xl font-bold text-white">¿Cómo funciona la protección?</h3>
+            </div>
+            <ul className="space-y-3 text-xs sm:text-sm text-slate-300">
+              <li className="flex items-start gap-2.5">
+                <span className="text-blue-400 font-bold">1.</span>
+                <span><strong>Bot Asistente en WhatsApp con IA:</strong> Reenviás el mensaje o enlace sospechoso directamente al bot y recibís un veredicto semántico instantáneo y claro en segundos.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="text-blue-400 font-bold">2.</span>
+                <span><strong>Red de Guardianes (Contactos de Confianza):</strong> Ante sospechas fundadas, el sistema alerta en paralelo a los familiares designados para actuar a tiempo y contener al ser querido.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="text-blue-400 font-bold">3.</span>
+                <span><strong>Bloqueo DNS & Verificador Web:</strong> Filtrado a nivel de red que impide cargar páginas fraudulentas y portal abierto para evaluar textos dudosos sin instalar nada.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="text-blue-400 font-bold">4.</span>
+                <span><strong>Fricción Positiva:</strong> Pausas pedagógicas y recordatorios concretos (&quot;Llamá a su número de siempre antes de transferir&quot;) que desarman la urgencia psicológica inducida.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="text-blue-400 font-bold">5.</span>
+                <span><strong>Preservación Pericial con Hash SHA-256:</strong> Estructuración automática de la evidencia para facilitar la denuncia formal inmediata ante la UFECI o comisarías.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* 3 PILARES TÉCNICOS */}
         <div className="grid gap-6 sm:grid-cols-3">
-          <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
-            <span className="text-2xl">🧠</span>
-            <h4 className="font-bold text-white text-base">Evaluación Heurística On-Device</h4>
+          <div className="space-y-2.5 rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+            <span className="text-3xl">💬</span>
+            <h4 className="font-bold text-white text-base">Bot en WhatsApp</h4>
             <p className="text-xs leading-relaxed text-slate-400">
-              Inspecciona el texto de SMS y notificaciones en busca de vectores de manipulación (urgencia, coerción, solicitud de extracción o códigos OTP), normalizando caracteres engañosos (*leetspeak*).
+              Análisis semántico con modelos de lenguaje. Cero fricción: no requiere instalar aplicaciones invasivas ni habilitar permisos de accesibilidad o superposición en Android.
             </p>
           </div>
 
-          <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
-            <span className="text-2xl">📞</span>
-            <h4 className="font-bold text-white text-base">Asistencia y Contención Telefónica</h4>
+          <div className="space-y-2.5 rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+            <span className="text-3xl">👥</span>
+            <h4 className="font-bold text-white text-base">Guardian Network</h4>
             <p className="text-xs leading-relaxed text-slate-400">
-              Detecta el estado de llamada o eventos VoIP para desplegar una guía visual rápida de contención, pausas reflexivas y acceso en un toque a la persona de confianza (sin interceptar ni grabar audio).
+              La seguridad comunitaria como primer anillo defensivo: si un adulto mayor recibe un mensaje de extorsión, sus hijos o allegados son notificados de inmediato para intervenir.
             </p>
           </div>
 
-          <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
-            <span className="text-2xl">🔗</span>
-            <h4 className="font-bold text-white text-base">Análisis Forense de Enlaces y QR</h4>
+          <div className="space-y-2.5 rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+            <span className="text-3xl">🌐</span>
+            <h4 className="font-bold text-white text-base">Protección DNS & Web</h4>
             <p className="text-xs leading-relaxed text-slate-400">
-              Evalúa dominios sospechosos mediante entropía de Shannon, distancia Levenshtein y detección de suplantación compuesta (*brand spoofing*) antes de que ingreses a sitios clonados.
+              Bloqueo preventivo de dominios de phishing y herramientas públicas de acceso libre para auditar enlaces y números sospechosos con total privacidad Zero-PII.
             </p>
           </div>
         </div>
 
-        {/* Declaración de Contrainteligencia / Salvaguarda */}
+        {/* Declaración de Privacidad y Delimitación */}
         <aside className="rounded-2xl border border-blue-500/30 bg-blue-950/40 p-5 text-xs text-blue-200 space-y-1.5">
           <p className="font-bold text-blue-100 flex items-center gap-2">
-            🛡️ Salvaguarda de Seguridad Operacional y Anti-Evasión:
+            🔒 Compromiso de Privacidad Absoluta (Ley 25.326 Zero-PII):
           </p>
           <p className="leading-relaxed">
-            Por estrictas razones de seguridad ciudadana, las expresiones regulares exactas, ponderaciones algorítmicas internas y firmas completas del paquete LKP permanecen <strong>protegidas y encapsuladas</strong> dentro del motor. Esto impide que organizaciones delictivas analicen los mecanismos de detección para diseñar tácticas de evasión o elusión técnica.
+            Luma Protect no almacena conversaciones privadas, números personales ni historiales de mensajes. El análisis se realiza de forma efímera para emitir el veredicto preventivo, respetando de manera irrestricta la intimidad familiar y el marco legal argentino.
           </p>
         </aside>
       </section>
@@ -754,56 +830,58 @@ export default function LumaProtectHomePage() {
         </div>
       </section>
 
-      {/* 10. PRÓXIMO LANZAMIENTO EN GOOGLE PLAY STORE */}
-      <section id="descarga" className="rounded-3xl border border-blue-200 bg-gradient-to-r from-lumaBlue to-[#0A47A3] p-8 text-white sm:p-12">
+      {/* 10. ACCESO INMEDIATO: BOT EN WHATSAPP Y RED DE GUARDIANES */}
+      <section id="descarga" className="rounded-3xl border border-blue-200 bg-gradient-to-r from-lumaBlue to-[#0A47A3] p-8 text-white sm:p-12 shadow-xl">
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
           <div className="space-y-4">
-            <span className="rounded-full bg-white/20 px-3.5 py-1.5 text-xs font-bold text-white">
-              🛡️ Próximamente en Google Play Store · Compilación Oficial Firmada
+            <span className="rounded-full bg-emerald-400/20 text-emerald-300 border border-emerald-400/40 px-3.5 py-1.5 text-xs font-bold inline-flex items-center gap-1.5">
+              <span>💬</span>
+              <span>Protección Inmediata · Sin Instalaciones Invasivas</span>
             </span>
             <h2 className="text-3xl font-extrabold sm:text-4xl">
-              Luma Protect en tu celular
+              Protegé a tu familia hoy mismo con Luma
             </h2>
             <p className="text-sm leading-relaxed text-blue-100 sm:text-base">
-              Por tu seguridad y la de tu familia, Luma Protect se distribuirá de forma oficial y directa a través de Google Play Store. No te pediremos descargar archivos APK externos ni habilitar &quot;fuentes desconocidas&quot; en tu dispositivo. Muy pronto disponible de forma libre y gratuita para toda la comunidad.
+              Olvidate de aplicaciones pesadas que consumen batería o exigen permisos peligrosos en tu teléfono. Podés usar nuestro <strong>Bot Asistente en WhatsApp con Inteligencia Artificial</strong> para verificar cualquier mensaje o enlace sospechoso en segundos, y activar la <strong>Red de Guardianes</strong> para cuidar a tus seres queridos.
             </p>
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <a
-                href="mailto:LumaProtect@proton.me?subject=Postulaci%C3%B3n%20Closed%20Testing%20Google%20Play"
-                className="inline-flex items-center gap-2 rounded-2xl bg-white px-6 py-3.5 text-sm font-extrabold text-lumaBlue shadow-lg hover:bg-slate-100 transition"
-              >
-                <span>🧪</span>
-                <span>Postularse a la Cohorte de Pruebas</span>
-              </a>
-              <a
-                href="https://t.me/LumaProtectArg"
+                href="https://t.me/LumaProtectArgBot"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-2xl bg-white px-6 py-3.5 text-sm font-extrabold text-lumaBlue shadow-lg hover:bg-slate-100 transition"
+              >
+                <span>💬</span>
+                <span>Iniciar Consulta con el Bot</span>
+              </a>
+              <Link
+                href="/verificador"
                 className="inline-flex items-center gap-2 rounded-2xl border border-white/30 bg-white/10 px-5 py-3.5 text-sm font-bold text-white hover:bg-white/20 transition"
               >
-                <span>📢</span>
-                <span>Avisarme del Lanzamiento</span>
-              </a>
+                <span>🔍</span>
+                <span>Probar Verificador Web</span>
+              </Link>
             </div>
           </div>
 
           <div className="rounded-2xl border border-white/20 bg-blue-950/40 p-6 space-y-4 text-xs text-blue-100 backdrop-blur-sm">
-            <p className="font-bold text-white text-sm">Garantías de la Compilación Oficial:</p>
+            <p className="font-bold text-white text-sm">¿Por qué este modelo es superior?</p>
             <ol className="list-decimal space-y-2.5 pl-4">
               <li>
-                <strong>Firma Criptográfica Oficial:</strong> Distribuida exclusivamente con validación de Google Play Protect, sin alterar configuraciones de seguridad del usuario.
+                <strong>Cero Falsos Positivos por Reglas Rígidas:</strong> La inteligencia artificial evalúa el contexto y la intención real de manipulación psicológica, sin alarmarte innecesariamente.
               </li>
               <li>
-                <strong>Privacidad Radical Zero-PII (Ley 25.326):</strong> Procesamiento local en el dispositivo. Tus llamadas y mensajes nunca se envían a servidores externos.
+                <strong>Privacidad Estricta (Ley 25.326 Zero-PII):</strong> Procesamiento seguro sin almacenar datos personales, nombres ni historiales de mensajes en servidores.
               </li>
               <li>
-                <strong>Validación Comunitaria:</strong> Evaluada en entornos de prueba cerrados con la participación voluntaria de estudiantes y colaboradores del ámbito académico antes de su apertura general.
+                <strong>Contención Humana Inmediata:</strong> Los contactos de confianza designados son alertados para intervenir a tiempo, evitando que la víctima actúe bajo engaño y soledad.
               </li>
             </ol>
-            <div className="pt-2 border-t border-white/10">
+            <div className="pt-2 border-t border-white/10 flex items-center justify-between">
               <Link href="/terminos" className="text-blue-200 underline font-semibold hover:text-white">
-                Conocé nuestros Términos de Uso y Privacidad →
+                Términos y Privacidad Zero-PII →
               </Link>
+              <span className="text-[11px] text-blue-300">Iniciativa Estudiantil UNSO</span>
             </div>
           </div>
         </div>

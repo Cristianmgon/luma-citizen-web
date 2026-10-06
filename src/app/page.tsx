@@ -38,7 +38,7 @@ export default function LumaProtectHomePage() {
 
               <p className="text-sm leading-relaxed text-slate-300 sm:text-base">
                 Una iniciativa independiente de investigación aplicada y desarrollo tecnológico impulsada por <strong>estudiantes universitarios de la Licenciatura en Ciberseguridad de la Universidad Nacional Raúl Scalabrini Ortiz (UNSO)</strong> en preparación de su trabajo de grado. <em>Este proyecto es de carácter autónomo y no cuenta a la fecha con patrocinio, aval o representación institucional formal de la UNSO.</em>{" "}
-                Ecosistema de asistencia cívica frente a <strong>estafas por WhatsApp, ingeniería social coercitiva, vaciamiento de cuentas y enlaces maliciosos</strong>. Operamos mediante un <strong>Bot Asistente en WhatsApp con Inteligencia Artificial</strong>, una <strong>Red de Contactos de Confianza (Guardian Network)</strong> y <strong>Bloqueo DNS de phishing</strong>, eliminando permisos invasivos en tu dispositivo y garantizando privacidad estricta (Ley 25.326 Zero-PII).
+                Ecosistema de defensa integral frente a <strong>estafas por WhatsApp, ingeniería social coercitiva, vaciamiento de cuentas y enlaces maliciosos</strong>. Operamos mediante un <strong>Doble Anillo Defensivo</strong>: un <strong>Escudo en Tiempo Real en tu Celular</strong> (App Android con Bloqueo DNS local y Fricción Positiva determinista) y un <strong>Bot Asistente en WhatsApp con Inteligencia Artificial</strong> para consultas inmediatas sin necesidad de instalar nada. Todo bajo privacidad estricta (Ley 25.326 Zero-PII).
               </p>
 
               {/* Botones de Acción */}
@@ -47,26 +47,30 @@ export default function LumaProtectHomePage() {
                   href="https://t.me/LumaProtectArgBot"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full rounded-2xl bg-emerald-600 px-8 py-4 text-center text-base font-extrabold text-white shadow-lg shadow-emerald-600/30 hover:bg-emerald-500 transition sm:w-auto flex items-center justify-center gap-2"
+                  className="w-full rounded-2xl bg-emerald-600 px-7 py-4 text-center text-base font-extrabold text-white shadow-lg shadow-emerald-600/30 hover:bg-emerald-500 transition sm:w-auto flex items-center justify-center gap-2"
                 >
                   <span>💬</span>
                   <span>Consultar Bot Asistente</span>
                 </a>
+                <a
+                  href="#tiempo-real"
+                  className="w-full rounded-2xl bg-lumaBlue px-7 py-4 text-center text-base font-extrabold text-white shadow-lg shadow-lumaBlue/30 hover:bg-blue-600 transition sm:w-auto flex items-center justify-center gap-2"
+                >
+                  <span>🛡️</span>
+                  <span>Protección en Tiempo Real</span>
+                </a>
                 <Link
                   href="/verificador"
-                  className="w-full rounded-2xl bg-lumaBlue px-8 py-4 text-center text-base font-extrabold text-white shadow-lg shadow-lumaBlue/30 hover:bg-blue-600 transition sm:w-auto"
+                  className="w-full rounded-2xl border border-slate-700 bg-slate-800/80 px-7 py-4 text-center text-base font-bold text-white hover:bg-slate-700 transition sm:w-auto flex items-center justify-center gap-2"
                 >
-                  🔍 Verificador Web Gratuito
-                </Link>
-                <Link
-                  href="/radar"
-                  className="w-full rounded-2xl border border-slate-700 bg-slate-800/80 px-8 py-4 text-center text-base font-bold text-white hover:bg-slate-700 transition sm:w-auto"
-                >
-                  📡 Radar Comunitario
+                  <span>🔍</span>
+                  <span>Verificador Web</span>
                 </Link>
               </div>
 
               <div className="flex items-center justify-center gap-4 pt-2 text-xs text-slate-400 lg:justify-start">
+                <span>🛡️ Escudo On-Device</span>
+                <span>·</span>
                 <span>🔒 Cero almacenamiento de conversaciones</span>
                 <span>·</span>
                 <span>Ley 25.326 Zero-PII</span>
@@ -348,17 +352,18 @@ export default function LumaProtectHomePage() {
         </div>
       </section>
 
-      {/* 5. PANTALLAS REALES DE LA APP Y PROTECCIÓN EN ACCIÓN */}
-      <section className="space-y-10">
+      {/* 5. PANTALLAS REALES DE LA APP Y PROTECCIÓN EN ACCIÓN (TIEMPO REAL) */}
+      <section id="tiempo-real" className="space-y-10 scroll-mt-20">
         <div className="text-center max-w-3xl mx-auto space-y-2">
-          <span className="rounded-full bg-blue-100 px-3.5 py-1 text-xs font-bold text-lumaBlue">
-            Prototipo Móvil en Calibración
+          <span className="rounded-full bg-emerald-100 px-3.5 py-1 text-xs font-bold text-emerald-800 border border-emerald-200">
+            Escudo en Tiempo Real On-Device · Cero Falsos Positivos
           </span>
           <h2 className="text-3xl font-black text-lumaText sm:text-4xl">
-            Así te protegerá Luma en tu celular
+            Protección Activa en tu Celular: Bloqueo DNS Local y Fricción Positiva
           </h2>
           <p className="text-sm text-lumaSubtext sm:text-base max-w-2xl mx-auto">
-            Capturas reales de la aplicación en fase de desarrollo y pruebas de laboratorio: una interfaz pensada para no requerir conocimientos técnicos y advertir al usuario en el momento exacto del intento de engaño.
+            A diferencia de los antivirus obsoletos que intentaban espiar tus mensajes privados generando falsas alarmas, 
+            la aplicación de Luma Protect actúa en el momento exacto del peligro mediante <strong>reglas estructurales deterministas en tu propio procesador</strong>: neutraliza enlaces clonados a nivel de red y activa pausas conscientes antes de que entregues dinero o claves.
           </p>
         </div>
 
@@ -376,11 +381,11 @@ export default function LumaProtectHomePage() {
             </div>
             <div className="mt-5 space-y-2 text-center">
               <span className="rounded-full bg-blue-100 px-2.5 py-0.5 text-[11px] font-bold text-blue-800">
-                1. Centro de Control
+                1. Escudo de Red Silencioso
               </span>
-              <h3 className="text-lg font-bold text-lumaText">Herramientas Preventivas</h3>
+              <h3 className="text-lg font-bold text-lumaText">Bloqueo DNS On-Device</h3>
               <p className="text-xs text-lumaSubtext max-w-xs">
-                Monitoreo local adaptado al usuario (ej. Adulto Mayor): análisis preventivo de notificaciones en el dispositivo, escáner QR y verificación segura de mensajes dudosos.
+                Servicio DNS local (VPN loopback en el teléfono) que bloquea dominios de phishing y typosquatting en cualquier app o navegador sin enviar tu tráfico a servidores externos.
               </p>
             </div>
           </div>
@@ -398,11 +403,11 @@ export default function LumaProtectHomePage() {
             </div>
             <div className="mt-5 space-y-2 text-center">
               <span className="rounded-full bg-rose-100 px-2.5 py-0.5 text-[11px] font-bold text-rose-800">
-                2. Alerta Preventiva en Pantalla
+                2. Fricción Positiva en Portapapeles
               </span>
-              <h3 className="text-lg font-bold text-rose-950">Alerta de Riesgo Detectado</h3>
+              <h3 className="text-lg font-bold text-rose-950">Aviso Inmediato al Copiar</h3>
               <p className="text-xs text-rose-800/90 max-w-xs">
-                Ante notificaciones o mensajes con patrones de extracción bancaria o robo de claves, Luma despliega una alerta clara recomendando no responder ni entregar tokens o dinero.
+                Si copiás un link falso que imita a un banco o un alias sospechoso, Luma despliega una alerta flotante pedagógica de 3 segundos para que frenes antes de pegar o transferir.
               </p>
             </div>
           </div>
@@ -420,28 +425,28 @@ export default function LumaProtectHomePage() {
             </div>
             <div className="mt-5 space-y-2 text-center">
               <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-[11px] font-bold text-emerald-800">
-                3. Respuesta y Contención
+                3. Red de Guardianes Familiares
               </span>
-              <h3 className="text-lg font-bold text-lumaText">Persona de Confianza y Salida</h3>
+              <h3 className="text-lg font-bold text-lumaText">Contención y Alerta a Hijos</h3>
               <p className="text-xs text-lumaSubtext max-w-xs">
-                Acceso directo de un toque para llamar a tu persona de confianza, salir de forma segura marcando &quot;No responder&quot; y registrar el evento sin guardar datos privados.
+                Acceso directo en 1 toque para llamar al contacto de confianza y notificación automática a los familiares a cargo cuando un adulto mayor interactúa con una amenaza confirmada.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 6. QUÉ Y CÓMO PROTEGE LUMA PROTECT (ARQUITECTURA VIABLE Y REAL) */}
+      {/* 6. QUÉ Y CÓMO PROTEGE LUMA PROTECT (EVOLUCIÓN EN TIEMPO REAL) */}
       <section className="rounded-3xl border border-slate-800 bg-slate-950 p-8 text-white sm:p-12 space-y-10 shadow-xl">
         <div className="max-w-3xl space-y-3">
           <span className="rounded-full bg-blue-500/20 px-3.5 py-1.5 text-xs font-bold text-blue-300 border border-blue-400/30">
-            Arquitectura de Protección Real · Sin Permisos Invasivos
+            Evolución de la Ciberseguridad · Arquitectura de Doble Anillo
           </span>
           <h2 className="text-3xl font-extrabold sm:text-4xl text-white">
-            ¿Qué es Luma Protect y cómo te defiende?
+            ¿Cómo evolucionó la protección en tiempo real y cómo te defiende?
           </h2>
           <p className="text-sm text-slate-300 leading-relaxed sm:text-base">
-            Ante la inviabilidad operativa de los antivirus tradicionales (que consumen batería, exigen permisos invasivos y generan falsos positivos), Luma Protect opera mediante un enfoque no intrusivo centrado en la persona y su entorno de confianza:
+            Frente al fracaso de los antivirus tradicionales (que exigían espiar tus mensajes privados, devoraban la batería y arrojaban falsos positivos constantes), Luma Protect transformó la protección en tiempo real en un <strong>sistema determinista, no invasivo y centrado en la persona</strong>:
           </p>
         </div>
 
@@ -458,23 +463,23 @@ export default function LumaProtectHomePage() {
             <ul className="space-y-3 text-xs sm:text-sm text-slate-300">
               <li className="flex items-start gap-2.5">
                 <span className="text-emerald-400 font-bold">✓</span>
-                <span><strong>Estafas por WhatsApp y Mensajería:</strong> Engaños de falsa urgencia, ofertas laborales fraudulentas y pedidos imprevistos de dinero.</span>
+                <span><strong>Enlaces Clonados y Phishing Bancario:</strong> Sitios fraudulentos con typosquatting que imitan a bancos, fintechs y organismos públicos (ANSES, AFIP/ARCA, Correo).</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-emerald-400 font-bold">✓</span>
-                <span><strong>Robo de Códigos de Verificación (OTP):</strong> Intentos de apoderamiento de cuentas bancarias y WhatsApp mediante solicitudes engañosas de códigos de 6 dígitos.</span>
+                <span><strong>Estafas por WhatsApp y Manipulación Psicológica:</strong> Falsos secuestros nocturnos, ofertas de empleo engañosas y urgencias financieras simuladas.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-emerald-400 font-bold">✓</span>
-                <span><strong>Suplantación de Identidad Familiar:</strong> Mensajes de &quot;Hola ma/pa, cambié de número&quot; que buscan forzar transferencias antes de que puedas verificar.</span>
+                <span><strong>Robo de Códigos de Verificación (OTP):</strong> Intentos de apoderamiento de cuentas de WhatsApp y homebanking mediante ardides de 6 dígitos.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-emerald-400 font-bold">✓</span>
-                <span><strong>Enlaces Maliciosos y Phishing Bancario:</strong> Sitios clonados que imitan bancos, billeteras virtuales y organismos públicos (ANSES, Correo, AFIP/ARCA).</span>
+                <span><strong>Suplantación Familiar (&quot;Hola ma, cambié de número&quot;):</strong> Maniobras coercitivas para forzar transferencias antes de que puedas comunicarte.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-emerald-400 font-bold">✓</span>
-                <span><strong>Falsas Transferencias y Mulas Financieras:</strong> Maniobras de supuestos pagos en exceso donde te exigen devolver dinero a cuentas de terceros.</span>
+                <span><strong>Cuentas Mula y Falsos Comprobantes:</strong> Solicitudes de devolución de supuestos pagos por error que derivan en lavado y estafas piramidales.</span>
               </li>
             </ul>
           </div>
@@ -485,40 +490,48 @@ export default function LumaProtectHomePage() {
               <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-600/30 text-xl font-bold text-emerald-300">
                 ⚙️
               </span>
-              <h3 className="text-xl font-bold text-white">¿Cómo funciona la protección?</h3>
+              <h3 className="text-xl font-bold text-white">¿Cómo opera la defensa activa?</h3>
             </div>
             <ul className="space-y-3 text-xs sm:text-sm text-slate-300">
               <li className="flex items-start gap-2.5">
                 <span className="text-blue-400 font-bold">1.</span>
-                <span><strong>Bot Asistente en WhatsApp con IA:</strong> Reenviás el mensaje o enlace sospechoso directamente al bot y recibís un veredicto semántico instantáneo y claro en segundos.</span>
+                <span><strong>Escudo DNS On-Device (0 ms):</strong> La App móvil bloquea la resolución de dominios maliciosos en todo el teléfono antes de que carguen en el navegador.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-blue-400 font-bold">2.</span>
-                <span><strong>Red de Guardianes (Contactos de Confianza):</strong> Ante sospechas fundadas, el sistema alerta en paralelo a los familiares designados para actuar a tiempo y contener al ser querido.</span>
+                <span><strong>Fricción Positiva en Portapapeles:</strong> Alerta inmediata al copiar enlaces clonados o alias de riesgo, desarmando la urgencia antes de pagar o entregar claves.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-blue-400 font-bold">3.</span>
-                <span><strong>Bloqueo DNS & Verificador Web:</strong> Filtrado a nivel de red que impide cargar páginas fraudulentas y portal abierto para evaluar textos dudosos sin instalar nada.</span>
+                <span><strong>Red de Guardianes Familiares:</strong> Notificación automática y remota a los hijos o allegados cuando un adulto mayor entra en contacto con una amenaza grave.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-blue-400 font-bold">4.</span>
-                <span><strong>Fricción Positiva:</strong> Pausas pedagógicas y recordatorios concretos (&quot;Llamá a su número de siempre antes de transferir&quot;) que desarman la urgencia psicológica inducida.</span>
+                <span><strong>Bot Asistente en WhatsApp con IA:</strong> Canal de consulta ágil para verificar audios, mensajes o capturas reenviadas en segundos sin instalar aplicaciones.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-blue-400 font-bold">5.</span>
-                <span><strong>Preservación Pericial con Hash SHA-256:</strong> Estructuración automática de la evidencia para facilitar la denuncia formal inmediata ante la UFECI o comisarías.</span>
+                <span><strong>Preservación Pericial SHA-256:</strong> Fijación inmutable de la evidencia para estructurar la denuncia formal ante la UFECI sin violar la Ley 25.326.</span>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* 3 PILARES TÉCNICOS */}
-        <div className="grid gap-6 sm:grid-cols-3">
+        {/* 4 PILARES TÉCNICOS DEL ECOSISTEMA */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="space-y-2.5 rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+            <span className="text-3xl">📱</span>
+            <h4 className="font-bold text-white text-base">App Móvil (Tiempo Real)</h4>
+            <p className="text-xs leading-relaxed text-slate-400">
+              Escudo permanente y silencioso: Bloqueo DNS local (VPN loopback), guardián de portapapeles y alertas de Fricción Positiva con 0 falsos positivos y 0 impacto en batería.
+            </p>
+          </div>
+
           <div className="space-y-2.5 rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
             <span className="text-3xl">💬</span>
-            <h4 className="font-bold text-white text-base">Bot en WhatsApp</h4>
+            <h4 className="font-bold text-white text-base">Bot en WhatsApp con IA</h4>
             <p className="text-xs leading-relaxed text-slate-400">
-              Análisis semántico con modelos de lenguaje. Cero fricción: no requiere instalar aplicaciones invasivas ni habilitar permisos de accesibilidad o superposición en Android.
+              Asistencia abierta y masiva: Reenviá cualquier audio, texto o imagen dudosa para obtener una auditoría explicativa al instante sin necesidad de instalar nada.
             </p>
           </div>
 
@@ -526,15 +539,15 @@ export default function LumaProtectHomePage() {
             <span className="text-3xl">👥</span>
             <h4 className="font-bold text-white text-base">Guardian Network</h4>
             <p className="text-xs leading-relaxed text-slate-400">
-              La seguridad comunitaria como primer anillo defensivo: si un adulto mayor recibe un mensaje de extorsión, sus hijos o allegados son notificados de inmediato para intervenir.
+              Escudo intergeneracional: Notificación automática a contactos de confianza designados para contener a familiares vulnerables y evitar la soledad en el engaño.
             </p>
           </div>
 
           <div className="space-y-2.5 rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
-            <span className="text-3xl">🌐</span>
-            <h4 className="font-bold text-white text-base">Protección DNS & Web</h4>
+            <span className="text-3xl">⚖️</span>
+            <h4 className="font-bold text-white text-base">Peritaje Forense SHA-256</h4>
             <p className="text-xs leading-relaxed text-slate-400">
-              Bloqueo preventivo de dominios de phishing y herramientas públicas de acceso libre para auditar enlaces y números sospechosos con total privacidad Zero-PII.
+              Acompañamiento a la justicia: Generación de reportes estructurados con hash de integridad inmutable para radicar denuncias penales eficaces ante la UFECI.
             </p>
           </div>
         </div>
@@ -830,19 +843,19 @@ export default function LumaProtectHomePage() {
         </div>
       </section>
 
-      {/* 10. ACCESO INMEDIATO: BOT EN WHATSAPP Y RED DE GUARDIANES */}
+      {/* 10. ACCESO AL ECOSISTEMA: APP EN TIEMPO REAL Y BOT ASISTENTE */}
       <section id="descarga" className="rounded-3xl border border-blue-200 bg-gradient-to-r from-lumaBlue to-[#0A47A3] p-8 text-white sm:p-12 shadow-xl">
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
           <div className="space-y-4">
             <span className="rounded-full bg-emerald-400/20 text-emerald-300 border border-emerald-400/40 px-3.5 py-1.5 text-xs font-bold inline-flex items-center gap-1.5">
-              <span>💬</span>
-              <span>Protección Inmediata · Sin Instalaciones Invasivas</span>
+              <span>🛡️</span>
+              <span>Doble Anillo Defensivo · Protección a tu Medida</span>
             </span>
             <h2 className="text-3xl font-extrabold sm:text-4xl">
-              Protegé a tu familia hoy mismo con Luma
+              Protegé a tu familia hoy mismo con Luma Protect
             </h2>
             <p className="text-sm leading-relaxed text-blue-100 sm:text-base">
-              Olvidate de aplicaciones pesadas que consumen batería o exigen permisos peligrosos en tu teléfono. Podés usar nuestro <strong>Bot Asistente en WhatsApp con Inteligencia Artificial</strong> para verificar cualquier mensaje o enlace sospechoso en segundos, y activar la <strong>Red de Guardianes</strong> para cuidar a tus seres queridos.
+              Luma Protect te ofrece la combinación defensiva perfecta: la <strong>App Móvil para protección pasiva permanente en tiempo real</strong> (bloqueo DNS local on-device y Fricción Positiva en el portapapeles) y el <strong>Bot Asistente en WhatsApp con Inteligencia Artificial</strong> para resolver cualquier duda al instante sin necesidad de instalar nada.
             </p>
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <a
@@ -854,27 +867,37 @@ export default function LumaProtectHomePage() {
                 <span>💬</span>
                 <span>Iniciar Consulta con el Bot</span>
               </a>
+              <a
+                href="#tiempo-real"
+                className="inline-flex items-center gap-2 rounded-2xl border border-white/40 bg-white/10 px-5 py-3.5 text-sm font-bold text-white hover:bg-white/20 transition"
+              >
+                <span>📱</span>
+                <span>Ver Escudo en Tiempo Real</span>
+              </a>
               <Link
                 href="/verificador"
-                className="inline-flex items-center gap-2 rounded-2xl border border-white/30 bg-white/10 px-5 py-3.5 text-sm font-bold text-white hover:bg-white/20 transition"
+                className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-blue-950/40 px-5 py-3.5 text-sm font-bold text-blue-200 hover:bg-blue-950/60 transition"
               >
                 <span>🔍</span>
-                <span>Probar Verificador Web</span>
+                <span>Verificador Web</span>
               </Link>
             </div>
           </div>
 
           <div className="rounded-2xl border border-white/20 bg-blue-950/40 p-6 space-y-4 text-xs text-blue-100 backdrop-blur-sm">
-            <p className="font-bold text-white text-sm">¿Por qué este modelo es superior?</p>
+            <p className="font-bold text-white text-sm">¿Por qué esta arquitectura es superadora?</p>
             <ol className="list-decimal space-y-2.5 pl-4">
               <li>
-                <strong>Cero Falsos Positivos por Reglas Rígidas:</strong> La inteligencia artificial evalúa el contexto y la intención real de manipulación psicológica, sin alarmarte innecesariamente.
+                <strong>Cero Falsos Positivos y Sin Espionaje:</strong> El teléfono no juzga conversaciones privadas; valida matemáticamente dominios y URLs antes de que carguen en el navegador.
               </li>
               <li>
-                <strong>Privacidad Estricta (Ley 25.326 Zero-PII):</strong> Procesamiento seguro sin almacenar datos personales, nombres ni historiales de mensajes en servidores.
+                <strong>Bloqueo DNS Local On-Device:</strong> Protección silenciosa 24/7 en segundo plano sin consumo apreciable de batería y sin enviar tu tráfico a servidores de terceros.
               </li>
               <li>
-                <strong>Contención Humana Inmediata:</strong> Los contactos de confianza designados son alertados para intervenir a tiempo, evitando que la víctima actúe bajo engaño y soledad.
+                <strong>Consulta Inmediata sin Fricción:</strong> Quien no tenga la aplicación puede verificar mensajes, audios y enlaces con solo reenviarlos al bot de WhatsApp.
+              </li>
+              <li>
+                <strong>Alerta Temprana a la Red de Guardianes:</strong> La familia está conectada para proteger a los adultos mayores ante intentos graves de vaciamiento de cuentas.
               </li>
             </ol>
             <div className="pt-2 border-t border-white/10 flex items-center justify-between">

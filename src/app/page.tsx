@@ -9,84 +9,84 @@ export const metadata = {
 
 export default function LumaProtectHomePage() {
   return (
-    <div className="space-y-20 py-4 sm:py-8">
+    <div className="space-y-16 sm:space-y-20 py-2 sm:py-6 w-full max-w-full overflow-hidden">
       {/* 1. HERO SECTION CON EL PERSONAJE ANIMADO Y COLORES OFICIALES */}
-      <section className="relative overflow-hidden rounded-3xl border border-blue-100 bg-gradient-to-br from-slate-950 via-[#0D254C] to-slate-900 px-6 py-16 text-white shadow-2xl sm:px-12 sm:py-20">
+      <section className="relative overflow-hidden rounded-3xl border border-blue-100 bg-gradient-to-br from-slate-950 via-[#0D254C] to-slate-900 px-4 py-10 text-white shadow-2xl sm:px-12 sm:py-20 w-full max-w-full">
         {/* Glow azul y esmeralda de fondo */}
-        <div className="pointer-events-none absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-lumaBlue/25 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-24 right-1/4 h-96 w-96 rounded-full bg-emerald-500/15 blur-3xl" />
+        <div className="pointer-events-none absolute -top-24 left-1/4 h-72 w-72 sm:h-96 sm:w-96 rounded-full bg-lumaBlue/25 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-24 right-1/4 h-72 w-72 sm:h-96 sm:w-96 rounded-full bg-emerald-500/15 blur-3xl" />
 
-        <div className="relative mx-auto max-w-6xl">
-          <div className="grid items-center gap-10 lg:grid-cols-12">
+        <div className="relative mx-auto max-w-6xl w-full">
+          <div className="grid items-center gap-8 lg:gap-10 lg:grid-cols-12">
             {/* Columna de Texto e Impacto */}
-            <div className="space-y-6 text-center lg:col-span-7 lg:text-left">
-              <div className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-950/60 px-4 py-1.5 text-xs font-bold text-blue-300 backdrop-blur-md">
+            <div className="space-y-5 sm:space-y-6 text-center lg:col-span-7 lg:text-left min-w-0">
+              <div className="inline-flex flex-wrap items-center justify-center lg:justify-start gap-1.5 sm:gap-2 rounded-2xl sm:rounded-full border border-blue-400/30 bg-blue-950/70 px-3.5 py-1.5 text-[11px] sm:text-xs font-bold text-blue-300 backdrop-blur-md max-w-full leading-relaxed">
                 <span>🛡️ Ciberseguridad Ciudadana</span>
-                <span>·</span>
+                <span className="hidden sm:inline">·</span>
                 <span>Investigación Estudiantil Independiente</span>
-                <span>·</span>
+                <span className="hidden sm:inline">·</span>
                 <span>Argentina & Latinoamérica</span>
               </div>
 
-              <h1 className="text-4xl font-black tracking-tight sm:text-6xl lg:text-7xl">
+              <h1 className="text-3xl font-black tracking-tight sm:text-6xl lg:text-7xl break-words">
                 Luma <span className="text-blue-400">Protect</span>
               </h1>
 
-              <p className="text-xl font-bold text-blue-200 sm:text-2xl">
+              <p className="text-lg font-bold text-blue-200 sm:text-2xl break-words">
                 La plataforma inteligente que protege personas, no solo dispositivos.
               </p>
 
-              <p className="text-sm leading-relaxed text-slate-300 sm:text-base">
+              <p className="text-xs sm:text-base leading-relaxed text-slate-300 break-words">
                 Una iniciativa independiente de investigación aplicada y desarrollo tecnológico impulsada por <strong>estudiantes universitarios de la Licenciatura en Ciberseguridad de la Universidad Nacional Raúl Scalabrini Ortiz (UNSO)</strong> en preparación de su trabajo de grado. <em>Este proyecto es de carácter autónomo y no cuenta a la fecha con patrocinio, aval o representación institucional formal de la UNSO.</em>{" "}
                 Ecosistema de defensa integral frente a <strong>estafas por WhatsApp, ingeniería social coercitiva, vaciamiento de cuentas y enlaces maliciosos</strong>. Operamos mediante un <strong>Doble Anillo Defensivo</strong>: un <strong>Escudo en Tiempo Real en tu Celular</strong> (App Android con Bloqueo DNS local y Fricción Positiva determinista) y un <strong>Bot Asistente en WhatsApp con Inteligencia Artificial</strong> para consultas inmediatas sin necesidad de instalar nada. Todo bajo privacidad estricta (Ley 25.326 Zero-PII).
               </p>
 
               {/* Botones de Acción */}
-              <div className="flex flex-col items-center gap-3 pt-2 sm:flex-row sm:justify-start">
+              <div className="flex flex-col items-stretch sm:items-center gap-2.5 sm:gap-3 pt-2 sm:flex-row sm:justify-start">
                 <a
                   href="https://t.me/LumaProtectArgBot"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full rounded-2xl bg-emerald-600 px-7 py-4 text-center text-base font-extrabold text-white shadow-lg shadow-emerald-600/30 hover:bg-emerald-500 transition sm:w-auto flex items-center justify-center gap-2"
+                  className="w-full rounded-2xl bg-emerald-600 px-6 py-3.5 text-center text-sm sm:text-base font-extrabold text-white shadow-lg shadow-emerald-600/30 hover:bg-emerald-500 transition sm:w-auto flex items-center justify-center gap-2"
                 >
                   <span>💬</span>
                   <span>Consultar Bot Asistente</span>
                 </a>
                 <a
                   href="#tiempo-real"
-                  className="w-full rounded-2xl bg-lumaBlue px-7 py-4 text-center text-base font-extrabold text-white shadow-lg shadow-lumaBlue/30 hover:bg-blue-600 transition sm:w-auto flex items-center justify-center gap-2"
+                  className="w-full rounded-2xl bg-lumaBlue px-6 py-3.5 text-center text-sm sm:text-base font-extrabold text-white shadow-lg shadow-lumaBlue/30 hover:bg-blue-600 transition sm:w-auto flex items-center justify-center gap-2"
                 >
                   <span>🛡️</span>
                   <span>Protección en Tiempo Real</span>
                 </a>
                 <Link
                   href="/verificador"
-                  className="w-full rounded-2xl border border-slate-700 bg-slate-800/80 px-7 py-4 text-center text-base font-bold text-white hover:bg-slate-700 transition sm:w-auto flex items-center justify-center gap-2"
+                  className="w-full rounded-2xl border border-slate-700 bg-slate-800/80 px-6 py-3.5 text-center text-sm sm:text-base font-bold text-white hover:bg-slate-700 transition sm:w-auto flex items-center justify-center gap-2"
                 >
                   <span>🔍</span>
                   <span>Verificador Web</span>
                 </Link>
               </div>
 
-              <div className="flex items-center justify-center gap-4 pt-2 text-xs text-slate-400 lg:justify-start">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 pt-2 text-[11px] sm:text-xs text-slate-400 lg:justify-start">
                 <span>🛡️ Escudo On-Device</span>
                 <span>·</span>
-                <span>🔒 Cero almacenamiento de conversaciones</span>
+                <span>🔒 Cero almacenamiento</span>
                 <span>·</span>
                 <span>Ley 25.326 Zero-PII</span>
                 <span>·</span>
-                <span>100% Gratuito y Comunitario</span>
+                <span>100% Gratuito</span>
               </div>
             </div>
 
             {/* Columna con el Personaje Animado Oficial */}
-            <div className="flex flex-col items-center justify-center lg:col-span-5">
-              <div className="relative flex items-center justify-center">
+            <div className="flex flex-col items-center justify-center lg:col-span-5 min-w-0">
+              <div className="relative flex items-center justify-center w-full max-w-[280px] sm:max-w-[340px]">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-lumaBlue/20 to-emerald-400/20 blur-2xl" />
                 <img
                   src="/images/luma_animada_transparente.webp"
                   alt="Luma - Personaje Guardián Protector"
-                  className="relative z-10 w-full max-w-[340px] drop-shadow-2xl transition hover:scale-105 duration-300"
+                  className="relative z-10 w-full h-auto drop-shadow-2xl transition hover:scale-105 duration-300"
                 />
               </div>
               <p className="mt-3 text-center text-xs font-semibold text-blue-300/80">
@@ -192,7 +192,7 @@ export default function LumaProtectHomePage() {
       </section>
 
       {/* 3. MANIFIESTO: PROTEGER PERSONAS, NO SOLO DISPOSITIVOS */}
-      <section className="mx-auto max-w-4xl space-y-6 rounded-3xl border border-blue-100 bg-gradient-to-br from-lumaBlueSoft/40 via-white to-slate-50 p-6 sm:p-10 shadow-sm">
+      <section className="mx-auto max-w-4xl space-y-6 rounded-3xl border border-blue-100 bg-gradient-to-br from-lumaBlueSoft/40 via-white to-slate-50 p-5 sm:p-10 shadow-sm overflow-hidden w-full max-w-full">
         <div className="flex items-center gap-3">
           <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-lumaBlue text-white font-black text-xl shadow-md shadow-lumaBlue/25">
             L
@@ -437,15 +437,15 @@ export default function LumaProtectHomePage() {
       </section>
 
       {/* 6. QUÉ Y CÓMO PROTEGE LUMA PROTECT (EVOLUCIÓN EN TIEMPO REAL) */}
-      <section className="rounded-3xl border border-slate-800 bg-slate-950 p-8 text-white sm:p-12 space-y-10 shadow-xl">
-        <div className="max-w-3xl space-y-3">
-          <span className="rounded-full bg-blue-500/20 px-3.5 py-1.5 text-xs font-bold text-blue-300 border border-blue-400/30">
+      <section className="rounded-3xl border border-slate-800 bg-slate-950 p-5 sm:p-12 text-white space-y-8 sm:space-y-10 shadow-xl overflow-hidden w-full max-w-full">
+        <div className="max-w-3xl space-y-3 min-w-0">
+          <span className="rounded-full bg-blue-500/20 px-3.5 py-1.5 text-xs font-bold text-blue-300 border border-blue-400/30 inline-flex flex-wrap max-w-full">
             Evolución de la Ciberseguridad · Arquitectura de Doble Anillo
           </span>
-          <h2 className="text-3xl font-extrabold sm:text-4xl text-white">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-white break-words">
             ¿Cómo evolucionó la protección en tiempo real y cómo te defiende?
           </h2>
-          <p className="text-sm text-slate-300 leading-relaxed sm:text-base">
+          <p className="text-xs sm:text-base text-slate-300 leading-relaxed break-words">
             Frente al fracaso de los antivirus tradicionales (que exigían espiar tus mensajes privados, devoraban la batería y arrojaban falsos positivos constantes), Luma Protect transformó la protección en tiempo real en un <strong>sistema determinista, no invasivo y centrado en la persona</strong>:
           </p>
         </div>
@@ -564,12 +564,12 @@ export default function LumaProtectHomePage() {
       </section>
 
       {/* 7. COMPROMISO HUMANO, FORMULARIO DE DENUNCIA Y ASISTENCIA FORENSE */}
-      <section className="space-y-12 rounded-3xl border border-blue-200 bg-gradient-to-b from-blue-50/50 via-white to-slate-50 p-6 sm:p-12 shadow-sm">
-        <div className="max-w-3xl space-y-3">
-          <span className="rounded-full bg-blue-100 px-3.5 py-1.5 text-xs font-bold text-lumaBlue border border-blue-200">
+      <section className="space-y-10 sm:space-y-12 rounded-3xl border border-blue-200 bg-gradient-to-b from-blue-50/50 via-white to-slate-50 p-5 sm:p-12 shadow-sm overflow-hidden w-full max-w-full">
+        <div className="max-w-3xl space-y-3 min-w-0">
+          <span className="rounded-full bg-blue-100 px-3.5 py-1.5 text-xs font-bold text-lumaBlue border border-blue-200 inline-flex flex-wrap max-w-full">
             Compromiso Social, Acompañamiento & Justicia
           </span>
-          <h2 className="text-3xl font-black text-lumaText sm:text-4xl">
+          <h2 className="text-2xl sm:text-4xl font-black text-lumaText break-words">
             No estás solo: Acompañamiento a la víctima y asistencia a la justicia
           </h2>
           <p className="text-sm leading-relaxed text-lumaSubtext sm:text-base">
@@ -662,7 +662,7 @@ export default function LumaProtectHomePage() {
               </span>
               <h4 className="text-xl font-bold text-white">¿Sufriste un fraude o intento de extorsión?</h4>
               <p className="text-xs text-slate-300 leading-relaxed sm:text-sm">
-                Podés radicar tu denuncia formal ante la <strong>Unidad Fiscal Especializada en Ciberdelincuencia (UFECI)</strong> enviando un correo a <code className="bg-slate-800 px-2 py-0.5 rounded text-blue-300 font-mono">denunciasufeci@mpf.gov.ar</code> o acudiendo a la comisaría o fiscalía más cercana con la información estructurada por Luma.
+                Podés radicar tu denuncia formal ante la <strong>Unidad Fiscal Especializada en Ciberdelincuencia (UFECI)</strong> enviando un correo a <code className="bg-slate-800 px-2 py-0.5 rounded text-blue-300 font-mono break-all inline-block max-w-full">denunciasufeci@mpf.gov.ar</code> o acudiendo a la comisaría o fiscalía más cercana con la información estructurada por Luma.
               </p>
             </div>
             <div className="md:col-span-4 flex flex-col sm:flex-row md:flex-col gap-2 justify-center">
@@ -844,39 +844,39 @@ export default function LumaProtectHomePage() {
       </section>
 
       {/* 10. ACCESO AL ECOSISTEMA: APP EN TIEMPO REAL Y BOT ASISTENTE */}
-      <section id="descarga" className="rounded-3xl border border-blue-200 bg-gradient-to-r from-lumaBlue to-[#0A47A3] p-8 text-white sm:p-12 shadow-xl">
+      <section id="descarga" className="rounded-3xl border border-blue-200 bg-gradient-to-r from-lumaBlue to-[#0A47A3] p-5 sm:p-10 text-white shadow-xl overflow-hidden w-full max-w-full">
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-          <div className="space-y-4">
-            <span className="rounded-full bg-emerald-400/20 text-emerald-300 border border-emerald-400/40 px-3.5 py-1.5 text-xs font-bold inline-flex items-center gap-1.5">
+          <div className="space-y-4 min-w-0">
+            <span className="rounded-full bg-emerald-400/20 text-emerald-300 border border-emerald-400/40 px-3.5 py-1.5 text-xs font-bold inline-flex items-center gap-1.5 max-w-full">
               <span>🛡️</span>
               <span>Doble Anillo Defensivo · Protección a tu Medida</span>
             </span>
-            <h2 className="text-3xl font-extrabold sm:text-4xl">
+            <h2 className="text-2xl sm:text-4xl font-extrabold break-words">
               Protegé a tu familia hoy mismo con Luma Protect
             </h2>
-            <p className="text-sm leading-relaxed text-blue-100 sm:text-base">
+            <p className="text-xs sm:text-base leading-relaxed text-blue-100 break-words">
               Luma Protect te ofrece la combinación defensiva perfecta: la <strong>App Móvil para protección pasiva permanente en tiempo real</strong> (bloqueo DNS local on-device y Fricción Positiva en el portapapeles) y el <strong>Bot Asistente en WhatsApp con Inteligencia Artificial</strong> para resolver cualquier duda al instante sin necesidad de instalar nada.
             </p>
-            <div className="pt-2 flex flex-wrap items-center gap-4">
+            <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3">
               <a
                 href="https://t.me/LumaProtectArgBot"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-2xl bg-white px-6 py-3.5 text-sm font-extrabold text-lumaBlue shadow-lg hover:bg-slate-100 transition"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white px-6 py-3.5 text-sm font-extrabold text-lumaBlue shadow-lg hover:bg-slate-100 transition"
               >
                 <span>💬</span>
                 <span>Iniciar Consulta con el Bot</span>
               </a>
               <a
                 href="#tiempo-real"
-                className="inline-flex items-center gap-2 rounded-2xl border border-white/40 bg-white/10 px-5 py-3.5 text-sm font-bold text-white hover:bg-white/20 transition"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/40 bg-white/10 px-5 py-3.5 text-sm font-bold text-white hover:bg-white/20 transition"
               >
                 <span>📱</span>
                 <span>Ver Escudo en Tiempo Real</span>
               </a>
               <Link
                 href="/verificador"
-                className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-blue-950/40 px-5 py-3.5 text-sm font-bold text-blue-200 hover:bg-blue-950/60 transition"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/20 bg-blue-950/40 px-5 py-3.5 text-sm font-bold text-blue-200 hover:bg-blue-950/60 transition"
               >
                 <span>🔍</span>
                 <span>Verificador Web</span>

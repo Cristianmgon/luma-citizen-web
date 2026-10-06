@@ -81,9 +81,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body className="min-h-screen flex flex-col bg-[#F7F9FC] text-[#102A43] antialiased selection:bg-blue-100 selection:text-lumaBlue">
+      <body className="min-h-screen flex flex-col bg-[#F7F9FC] text-[#102A43] antialiased selection:bg-blue-100 selection:text-lumaBlue w-full max-w-full overflow-x-hidden">
         <CitizenNavigation />
-        <main className="flex-1 mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 sm:py-10">
+        <main className="flex-1 mx-auto w-full max-w-6xl px-3 py-6 sm:px-6 sm:py-10 min-w-0 overflow-x-hidden">
           {children}
         </main>
       </body>

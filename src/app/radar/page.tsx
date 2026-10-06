@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PublicFooter from "@/components/public-footer";
+import LumaCuidadoraAvatar from "@/components/luma-cuidadora-avatar";
 
 export const metadata = {
   title: "Radar Comunitario · Luma Inteligencia Ciudadana",
@@ -117,10 +118,10 @@ export default function RadarPage() {
 
           <div className="flex flex-col items-center justify-center lg:col-span-4">
             <div className="relative mx-auto h-48 w-48 sm:h-56 sm:w-56 drop-shadow-md">
-              <img
-                src="/images/luma_animada_transparente.webp"
+              <LumaCuidadoraAvatar
                 alt="Luma Protegiendo a la Comunidad"
                 className="h-full w-full object-contain"
+                loopIntervalSeconds={16}
               />
             </div>
             <div className="mt-2 rounded-2xl border border-blue-200 bg-white p-3 text-center text-xs font-semibold text-lumaText shadow-sm max-w-xs">

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PublicFooter from "@/components/public-footer";
+import LumaCuidadoraAvatar from "@/components/luma-cuidadora-avatar";
 
 export const metadata = {
   title: "Luma Protect · Ciberseguridad Ciudadana e Investigación Estudiantil (UNSO)",
@@ -83,10 +84,10 @@ export default function LumaProtectHomePage() {
             <div className="flex flex-col items-center justify-center lg:col-span-5 min-w-0">
               <div className="relative flex items-center justify-center w-full max-w-[280px] sm:max-w-[340px]">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-lumaBlue/20 to-emerald-400/20 blur-2xl" />
-                <img
-                  src="/images/luma_animada_transparente.webp"
-                  alt="Luma - Personaje Guardián Protector"
+                <LumaCuidadoraAvatar
+                  alt="Luma Cuidadora - Personaje Guardián Protector"
                   className="relative z-10 w-full h-auto drop-shadow-2xl transition hover:scale-105 duration-300"
+                  loopIntervalSeconds={16}
                 />
               </div>
               <p className="mt-3 text-center text-xs font-semibold text-blue-300/80">

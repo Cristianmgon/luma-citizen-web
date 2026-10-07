@@ -33,9 +33,6 @@ export default function PublicFooter() {
           <Link href="/" className="hover:text-lumaBlue hover:underline">
             Inicio
           </Link>
-          <Link href="/descargar" className="font-bold text-emerald-700 hover:text-emerald-800 hover:underline">
-            Descargar APK
-          </Link>
           <Link href="/verificador" className="hover:text-lumaBlue hover:underline">
             Verificador Web
           </Link>

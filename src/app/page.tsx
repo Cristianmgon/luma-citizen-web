@@ -44,13 +44,6 @@ export default function LumaProtectHomePage() {
 
               {/* Botones de Acción */}
               <div className="flex flex-col items-stretch sm:items-center gap-2.5 sm:gap-3 pt-2 sm:flex-row sm:justify-start">
-                <Link
-                  href="/descargar"
-                  className="w-full rounded-2xl bg-emerald-500 hover:bg-emerald-400 px-6 py-3.5 text-center text-sm sm:text-base font-extrabold text-white shadow-lg shadow-emerald-500/25 transition sm:w-auto flex items-center justify-center gap-2"
-                >
-                  <span>📥</span>
-                  <span>Descargar APK (Android)</span>
-                </Link>
                 <a
                   href="https://t.me/LumaProtectArgBot"
                   target="_blank"
@@ -60,9 +53,16 @@ export default function LumaProtectHomePage() {
                   <span>🤖</span>
                   <span>Consultar Bot Asistente</span>
                 </a>
+                <a
+                  href="#tiempo-real"
+                  className="w-full rounded-2xl bg-lumaBlue px-6 py-3.5 text-center text-sm sm:text-base font-extrabold text-white shadow-lg shadow-lumaBlue/30 hover:bg-blue-600 transition sm:w-auto flex items-center justify-center gap-2"
+                >
+                  <span>🛡️</span>
+                  <span>Protección en Tiempo Real</span>
+                </a>
                 <Link
                   href="/verificador"
-                  className="w-full rounded-2xl bg-lumaBlue px-6 py-3.5 text-center text-sm sm:text-base font-extrabold text-white shadow-lg shadow-lumaBlue/30 hover:bg-blue-600 transition sm:w-auto flex items-center justify-center gap-2"
+                  className="w-full rounded-2xl border border-slate-700 bg-slate-800/80 px-6 py-3.5 text-center text-sm sm:text-base font-bold text-white hover:bg-slate-700 transition sm:w-auto flex items-center justify-center gap-2"
                 >
                   <span>🔍</span>
                   <span>Verificador Web</span>
@@ -859,21 +859,21 @@ export default function LumaProtectHomePage() {
               Luma Protect te ofrece la combinación defensiva perfecta: la <strong>App Móvil para protección pasiva permanente en tiempo real</strong> (bloqueo DNS local on-device y Fricción Positiva en el portapapeles) y el <strong>Bot Asistente en Telegram con Inteligencia Artificial</strong> (@LumaProtectArgBot) para resolver cualquier duda al instante sin necesidad de instalar nada.
             </p>
             <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3">
-              <Link
-                href="/descargar"
-                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-400 hover:bg-emerald-300 px-6 py-3.5 text-sm font-extrabold text-slate-950 shadow-lg shadow-emerald-400/20 transition"
-              >
-                <span>📥</span>
-                <span>Descargar APK (Android v0.4.5)</span>
-              </Link>
               <a
                 href="https://t.me/LumaProtectArgBot"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#229ED9] hover:bg-[#1b8ec5] px-5 py-3.5 text-sm font-extrabold text-white shadow-lg shadow-[#229ED9]/25 transition"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#229ED9] hover:bg-[#1b8ec5] px-6 py-3.5 text-sm font-extrabold text-white shadow-lg shadow-[#229ED9]/25 transition"
               >
                 <span>🤖</span>
                 <span>Consultar Bot Asistente</span>
+              </a>
+              <a
+                href="#tiempo-real"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/40 bg-white/10 px-5 py-3.5 text-sm font-bold text-white hover:bg-white/20 transition"
+              >
+                <span>📱</span>
+                <span>Ver Escudo en Tiempo Real</span>
               </a>
               <Link
                 href="/verificador"

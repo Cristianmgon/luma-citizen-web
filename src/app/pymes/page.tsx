@@ -585,14 +585,14 @@ export default function PymesCommercePage() {
 
                   <div>
                     <label className="block text-xs font-bold text-slate-700 mb-1">
-                      Contacto (WhatsApp / Email del titular o encargado)
+                      Contacto (Telegram / WhatsApp / Email del titular o encargado)
                     </label>
                     <input
                       type="text"
                       required
                       value={formContact}
                       onChange={(e) => setFormContact(e.target.value)}
-                      placeholder="Ej: 11 4928-2417 o contacto@negocio.com"
+                      placeholder="Ej: @usuario_telegram, 11 4928-2417 o contacto@negocio.com"
                       className="w-full rounded-xl border border-slate-200 px-3.5 py-2 text-xs focus:border-lumaBlue focus:outline-none focus:ring-1 focus:ring-lumaBlue"
                     />
                   </div>
@@ -636,7 +636,7 @@ export default function PymesCommercePage() {
                     ¡Solicitud enviada correctamente!
                   </h3>
                   <p className="text-xs sm:text-sm text-lumaSubtext max-w-md mx-auto">
-                    Gracias por confiar en el equipo de Luma Protect. Un consultor especializado se contactará por WhatsApp o email a <strong>{formContact}</strong> para coordinar el diagnóstico de tu local.
+                    Gracias por confiar en el equipo de Luma Protect. Un consultor especializado se contactará por Telegram, WhatsApp o email a <strong>{formContact}</strong> para coordinar el diagnóstico de tu local.
                   </p>
                   <div className="pt-2">
                     <a

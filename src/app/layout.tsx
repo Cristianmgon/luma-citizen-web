@@ -9,7 +9,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lumaprotect.app"),
+  metadataBase: new URL("https://lumaprotect.com.ar"),
   title: {
     default: "Luma Protect · Seguridad Ciudadana e Inteligencia Familiar",
     template: "%s | Luma Protect",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_AR",
-    url: "https://lumaprotect.app",
+    url: "https://lumaprotect.com.ar",
     title: "Luma Protect · Seguridad Ciudadana e Inteligencia Familiar",
     description:
       "Protección activa contra secuestros virtuales, estafas bancarias y hackeo de WhatsApp. Verificador web local e investigación ciudadana UNSO.",

@@ -123,7 +123,7 @@ export default function TerminosPage() {
             <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4 space-y-1.5">
               <h3 className="font-bold text-slate-900">3.3 Canales y Asistentes de Difusión Ciudadana</h3>
               <p>
-                Los canales oficiales de Telegram, TikTok y Facebook operan como medios de divulgación y alerta temprana. No se solicitan transferencias ni datos bancarios por ninguno de estos medios.
+                Los canales oficiales y el Bot Asistente en Telegram (@LumaProtectArgBot), así como las cuentas de TikTok y Facebook, operan exclusivamente como medios pedagógicos de divulgación, asistencia y alerta temprana. No se solicitan transferencias, contraseñas ni datos bancarios por ninguno de estos medios.
               </p>
             </div>
           </div>

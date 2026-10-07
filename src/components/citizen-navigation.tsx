@@ -66,14 +66,22 @@ export default function CitizenNavigation() {
 
         {/* CTA BUTTONS & MOBILE TOGGLE */}
         <div className="flex items-center gap-2">
+          <Link
+            href="/descargar"
+            className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 px-3.5 py-2 text-xs font-extrabold text-white shadow-xs transition"
+          >
+            <span>📥</span>
+            <span>Descargar APK</span>
+          </Link>
+
           <a
             href="https://t.me/LumaProtectArgBot"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-2 rounded-xl border border-emerald-500/40 bg-emerald-50 px-3.5 py-2 text-xs font-bold text-emerald-800 hover:border-emerald-600 hover:text-white hover:bg-emerald-600 transition"
+            className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-[#229ED9] hover:bg-[#1b8ec5] px-3.5 py-2 text-xs font-bold text-white shadow-xs transition"
           >
-            <span>💬</span>
-            <span>Consultar Bot</span>
+            <span>🤖</span>
+            <span>Consultar Bot Asistente</span>
           </a>
 
           <button
@@ -122,15 +130,25 @@ export default function CitizenNavigation() {
             })}
           </div>
 
-          <div className="pt-2">
+          <div className="pt-2 space-y-2">
             <Link
-              href="/#descarga"
+              href="/descargar"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex w-full items-center justify-center gap-2 rounded-xl border border-blue-200 bg-blue-50/70 px-4 py-3 text-center text-xs font-bold text-lumaBlue hover:bg-blue-100 transition"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 px-4 py-3 text-center text-xs font-black text-white shadow-sm transition"
             >
-              <span>🛡️</span>
-              <span>Próximamente en Google Play Store</span>
+              <span>📥</span>
+              <span>Descargar APK Android (v0.4.5)</span>
             </Link>
+            <a
+              href="https://t.me/LumaProtectArgBot"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#229ED9] hover:bg-[#1b8ec5] px-4 py-2.5 text-center text-xs font-bold text-white shadow-sm transition"
+            >
+              <span>🤖</span>
+              <span>Consultar Bot Asistente</span>
+            </a>
           </div>
         </div>
       )}

@@ -33,6 +33,9 @@ export default function PublicFooter() {
           <Link href="/" className="hover:text-lumaBlue hover:underline">
             Inicio
           </Link>
+          <Link href="/descargar" className="font-bold text-emerald-700 hover:text-emerald-800 hover:underline">
+            Descargar APK
+          </Link>
           <Link href="/verificador" className="hover:text-lumaBlue hover:underline">
             Verificador Web
           </Link>
@@ -49,12 +52,20 @@ export default function PublicFooter() {
             Términos y Privacidad
           </Link>
           <a
+            href="https://t.me/LumaProtectArgBot"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-sky-600 hover:underline flex items-center gap-1 font-semibold text-sky-700"
+          >
+            <span>🤖</span> Bot Telegram
+          </a>
+          <a
             href="https://t.me/LumaProtectArg"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-600 hover:underline flex items-center gap-1"
           >
-            <span>📢</span> Telegram
+            <span>📢</span> Canal Telegram
           </a>
           <a
             href="https://www.tiktok.com/@lumaprotect"

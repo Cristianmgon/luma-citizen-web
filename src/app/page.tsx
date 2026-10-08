@@ -39,7 +39,7 @@ export default function LumaProtectHomePage() {
 
               <p className="text-xs sm:text-base leading-relaxed text-slate-300 break-words">
                 Una iniciativa independiente de investigación aplicada y desarrollo tecnológico impulsada por <strong>estudiantes universitarios de la Licenciatura en Ciberseguridad de la Universidad Nacional Raúl Scalabrini Ortiz (UNSO)</strong> en preparación de su trabajo de grado. <em>Este proyecto es de carácter autónomo y no cuenta a la fecha con patrocinio, aval o representación institucional formal de la UNSO.</em>{" "}
-                Ecosistema de defensa integral frente a <strong>estafas por WhatsApp, ingeniería social coercitiva, vaciamiento de cuentas y enlaces maliciosos</strong>. Operamos mediante un <strong>Doble Anillo Defensivo</strong>: un <strong>Escudo en Tiempo Real en tu Celular</strong> (App Android con Bloqueo DNS local y Fricción Positiva determinista) y un <strong>Bot Asistente en Telegram con Inteligencia Artificial</strong> (@LumaProtectArgBot) para consultas inmediatas sin necesidad de instalar nada. Todo bajo privacidad estricta (Ley 25.326 Zero-PII).
+                Ecosistema de defensa integral frente a <strong>estafas por canales de mensajería, ingeniería social coercitiva, vaciamiento de cuentas y enlaces maliciosos</strong>. Operamos mediante un <strong>Doble Anillo Defensivo</strong>: un <strong>Escudo en Tiempo Real en tu Celular</strong> (App Android con Fricción Positiva contextual, análisis forense de enlaces/QR y Contacto de Confianza) y un <strong>Bot Asistente en Telegram con Inteligencia Artificial</strong> (@LumaProtectArgBot) para consultas inmediatas sin necesidad de instalar nada. Todo bajo privacidad estricta (Ley 25.326 Zero-PII).
               </p>
 
               {/* Botones de Acción */}
@@ -357,14 +357,14 @@ export default function LumaProtectHomePage() {
       <section id="tiempo-real" className="space-y-10 scroll-mt-20">
         <div className="text-center max-w-3xl mx-auto space-y-2">
           <span className="rounded-full bg-emerald-100 px-3.5 py-1 text-xs font-bold text-emerald-800 border border-emerald-200">
-            Escudo en Tiempo Real On-Device · Cero Falsos Positivos
+            Escudo en Tiempo Real On-Device
           </span>
           <h2 className="text-3xl font-black text-lumaText sm:text-4xl">
-            Protección Activa en tu Celular: Bloqueo DNS Local y Fricción Positiva
+            Protección Activa en tu Celular: Análisis Forense de Enlaces y Fricción Positiva
           </h2>
           <p className="text-sm text-lumaSubtext sm:text-base max-w-2xl mx-auto">
-            A diferencia de los antivirus obsoletos que intentaban espiar tus mensajes privados generando falsas alarmas, 
-            la aplicación de Luma Protect actúa en el momento exacto del peligro mediante <strong>reglas estructurales deterministas en tu propio procesador</strong>: neutraliza enlaces clonados a nivel de red y activa pausas conscientes antes de que entregues dinero o claves.
+            A diferencia de los antivirus obsoletos que intentaban espiar tus mensajes privados, 
+            la aplicación de Luma Protect actúa en el momento exacto del peligro mediante <strong>evaluación on-device en tu propio procesador</strong>: audita enlaces y códigos QR compartidos y activa pausas conscientes en pantalla antes de que entregues dinero o claves.
           </p>
         </div>
 
@@ -382,11 +382,11 @@ export default function LumaProtectHomePage() {
             </div>
             <div className="mt-5 space-y-2 text-center">
               <span className="rounded-full bg-blue-100 px-2.5 py-0.5 text-[11px] font-bold text-blue-800">
-                1. Escudo de Red Silencioso
+                1. Auditoría de Enlaces y QR
               </span>
-              <h3 className="text-lg font-bold text-lumaText">Bloqueo DNS On-Device</h3>
+              <h3 className="text-lg font-bold text-lumaText">Análisis Forense de Enlaces</h3>
               <p className="text-xs text-lumaSubtext max-w-xs">
-                Servicio DNS local (VPN loopback en el teléfono) que bloquea dominios de phishing y typosquatting en cualquier app o navegador sin enviar tu tráfico a servidores externos.
+                Inspección on-device de URLs y códigos QR compartidos: aísla subdominios fraudulentos (SECUSO eTLD+1), typosquatting bancario y entropía maliciosa sin enviar tus datos a la nube.
               </p>
             </div>
           </div>
@@ -404,11 +404,11 @@ export default function LumaProtectHomePage() {
             </div>
             <div className="mt-5 space-y-2 text-center">
               <span className="rounded-full bg-rose-100 px-2.5 py-0.5 text-[11px] font-bold text-rose-800">
-                2. Fricción Positiva en Portapapeles
+                2. Fricción Positiva Contextual
               </span>
-              <h3 className="text-lg font-bold text-rose-950">Aviso Inmediato al Copiar</h3>
+              <h3 className="text-lg font-bold text-rose-950">Alerta Inmediata en Pantalla</h3>
               <p className="text-xs text-rose-800/90 max-w-xs">
-                Si copiás un link falso que imita a un banco o un alias sospechoso, Luma despliega una alerta flotante pedagógica de 3 segundos para que frenes antes de pegar o transferir.
+                Ante notificaciones con maniobras de engaño o enlaces de riesgo, Luma despliega una interrupción visual prioritaria para frenar la urgencia y evitar que actúes bajo coerción.
               </p>
             </div>
           </div>
@@ -426,11 +426,11 @@ export default function LumaProtectHomePage() {
             </div>
             <div className="mt-5 space-y-2 text-center">
               <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-[11px] font-bold text-emerald-800">
-                3. Red de Guardianes Familiares
+                3. Contacto de Confianza
               </span>
-              <h3 className="text-lg font-bold text-lumaText">Contención y Alerta a Hijos</h3>
+              <h3 className="text-lg font-bold text-lumaText">Rescate Familiar a un Toque</h3>
               <p className="text-xs text-lumaSubtext max-w-xs">
-                Acceso directo en 1 toque para llamar al contacto de confianza y notificación automática a los familiares a cargo cuando un adulto mayor interactúa con una amenaza confirmada.
+                Botón directo en la pantalla de alerta para llamar de inmediato a tu hijo o familiar de confianza, rompiendo la soledad y la manipulación sin intermediarios ni violación de privacidad.
               </p>
             </div>
           </div>
@@ -447,7 +447,7 @@ export default function LumaProtectHomePage() {
             ¿Cómo evolucionó la protección en tiempo real y cómo te defiende?
           </h2>
           <p className="text-xs sm:text-base text-slate-300 leading-relaxed break-words">
-            Frente al fracaso de los antivirus tradicionales (que exigían espiar tus mensajes privados, devoraban la batería y arrojaban falsos positivos constantes), Luma Protect transformó la protección en tiempo real en un <strong>sistema determinista, no invasivo y centrado en la persona</strong>:
+            Frente a las soluciones tradicionales que exigían espiar tus mensajes privados o devoraban la batería, Luma Protect transformó la protección en tiempo real en un <strong>sistema determinista, no invasivo y centrado en la persona</strong>:
           </p>
         </div>
 
@@ -496,15 +496,15 @@ export default function LumaProtectHomePage() {
             <ul className="space-y-3 text-xs sm:text-sm text-slate-300">
               <li className="flex items-start gap-2.5">
                 <span className="text-blue-400 font-bold">1.</span>
-                <span><strong>Escudo DNS On-Device (0 ms):</strong> La App móvil bloquea la resolución de dominios maliciosos en todo el teléfono antes de que carguen en el navegador.</span>
+                <span><strong>Análisis Forense de Enlaces y QR:</strong> Evaluación on-device de URLs y códigos QR compartidos, aislando subdominios engañosos y suplantación de entidades bancarias.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-blue-400 font-bold">2.</span>
-                <span><strong>Fricción Positiva en Portapapeles:</strong> Alerta inmediata al copiar enlaces clonados o alias de riesgo, desarmando la urgencia antes de pagar o entregar claves.</span>
+                <span><strong>Fricción Positiva Contextual:</strong> Interrupción visual inmediata ante notificaciones de riesgo o llamadas sospechosas, desarmando la urgencia antes de pagar o entregar claves.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-blue-400 font-bold">3.</span>
-                <span><strong>Red de Guardianes Familiares:</strong> Notificación automática y remota a los hijos o allegados cuando un adulto mayor entra en contacto con una amenaza grave.</span>
+                <span><strong>Contacto de Confianza a un Toque:</strong> Conexión telefónica asistida y directa con familiares designados para contener a la persona y evitar la soledad en el engaño.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-blue-400 font-bold">4.</span>
@@ -524,7 +524,7 @@ export default function LumaProtectHomePage() {
             <span className="text-3xl">📱</span>
             <h4 className="font-bold text-white text-base">App Móvil (Tiempo Real)</h4>
             <p className="text-xs leading-relaxed text-slate-400">
-              Escudo permanente y silencioso: Bloqueo DNS local (VPN loopback), guardián de portapapeles y alertas de Fricción Positiva con 0 falsos positivos y 0 impacto en batería.
+              Escudo preventivo y silencioso: Fricción Positiva en notificaciones, análisis forense de enlaces/QR y correlación VoIP+OTP con 0 impacto en batería.
             </p>
           </div>
 
@@ -538,9 +538,9 @@ export default function LumaProtectHomePage() {
 
           <div className="space-y-2.5 rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
             <span className="text-3xl">👥</span>
-            <h4 className="font-bold text-white text-base">Guardian Network</h4>
+            <h4 className="font-bold text-white text-base">Contacto de Confianza</h4>
             <p className="text-xs leading-relaxed text-slate-400">
-              Escudo intergeneracional: Notificación automática a contactos de confianza designados para contener a familiares vulnerables y evitar la soledad en el engaño.
+              Escudo intergeneracional: Enlace telefónico asistido a familiares designados para contener a personas vulnerables y romper el aislamiento en el engaño.
             </p>
           </div>
 
@@ -856,7 +856,7 @@ export default function LumaProtectHomePage() {
               Protegé a tu familia hoy mismo con Luma Protect
             </h2>
             <p className="text-xs sm:text-base leading-relaxed text-blue-100 break-words">
-              Luma Protect te ofrece la combinación defensiva perfecta: la <strong>App Móvil para protección pasiva permanente en tiempo real</strong> (bloqueo DNS local on-device y Fricción Positiva en el portapapeles) y el <strong>Bot Asistente en Telegram con Inteligencia Artificial</strong> (@LumaProtectArgBot) para resolver cualquier duda al instante sin necesidad de instalar nada.
+              Luma Protect te ofrece la combinación defensiva perfecta: la <strong>App Móvil para protección pasiva permanente en tiempo real</strong> (Fricción Positiva en notificaciones, análisis forense de enlaces/QR y Contacto de Confianza) y el <strong>Bot Asistente en Telegram con Inteligencia Artificial</strong> (@LumaProtectArgBot) para resolver cualquier duda al instante sin necesidad de instalar nada.
             </p>
             <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3">
               <a
@@ -889,16 +889,16 @@ export default function LumaProtectHomePage() {
             <p className="font-bold text-white text-sm">¿Por qué esta arquitectura es superadora?</p>
             <ol className="list-decimal space-y-2.5 pl-4">
               <li>
-                <strong>Cero Falsos Positivos y Sin Espionaje:</strong> El teléfono no juzga conversaciones privadas; valida matemáticamente dominios y URLs antes de que carguen en el navegador.
+                <strong>Privacidad Absoluta Sin Espionaje:</strong> El teléfono no monitorea conversaciones privadas ni envía tus datos a servidores; evalúa patrones de coerción y metadatos de enlaces 100% on-device.
               </li>
               <li>
-                <strong>Bloqueo DNS Local On-Device:</strong> Protección silenciosa 24/7 en segundo plano sin consumo apreciable de batería y sin enviar tu tráfico a servidores de terceros.
+                <strong>Análisis Forense Local On-Device:</strong> Detección estructural de suplantación bancaria y códigos QR sin consumo apreciable de batería y sin intermediarios.
               </li>
               <li>
                 <strong>Consulta Inmediata sin Fricción:</strong> Quien no tenga la aplicación puede verificar mensajes, audios y enlaces con solo reenviarlos al bot de Telegram (@LumaProtectArgBot).
               </li>
               <li>
-                <strong>Alerta Temprana a la Red de Guardianes:</strong> La familia está conectada para proteger a los adultos mayores ante intentos graves de vaciamiento de cuentas.
+                <strong>Contención Humana con Contacto de Confianza:</strong> Acceso a un toque para consultar a familiares designados ante situaciones de presión o intento de vaciamiento de cuentas.
               </li>
             </ol>
             <div className="pt-2 border-t border-white/10 flex items-center justify-between">

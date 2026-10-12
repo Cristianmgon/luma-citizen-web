@@ -104,17 +104,17 @@ export default function LumaProtectHomePage() {
               </div>
             </div>
 
-            {/* Columna con el Personaje Animado Oficial */}
+            {/* Columna con el Personaje Animado Oficial (Agrandado 50%) */}
             <div className="flex flex-col items-center justify-center lg:col-span-5 min-w-0">
-              <div className="relative flex items-center justify-center w-full max-w-[280px] sm:max-w-[340px]">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-lumaBlue/20 to-emerald-400/20 blur-2xl" />
+              <div className="relative flex items-center justify-center w-full max-w-[420px] sm:max-w-[510px]">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-lumaBlue/25 to-emerald-400/25 blur-3xl scale-110" />
                 <LumaCuidadoraAvatar
                   alt="Luma Cuidadora - Personaje Guardián Protector"
                   className="relative z-10 w-full h-auto drop-shadow-2xl transition hover:scale-105 duration-300"
                   loopIntervalSeconds={16}
                 />
               </div>
-              <p className="mt-3 text-center text-xs font-semibold text-blue-300/80">
+              <p className="mt-3 text-center text-xs sm:text-sm font-semibold text-blue-300/80">
                 ✨ Luma Cuidadora · Asistencia empática para toda la familia
               </p>
             </div>

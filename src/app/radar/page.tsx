@@ -83,7 +83,7 @@ export default function RadarPage() {
       {/* 1. HERO Y MANIFIESTO CÍVICO CON LA MASCOTA */}
       <section className="relative overflow-hidden rounded-3xl border border-blue-100 bg-gradient-to-br from-lumaBlueSoft via-white to-blue-50/40 p-6 sm:p-10 shadow-sm">
         <div className="grid items-center gap-8 lg:grid-cols-12">
-          <div className="space-y-4 lg:col-span-8">
+          <div className="space-y-4 lg:col-span-7">
             <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/90 px-3.5 py-1.5 text-xs font-bold text-lumaBlue shadow-sm">
               <span className="flex h-2 w-2 rounded-full bg-lumaBlue animate-ping" />
               <span>Radar de Inteligencia Ciudadana</span>
@@ -116,15 +116,16 @@ export default function RadarPage() {
             </div>
           </div>
 
-          <div className="flex flex-col items-center justify-center lg:col-span-4">
-            <div className="relative mx-auto h-48 w-48 sm:h-56 sm:w-56 drop-shadow-md">
+          <div className="flex flex-col items-center justify-center lg:col-span-5">
+            <div className="relative mx-auto h-84 w-84 sm:h-96 sm:w-96 drop-shadow-xl flex items-center justify-center">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-lumaBlue/20 to-emerald-400/20 blur-3xl scale-110 pointer-events-none" />
               <LumaCuidadoraAvatar
                 alt="Luma Protegiendo a la Comunidad"
-                className="h-full w-full object-contain"
+                className="relative z-10 h-full w-full object-contain"
                 loopIntervalSeconds={16}
               />
             </div>
-            <div className="mt-2 rounded-2xl border border-blue-200 bg-white p-3 text-center text-xs font-semibold text-lumaText shadow-sm max-w-xs">
+            <div className="mt-4 rounded-2xl border border-blue-200 bg-white p-3 text-center text-xs sm:text-sm font-semibold text-lumaText shadow-sm max-w-sm">
               &ldquo;Visibilizar el problema es el primer paso para combatirlo juntos.&rdquo;
             </div>
           </div>

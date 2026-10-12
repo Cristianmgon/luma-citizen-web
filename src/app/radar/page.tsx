@@ -117,15 +117,15 @@ export default function RadarPage() {
           </div>
 
           <div className="flex flex-col items-center justify-center lg:col-span-5">
-            <div className="relative mx-auto h-84 w-84 sm:h-96 sm:w-96 drop-shadow-xl flex items-center justify-center">
+            <div className="relative mx-auto w-full max-w-[340px] sm:max-w-[400px] drop-shadow-xl flex items-center justify-center">
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-lumaBlue/20 to-emerald-400/20 blur-3xl scale-110 pointer-events-none" />
               <LumaCuidadoraAvatar
                 alt="Luma Protegiendo a la Comunidad"
-                className="relative z-10 h-full w-full object-contain"
+                className="relative z-10 w-full h-auto object-contain"
                 loopIntervalSeconds={16}
               />
             </div>
-            <div className="-mt-3 sm:-mt-5 relative z-20 rounded-2xl border border-blue-200 bg-white/95 backdrop-blur-xs px-4 py-2.5 text-center text-xs sm:text-sm font-semibold text-lumaText shadow-md max-w-sm">
+            <div className="-mt-1 sm:-mt-2 relative z-20 rounded-2xl border border-blue-200 bg-white/95 backdrop-blur-xs px-4 py-2.5 text-center text-xs sm:text-sm font-semibold text-lumaText shadow-md max-w-sm">
               &ldquo;Visibilizar el problema es el primer paso para combatirlo juntos.&rdquo;
             </div>
           </div>

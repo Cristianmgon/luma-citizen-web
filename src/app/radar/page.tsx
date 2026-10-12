@@ -125,7 +125,7 @@ export default function RadarPage() {
                 loopIntervalSeconds={16}
               />
             </div>
-            <div className="mt-4 rounded-2xl border border-blue-200 bg-white p-3 text-center text-xs sm:text-sm font-semibold text-lumaText shadow-sm max-w-sm">
+            <div className="-mt-3 sm:-mt-5 relative z-20 rounded-2xl border border-blue-200 bg-white/95 backdrop-blur-xs px-4 py-2.5 text-center text-xs sm:text-sm font-semibold text-lumaText shadow-md max-w-sm">
               &ldquo;Visibilizar el problema es el primer paso para combatirlo juntos.&rdquo;
             </div>
           </div>
@@ -135,7 +135,7 @@ export default function RadarPage() {
       {/* 2. LOS 3 PILARES SOCIALES */}
       <section className="space-y-4">
         <h2 className="text-2xl font-black text-lumaText">
-          ¿Por qué es indispensable visibilizar el cibercrimen?
+          ¿Por qué es indispensable visibilizar el delito asistido tecnológicamente?
         </h2>
         <div className="grid gap-6 md:grid-cols-3">
           <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm space-y-3">

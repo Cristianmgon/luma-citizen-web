@@ -37,10 +37,34 @@ export default function LumaProtectHomePage() {
                 La plataforma inteligente que protege personas, no solo dispositivos.
               </p>
 
-              <p className="text-xs sm:text-base leading-relaxed text-slate-300 break-words">
-                Una iniciativa independiente de investigación aplicada y desarrollo tecnológico impulsada por <strong>estudiantes universitarios de la Licenciatura en Ciberseguridad de la Universidad Nacional Raúl Scalabrini Ortiz (UNSO)</strong> en preparación de su trabajo de grado. <em>Este proyecto es de carácter autónomo y no cuenta a la fecha con patrocinio, aval o representación institucional formal de la UNSO.</em>{" "}
-                Ecosistema de defensa integral frente a <strong>estafas por canales de mensajería, ingeniería social coercitiva, vaciamiento de cuentas y enlaces maliciosos</strong>. Operamos mediante un <strong>Doble Anillo Defensivo</strong>: un <strong>Escudo en Tiempo Real en tu Celular</strong> (App Android con Fricción Positiva contextual, análisis forense de enlaces/QR y Contacto de Confianza) y un <strong>Bot Asistente en Telegram con Inteligencia Artificial</strong> (@LumaProtectArgBot) para consultas inmediatas sin necesidad de instalar nada. Todo bajo privacidad estricta (Ley 25.326 Zero-PII).
-              </p>
+              <div className="space-y-4 text-xs sm:text-base leading-relaxed text-slate-300 break-words">
+                <p>
+                  Una iniciativa independiente de investigación aplicada y desarrollo tecnológico impulsada por estudiantes de la Licenciatura en Ciberseguridad de la Universidad Nacional Raúl Scalabrini Ortiz (UNSO) en preparación de su trabajo de grado. (Este proyecto es de carácter autónomo y no cuenta a la fecha con patrocinio, aval o representación institucional formal de la UNSO).
+                </p>
+
+                <p>
+                  Creamos un ecosistema de defensa integral frente a estafas por canales de mensajería, ingeniería social coercitiva, vaciamiento de cuentas y enlaces maliciosos mediante un Doble Anillo Defensivo:
+                </p>
+
+                <ul className="space-y-2 pl-4 text-slate-200">
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold shrink-0">•</span>
+                    <span>
+                      <strong className="text-white">Escudo en tu Celular (App Android):</strong> Fricción positiva contextual para frenar el engaño a tiempo, análisis forense de enlaces y códigos QR, y conexión directa con tu contacto de confianza.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-cyan-400 font-bold shrink-0">•</span>
+                    <span>
+                      <strong className="text-white">Bot Asistente en Telegram (@LumaProtectArgBot):</strong> Orientación inmediata con Inteligencia Artificial para resolver dudas y analizar mensajes sospechosos al instante, sin necesidad de instalar nada.
+                    </span>
+                  </li>
+                </ul>
+
+                <p className="text-emerald-400 font-semibold pt-1">
+                  Todo bajo estricta privacidad y protección de datos personales (Ley 25.326 Zero-PII).
+                </p>
+              </div>
 
               {/* Botones de Acción */}
               <div className="flex flex-col items-stretch sm:items-center gap-2.5 sm:gap-3 pt-2 sm:flex-row sm:justify-start">

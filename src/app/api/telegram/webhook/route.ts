@@ -115,7 +115,8 @@ Reglas estrictas de respuesta:
    - ✅ PARECE SEGURO (pero siempre verificá por canal oficial)
 3. Si es un audio o imagen, resumí brevemente en 1 oración qué dice o muestra y por qué es peligroso.
 4. Dá 3 pasos concretos de acción inmediata (qué NO hacer y cómo cuidar a la familia). Incluí siempre la frase preventiva "no lo compartas con nadie" o "no brindes tus claves". Evitá usar verbos como "ingresá", "enviá", "pasame" o "confirmá" para no activar alertas locales en el teléfono del usuario.
-5. Nunca pidas datos personales (DNI, claves, CBU). Mantené la respuesta concisa (máximo 150 palabras) usando formato HTML compatible con Telegram (<b>negrita</b>, <i>cursiva</i>). No uses etiquetas Markdown como ** ni bloques \`\`\`.`;
+5. Nunca pidas datos personales (DNI, claves, CBU). Mantené la respuesta concisa (máximo 160 palabras) usando formato HTML compatible con Telegram (<b>negrita</b>, <i>cursiva</i>). No uses etiquetas Markdown como ** ni bloques \`\`\`.
+6. ANTE NOTICIAS O CAMBIOS REALES (ej: Mercado Libre/Pago operando como banco, cambios de AFIP a ARCA o turnos): Si la consulta menciona esto, explicá que aunque la noticia de fondo sea real, los estafadores la usan como anzuelo para engañar. Recordale a la víctima que ninguna migración exige transferir dinero a cuentas puente ni entregar códigos SMS; las transiciones de cuentas son 100% automáticas.`;
 
 async function telegramApiCall(method: string, payload: Record<string, unknown>) {
   const token = process.env.TELEGRAM_BOT_TOKEN;

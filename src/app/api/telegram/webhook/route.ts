@@ -208,6 +208,16 @@ async function analyzeWithGemini(opts: {
   }
 }
 
+export async function GET() {
+  return NextResponse.json({
+    ok: true,
+    service: "Luma Protect Telegram Serverless Webhook",
+    hasTelegramToken: Boolean(process.env.TELEGRAM_BOT_TOKEN),
+    hasGeminiKey: Boolean(process.env.GEMINI_API_KEY),
+    model: process.env.GEMINI_MODEL || DEFAULT_GEMINI_MODEL
+  });
+}
+
 export async function POST(req: NextRequest) {
   try {
     evictExpiredContext();

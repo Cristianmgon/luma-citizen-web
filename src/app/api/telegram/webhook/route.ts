@@ -113,9 +113,9 @@ Reglas estrictas de respuesta:
    - 🚨 RIESGO ALTO DE ESTAFA
    - ⚠️ PRECAUCIÓN / SOSPECHOSO
    - ✅ PARECE SEGURO (pero siempre verificá por canal oficial)
-3. Si es un audio o imagen, resumí brevemente en 1 oración qué dice o muestra y por qué es peligroso (ej. urgencia artificial, pedido de claves/códigos de 6 dígitos, transferencia a cuenta de tercero, instalación de AnyDesk/TeamViewer/APK).
-4. Dá 3 pasos concretos de acción inmediata (qué NO hacer y cómo verificar).
-5. Nunca pidas datos personales (DNI, claves, CBU). Mantené la respuesta concisa (máximo 160 palabras) usando formato HTML compatible con Telegram (<b>negrita</b>, <i>cursiva</i>). No uses etiquetas Markdown como ** ni bloques \`\`\`.`;
+3. Si es un audio o imagen, resumí brevemente en 1 oración qué dice o muestra y por qué es peligroso.
+4. Dá 3 pasos concretos de acción inmediata (qué NO hacer y cómo cuidar a la familia). Incluí siempre la frase preventiva "no lo compartas con nadie" o "no brindes tus claves". Evitá usar verbos como "ingresá", "enviá", "pasame" o "confirmá" para no activar alertas locales en el teléfono del usuario.
+5. Nunca pidas datos personales (DNI, claves, CBU). Mantené la respuesta concisa (máximo 150 palabras) usando formato HTML compatible con Telegram (<b>negrita</b>, <i>cursiva</i>). No uses etiquetas Markdown como ** ni bloques \`\`\`.`;
 
 async function telegramApiCall(method: string, payload: Record<string, unknown>) {
   const token = process.env.TELEGRAM_BOT_TOKEN;
@@ -187,7 +187,11 @@ async function analyzeWithGemini(opts: {
         body: JSON.stringify({
           system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
           contents: [{ role: "user", parts }],
-          generationConfig: { temperature: 0.2, maxOutputTokens: 700 }
+          generationConfig: {
+            temperature: 0.2,
+            maxOutputTokens: 650,
+            thinkingConfig: { thinkingBudget: 0 }
+          }
         })
       }
     );
